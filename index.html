@@ -55,7 +55,7 @@ main{padding:15px}
 .steptime{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#718699}
 .step h4{margin:2px 0 0;font-size:18px}
 .pitch{background:linear-gradient(180deg,#7bbd77,#69a966);border-radius:15px;overflow:hidden;box-shadow:inset 0 0 0 3px #ffffffd9,0 0 0 1px #c5d3dc;margin:8px 0 10px}
-.pitch svg{display:block;width:100%;height:auto}
+.pitch svg{display:block;width:100%;height:auto}.legend{display:flex;gap:10px;flex-wrap:wrap;margin:7px 0 2px;font-size:11px;font-weight:800;color:#536b7e}.legend span{display:flex;align-items:center;gap:5px}.dot{width:11px;height:11px;border-radius:50%;display:inline-block}.dot.blue{background:#1974d2}.dot.red{background:#d8574d}.dot.grey{background:#4c5c69}.dot.orange{background:#f4a338;border-radius:2px}.setup{font-size:12px;font-weight:800;color:#36556e;background:#edf5fa;border-radius:10px;padding:8px 10px;margin:7px 0}
 .desc{font-size:13px;color:var(--muted);line-height:1.43}
 .change{margin-top:8px;border-radius:11px;padding:9px 10px;background:#eaf6ee;color:#216944;font-size:12px;font-weight:800}
 .coach{margin-top:13px;border-radius:13px;background:#f7fbff;padding:11px 12px}
@@ -124,7 +124,7 @@ main{padding:15px}
 
 <section class="station">
 <div class="station-head green"><div><div class="small">Station A · Onsdag</div><h3>Vendinger & 1v1</h3></div><div class="time">15 min</div></div>
-<div class="pad"><div class="note"><b>Opsæt én gang:</b> startkø nederst, arbejdsområde i midten og to små keglemål i modsatte side. Kun én ting ændres mellem trinene.</div>
+<div class="pad"><div class="note"><b>Opsæt én gang:</b> startkø nederst, arbejdsområde i midten og to små keglemål i modsatte side. Kun én ting ændres mellem trinene.</div><div class="legend"><span><i class="dot blue"></i>Angriber</span><span><i class="dot red"></i>Forsvarer</span><span><i class="dot grey"></i>Træner</span><span><i class="dot orange"></i>Kegle</span></div>
 <div class="steps">
 
 <article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Vending + acceleration</h4></div></div>
@@ -147,7 +147,7 @@ main{padding:15px}
 
 <section class="station">
 <div class="station-head orange"><div><div class="small">Station B · Onsdag</div><h3>1-2, modløb & genpres</h3></div><div class="time">15 min</div></div>
-<div class="pad"><div class="note"><b>Rød tråd:</b> aflever → bevæg dig → modtag igen. Til sidst kommer en forsvarer på, og boldtab udløser fælles genpres.</div>
+<div class="pad"><div class="note"><b>Rød tråd:</b> aflever → bevæg dig → modtag igen. Til sidst kommer en forsvarer på, og boldtab udløser fælles genpres.</div><div class="legend"><span><i class="dot blue"></i>Angriber</span><span><i class="dot red"></i>Forsvarer</span><span><i class="dot orange"></i>Kegle</span></div>
 <div class="steps">
 
 <article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>1-2 i fart</h4></div></div>
@@ -172,24 +172,114 @@ main{padding:15px}
 <section class="card game"><div class="pad"><div class="kicker">Fælles afslutning</div><h2>Kampblok · 15–20 min</h2><div class="muted">Spil så frit som muligt. Stop kun kort, når dagens fokus kan fremhæves naturligt. Giv ekstra ros, når spillerne selv bruger vending, 1-2 eller genpres fra stationerne.</div><div class="gamegrid"><div><b>Bonusmål</b>1 ekstra point efter 1-2 eller vending forbi modstander.</div><div><b>Ved boldtab</b>Se efter, om nærmeste spiller reagerer med pres.</div></div></div></section>
 </div>
 
+
 <div id="mon" class="view">
 <div class="grid">
-<section class="station"><div class="station-head green"><div><div class="small">Station A · Mandag</div><h3>Kontrol & fart forbi</h3></div><div class="time">15 min</div></div><div class="pad">
-<div class="note"><b>Mandag = fundament:</b> enklere version, så onsdag kan bygge videre uden at starte forfra.</div>
-<div class="steps">
-<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Dribl og vend</h4></div></div><div class="desc">Små berøringer mod en kegle, tydelig vending og fart væk.</div><div class="change">Grundopstilling.</div></article>
-<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>Vælg retning</h4></div></div><div class="desc">Træner viser sent retningen. Spilleren skal kigge op før vendingen.</div><div class="change">Kun trænersignal tilføjes.</div></article>
-<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>1v1 med kontrol</h4></div></div><div class="desc">Forsvarer på. Scoring kræver kontrolleret dribling gennem mål.</div><div class="change">Forsvarer erstatter kegle/træner.</div></article>
-</div></div></section>
 
-<section class="station"><div class="station-head orange"><div><div class="small">Station B · Mandag</div><h3>Pasning & bevægelse</h3></div><div class="time">15 min</div></div><div class="pad">
-<div class="note"><b>Mandag = relation:</b> lær rytmen aflever → bevæg dig → modtag igen.</div>
+<section class="station">
+<div class="station-head green"><div><div class="small">Station A · Mandag</div><h3>Kontrol, vending & 1v1</h3></div><div class="time">15 min</div></div>
+<div class="pad">
+<div class="note"><b>Opsæt én gang:</b> 2 startkøer med 3–5 spillere i hver. Midterkegle ca. 7 m fremme. To keglemål ca. 5 m efter midten.</div>
+<div class="legend"><span><i class="dot blue"></i>Angriber</span><span><i class="dot red"></i>Forsvarer</span><span><i class="dot grey"></i>Træner</span><span><i class="dot orange"></i>Kegle</span></div>
+
 <div class="steps">
-<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Spil og følg</h4></div></div><div class="desc">Aflever og løb direkte til næste position.</div><div class="change">Grundopstilling.</div></article>
-<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>1-2 og modløb</h4></div></div><div class="desc">Spil ind, kom i modløb, læg af og bevæg videre.</div><div class="change">Modløbet tilføjes.</div></article>
-<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>3v2 med pres</h4></div></div><div class="desc">Overtalsspil. Ved boldtab skal nærmeste spiller presse med det samme.</div><div class="change">To forsvarere og retning/mål tilføjes.</div></article>
-</div></div></section>
+<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Dribl ind – vend – fart ud</h4></div></div>
+<div class="setup">START: Blå spiller ved startkeglen med bold. Næste spiller venter bagved.</div>
+<div class="pitch"><svg viewBox="0 0 360 220">
+<rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/>
+<use href="#blue" transform="translate(55 158)"/><use href="#ball" transform="translate(77 174)"/>
+<use href="#blue" transform="translate(30 175) scale(.72)"/>
+<use href="#cone" transform="translate(172 112)"/><use href="#cone" transform="translate(304 70)"/><use href="#cone" transform="translate(304 152)"/>
+<path d="M86 156 C112 153 134 140 153 123" stroke="#fff" stroke-width="4" fill="none"/><text x="150" y="128" fill="#fff" font-size="22">➜</text>
+<path d="M185 110 C220 106 251 89 282 78" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="278" y="83" fill="#ffe65d" font-size="22">➜</text>
+<text x="29" y="202" fill="#fff" font-size="13" font-weight="900">START / KØ</text>
+</svg></div>
+<div class="desc">Spilleren dribler mod midterkeglen, laver en vending/finte og accelererer gennem et af de to keglemål. Start næste spiller, når den første har vendt.</div>
+<div class="change">ÆNDRING: Grundøvelsen. 2 parallelle baner hvis I er 8–10 spillere på stationen.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>Træner bestemmer målet</h4></div></div>
+<div class="setup">START: Præcis samme kø og kegler. Træner står bag midterkeglen.</div>
+<div class="pitch"><svg viewBox="0 0 360 220">
+<rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/>
+<use href="#blue" transform="translate(55 158)"/><use href="#ball" transform="translate(77 174)"/><use href="#blue" transform="translate(30 175) scale(.72)"/>
+<use href="#coach" transform="translate(174 57)"/><use href="#cone" transform="translate(172 112)"/><use href="#cone" transform="translate(304 70)"/><use href="#cone" transform="translate(304 152)"/>
+<path d="M86 156 C112 153 134 140 153 123" stroke="#fff" stroke-width="4" fill="none"/><text x="150" y="128" fill="#fff" font-size="22">➜</text>
+<path d="M186 114 C221 120 252 136 282 149" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="278" y="154" fill="#ffe65d" font-size="22">➜</text>
+<text x="145" y="30" fill="#fff" font-size="13" font-weight="900">TRÆNER</text><text x="29" y="202" fill="#fff" font-size="13" font-weight="900">START / KØ</text>
+</svg></div>
+<div class="desc">Træneren peger først højre/venstre, når spilleren nærmer sig midten. Spilleren skal se op, vælge vending og eksplodere mod det viste mål.</div>
+<div class="change">ÆNDRING FRA TRIN 1: Kun træneren tilføjes. Banen røres ikke.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>1v1 – angriber vælger</h4></div></div>
+<div class="setup">START: Angriber med bold fra køen. Forsvarer starter ved midten. Byt roller efter hver duel.</div>
+<div class="pitch"><svg viewBox="0 0 360 220">
+<rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/>
+<use href="#blue" transform="translate(55 158)"/><use href="#ball" transform="translate(77 174)"/><use href="#blue" transform="translate(30 175) scale(.72)"/>
+<use href="#red" transform="translate(177 116)"/><use href="#cone" transform="translate(304 70)"/><use href="#cone" transform="translate(304 152)"/>
+<path d="M86 156 C119 153 141 142 159 127" stroke="#fff" stroke-width="4" fill="none"/><text x="156" y="132" fill="#fff" font-size="22">➜</text>
+<path d="M193 107 C225 91 253 82 282 77" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="278" y="82" fill="#ffe65d" font-size="22">➜</text>
+<path d="M193 124 C226 136 253 145 282 150" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="278" y="155" fill="#ffe65d" font-size="22">➜</text>
+<text x="29" y="202" fill="#fff" font-size="13" font-weight="900">START / KØ</text>
+</svg></div>
+<div class="desc">Angriberen scorer ved at drible kontrolleret gennem et af de to mål. Forsvareren forsøger at lukke én side og vinde bolden.</div>
+<div class="change">ÆNDRING FRA TRIN 2: Træner/midterkegle erstattes af en forsvarer.</div></article>
 </div>
+<div class="coach"><b>Coaching points</b><ul><li>Bolden tæt på ind mod modstander/kegle</li><li>Se op før vendingen</li><li>Efter vending: større berøring og fart</li></ul></div>
+</div></section>
+
+<section class="station">
+<div class="station-head orange"><div><div class="small">Station B · Mandag</div><h3>Pasning, 1-2 & modløb</h3></div><div class="time">15 min</div></div>
+<div class="pad">
+<div class="note"><b>Opsæt én gang:</b> A-kø med bolde nederst. B-position diagonalt fremme. Et lille mål i modsatte ende. 3–5 spillere pr. startposition.</div>
+<div class="legend"><span><i class="dot blue"></i>Medspiller</span><span><i class="dot red"></i>Forsvarer</span><span><i class="dot orange"></i>Kegle</span></div>
+
+<div class="steps">
+<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Aflever – løb – få igen</h4></div></div>
+<div class="setup">START: A har bold. B står diagonalt ca. 7 m fremme. A følger sin aflevering.</div>
+<div class="pitch"><svg viewBox="0 0 360 220">
+<rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/>
+<use href="#blue" transform="translate(58 160)"/><use href="#ball" transform="translate(80 176)"/><use href="#blue" transform="translate(31 177) scale(.72)"/>
+<use href="#blue" transform="translate(205 94)"/><use href="#cone" transform="translate(177 160)"/><use href="#goal" transform="translate(298 75)"/>
+<path d="M90 159 C121 151 153 132 184 109" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="181" y="114" fill="#ffe65d" font-size="22">➜</text>
+<path d="M199 107 C178 124 150 146 116 165" stroke="#fff" stroke-width="4" fill="none"/><text x="112" y="170" fill="#fff" font-size="22">➜</text>
+<path d="M68 149 C96 133 122 131 154 146" stroke="#fff" stroke-width="3" stroke-dasharray="7 6" fill="none"/>
+<text x="29" y="202" fill="#fff" font-size="13" font-weight="900">A · KØ</text><text x="195" y="56" fill="#fff" font-size="13" font-weight="900">B</text>
+</svg></div>
+<div class="desc">A spiller til B og løber straks forbi keglen. B lægger bolden tilbage i A's løbebane. A afslutter aktionen ved at føre bolden mod målet.</div>
+<div class="change">ÆNDRING: Grundrelationen: aflever → bevæg → få igen.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>B kommer i modløb</h4></div></div>
+<div class="setup">START: Samme bane. B starter længere fremme og skal møde bolden aktivt.</div>
+<div class="pitch"><svg viewBox="0 0 360 220">
+<rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/>
+<use href="#blue" transform="translate(58 160)"/><use href="#ball" transform="translate(80 176)"/><use href="#blue" transform="translate(31 177) scale(.72)"/>
+<use href="#blue" transform="translate(251 82)"/><use href="#cone" transform="translate(177 160)"/><use href="#goal" transform="translate(298 75)"/>
+<path d="M90 159 C141 148 187 121 230 92" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="226" y="97" fill="#ffe65d" font-size="22">➜</text>
+<path d="M243 92 C226 121 211 143 190 157" stroke="#fff" stroke-width="4" fill="none"/><text x="186" y="163" fill="#fff" font-size="22">➜</text>
+<text x="29" y="202" fill="#fff" font-size="13" font-weight="900">A · KØ</text><text x="242" y="46" fill="#fff" font-size="13" font-weight="900">B</text>
+</svg></div>
+<div class="desc">A spiller frem. B kommer mod bolden, tager imod på forreste fod og vender ud. A bevæger sig frem som ny spillemulighed.</div>
+<div class="change">ÆNDRING FRA TRIN 1: B starter højere og laver et tydeligt modløb.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>2v1 – find 1-2'eren</h4></div></div>
+<div class="setup">START: A med bold + B som medspiller. Forsvarer mellem dem og målet.</div>
+<div class="pitch"><svg viewBox="0 0 360 220">
+<rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/>
+<use href="#blue" transform="translate(58 160)"/><use href="#ball" transform="translate(80 176)"/><use href="#blue" transform="translate(151 86)"/>
+<use href="#red" transform="translate(210 137)"/><use href="#goal" transform="translate(299 103)"/>
+<path d="M90 157 C114 146 128 128 139 104" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="136" y="110" fill="#ffe65d" font-size="22">➜</text>
+<path d="M163 96 C206 93 252 99 294 111" stroke="#fff" stroke-width="4" fill="none"/><text x="288" y="116" fill="#fff" font-size="22">➜</text>
+<path d="M200 149 C181 157 164 162 143 166" stroke="#ffe65d" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+<text x="29" y="202" fill="#fff" font-size="13" font-weight="900">A · START</text>
+</svg></div>
+<div class="desc">Spil 2v1 mod mål. Brug 1-2, modløb eller dribling afhængigt af forsvareren. Mister de bolden, presser begge straks i 3 sekunder.</div>
+<div class="change">ÆNDRING FRA TRIN 2: Én forsvarer tilføjes. Nu skal spillerne selv vælge løsningen.</div></article>
+</div>
+<div class="coach"><b>Coaching points</b><ul><li>Aflevering = bevægelse med det samme</li><li>Kom mod bolden – stå ikke og vent</li><li>Ved boldtab: nærmeste presser, makkeren hjælper</li></ul></div>
+</div></section>
+</div>
+
+<section class="card game"><div class="pad"><div class="kicker">Fælles afslutning · Mandag</div><h2>Kampblok · 15–20 min</h2><div class="muted">Fri kamp. Ros især vendinger, 1-2-afleveringer og spillere, der reagerer hurtigt efter boldtab. Ingen lange stop.</div></div></section>
 </div>
 
 <div id="archive" class="view">
@@ -205,10 +295,10 @@ main{padding:15px}
 </div>
 
 <section class="card"><div class="pad"><div class="kicker">Feedback-loop</div><h2>Efter træning · 30 sekunder</h2>
-<div class="muted">Skriv stikord. Det er nok til at justere næste version uden at ændre hele formatet.</div>
+<div class="muted">Skriv stikord og tryk <b>Send feedback til Mads</b>. Din mail-app åbnes med feedbacken adresseret til <b>mail@madsmnielsen.dk</b>, så den kan sendes direkte.</div>
 <div class="feedbackbox">
 <textarea id="feedback" placeholder="Fx: Station B trin 2 fungerede godt. 1v1 var for let. Mere genpres næste onsdag."></textarea>
-<button class="btn primary" onclick="copyFeedback()">Kopiér feedback</button>
+<button class="btn primary" onclick="sendFeedback()">Send feedback til Mads</button>
 <button class="btn secondary" onclick="fillTemplate()">Indsæt skabelon</button>
 <div id="status" class="status"></div>
 </div></div></section>
@@ -227,11 +317,13 @@ function showView(id,btn){
 function fillTemplate(){
  document.getElementById('feedback').value='Hvad virkede godt?\n- \n\nHvad var for let/svært?\n- \n\nHvad skal vi have mere/mindre af næste gang?\n- ';
 }
-async function copyFeedback(){
+function sendFeedback(){
  const el=document.getElementById('feedback');
  if(!el.value.trim()) fillTemplate();
- try{await navigator.clipboard.writeText(el.value);document.getElementById('status').textContent='✓ Feedback kopieret';}
- catch(e){document.getElementById('status').textContent='Markér teksten og kopiér den manuelt.';}
+ const subject=encodeURIComponent('U11 træning – feedback');
+ const body=encodeURIComponent(el.value);
+ document.getElementById('status').textContent='Åbner din mail med feedbacken klar til afsendelse…';
+ window.location.href='mailto:mail@madsmnielsen.dk?subject='+subject+'&body='+body;
 }
 </script>
 </body>

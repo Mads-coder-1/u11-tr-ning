@@ -2,44 +2,237 @@
 <html lang="da">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0c3157">
-<title>U11 Træning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>U11 Træning · Version 2</title>
 <style>
-:root{--navy:#0b3158;--navy2:#123f70;--blue:#176db0;--green:#2f9d62;--orange:#f3a12d;--cream:#fff9ea;--ink:#17324d;--muted:#5d7184;--line:#c8d7e4;--bg:#eef4f8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}.wrap{max-width:1100px;margin:auto;padding:10px}.poster{background:white;border:1px solid #a9bfd0;box-shadow:0 8px 30px #12324a22}.hero{background:linear-gradient(135deg,#082b50,#0c3b69);color:#fff;padding:18px;border-bottom:5px solid #fff}.heroTop{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;align-items:center}.brand{font-size:40px;font-weight:1000;letter-spacing:-1.5px;line-height:.95}.focusTitle{font-size:15px;font-weight:900}.focusBig{font-size:22px;font-weight:1000;color:#ffd42a;margin-top:4px}.todayBox{margin-top:12px;background:#fff;color:var(--navy);border-radius:12px;padding:12px;display:grid;grid-template-columns:1fr auto;gap:10px}.todayBox b{font-size:14px}.todayBox span{font-size:13px}.cycleBadge{background:#e7f5ec;color:#1c7546;border:2px solid #8dccaa;border-radius:12px;padding:8px 12px;text-align:center;font-weight:1000}.coachStrip{background:#fff;padding:12px 14px;border-bottom:4px solid var(--navy);display:grid;grid-template-columns:1fr 1fr;gap:12px}.coachDay{border:1px solid #b8c9d7;border-radius:12px;padding:10px}.dayTitle{text-align:center;background:var(--navy);color:#fff;border-radius:999px;font-weight:1000;padding:5px 10px;margin:-2px auto 8px;width:max-content}.coaches{display:flex;justify-content:center;gap:14px}.coach{display:flex;align-items:center;gap:8px}.face{width:48px;height:48px;border-radius:50%;background:linear-gradient(#ffd6b4,#e9a776);border:3px solid white;box-shadow:0 0 0 2px #153b5c;position:relative}.face:before{content:"";position:absolute;left:11px;top:19px;width:5px;height:5px;border-radius:50%;background:#253545;box-shadow:17px 0 #253545}.face:after{content:"";position:absolute;left:15px;top:31px;width:14px;height:6px;border-bottom:2px solid #7b432d;border-radius:0 0 20px 20px}.hair{position:absolute;left:5px;top:-3px;width:34px;height:15px;background:#7b4a20;border-radius:60% 60% 20% 20%}.bald .hair{width:18px;left:13px;background:#ad7650}.glasses:after{content:"◉  ◉";position:absolute;left:7px;top:15px;font-size:10px;color:#162f45}.moustache:after{content:"〰";position:absolute;left:12px;top:26px;font-weight:900;color:#835128}.coachName{font-weight:1000;font-size:14px}.coachSub{font-size:11px;color:var(--muted)}.nav{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--navy);gap:1px}.nav button{border:0;background:var(--navy2);color:white;padding:13px 7px;font-weight:1000}.nav button.on{background:white;color:var(--navy)}.content{padding:12px}.sectionTitle{background:var(--navy);color:white;font-size:18px;font-weight:1000;padding:10px 13px;border-radius:8px 8px 0 0;display:flex;justify-content:space-between;gap:10px}.stationGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.station{border:1px solid #9fb6c8;border-radius:10px;overflow:hidden;background:#fff}.stationHead{padding:10px 12px;font-weight:1000;font-size:17px;border-bottom:1px solid #afc4d3}.stationHead .letter{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;color:white;background:#1264a6;margin-right:7px}.meta{font-size:12px;color:var(--muted);font-weight:700;margin-top:4px}.stage{display:grid;grid-template-columns:130px 1fr;border-top:1px solid #d5e0e8;min-height:190px}.stage:first-of-type{border-top:0}.copy{padding:12px}.time{display:inline-block;background:#0b4d8c;color:white;border-radius:5px;padding:4px 7px;font-weight:1000;font-size:12px}.stepName{font-size:16px;font-weight:1000;margin:7px 0}.copy p{font-size:13px;line-height:1.4;margin:0 0 9px}.focusline{font-size:12px;font-weight:900}.pitchWrap{padding:10px;background:#f6faf7}.pitch{position:relative;min-height:168px;background:linear-gradient(90deg,#69aa5f,#78b86d);border:3px solid #fff;box-shadow:0 0 0 1px #86a78d;border-radius:8px;overflow:hidden}.pitch:before{content:"";position:absolute;inset:10px;border:2px solid #ffffffc9}.cone{position:absolute;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:15px solid #ff9715;filter:drop-shadow(0 1px 0 #8b4e00)}.player{position:absolute;width:23px;height:23px;border-radius:50%;background:#156cc0;border:3px solid white;box-shadow:0 0 0 1px #0a3c68}.player.red{background:#d8463a}.ball{position:absolute;font-size:18px}.goal{position:absolute;width:34px;height:24px;border:4px solid white;border-bottom:0}.arrow{position:absolute;height:3px;background:#152f44;transform-origin:left center}.arrow:after{content:"";position:absolute;right:-2px;top:-4px;border-left:8px solid #152f44;border-top:5px solid transparent;border-bottom:5px solid transparent}.arrow.dash{background:repeating-linear-gradient(90deg,#152f44 0 7px,transparent 7px 12px)}.arrow.yellow{background:#ffe040}.arrow.yellow:after{border-left-color:#ffe040}.lab{position:absolute;font-size:10px;font-weight:1000;background:#fff;padding:2px 4px;border-radius:4px}.coachPoints{margin:10px;border:1px solid #abc1d2;background:#f7fafc;border-radius:8px;padding:10px}.coachPoints b{font-size:13px}.coachPoints ul{margin:5px 0 0;padding-left:18px;font-size:12px;line-height:1.5}.bottomGrid{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;margin-top:12px}.panel{border:1px solid #a7bccd;border-radius:10px;background:white;padding:12px}.panel h3{margin:0 0 8px;color:var(--navy)}.cycle{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.cy{border:1px solid #cad7e0;border-radius:8px;padding:8px;font-size:12px}.cy.now{border:2px solid #2d9a5f;background:#eef9f2}.cy b{display:block;margin-bottom:4px}.feedbackBtn{border:0;width:100%;background:var(--navy);color:#fff;border-radius:8px;padding:11px;font-weight:1000}.archiveItem{padding:10px;border:1px solid #d3dfe7;border-radius:8px;margin-top:7px}.archiveItem b{display:block}.small{font-size:12px;color:var(--muted);line-height:1.4}.hidden{display:none}.footer{background:#edf4f8;border-top:1px solid #b8c9d7;padding:10px;text-align:center;font-weight:900;color:var(--navy);font-size:12px}
-@media(max-width:760px){.wrap{padding:0}.poster{border:0}.heroTop{grid-template-columns:1fr}.brand{font-size:32px}.focusBig{font-size:18px}.coachStrip{grid-template-columns:1fr}.stationGrid{grid-template-columns:1fr}.stage{grid-template-columns:42% 58%;min-height:178px}.pitch{min-height:155px}.bottomGrid{grid-template-columns:1fr}.cycle{grid-template-columns:1fr}.coachDay:first-child{display:none}.sectionTitle{font-size:15px}.copy{padding:9px}.copy p{font-size:12px}.pitchWrap{padding:7px}}
+:root{
+  --navy:#113a5d; --navy2:#1c587f; --green:#1d9660; --green2:#55b67e;
+  --orange:#efa43b; --red:#d8574d; --bg:#edf3f7; --card:#fff;
+  --text:#17334d; --muted:#617689; --line:#dfe8ee; --soft:#f5f8fb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button{font:inherit}
+.wrap{max-width:1120px;margin:auto}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:22px 16px 17px;box-shadow:0 5px 18px #12324c22}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;opacity:.8}
+.hero{display:flex;justify-content:space-between;gap:14px;align-items:flex-end;margin-top:5px}
+h1{margin:0;font-size:30px;line-height:1.05}
+.subtitle{margin-top:7px;opacity:.92;font-size:14px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.chip{border:1px solid #ffffff22;background:#ffffff18;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px}
+.tab{border:0;border-radius:12px;padding:11px 8px;background:#ffffff1f;color:#fff;font-weight:900;cursor:pointer}
+.tab.active{background:#fff;color:var(--navy)}
+main{padding:15px}
+.card,.station{background:var(--card);border-radius:18px;box-shadow:0 4px 15px #17334d12;overflow:hidden;margin-bottom:15px}
+.pad{padding:16px}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#718699}
+.focus{border-left:6px solid var(--green)}
+.focus h2,.card h2{margin:4px 0 7px;font-size:23px}
+.muted{color:var(--muted);line-height:1.45}
+.progress{height:8px;background:#e6edf2;border-radius:99px;overflow:hidden;margin:11px 0 5px}
+.progress span{display:block;height:100%;width:33%;background:linear-gradient(90deg,var(--green),var(--green2))}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:13px}
+.quick div{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:12px;color:var(--muted)}
+.quick b{display:block;color:var(--text);font-size:15px;margin-bottom:2px}
+.view{display:none}.view.active{display:block}
+.grid{display:grid;grid-template-columns:1fr;gap:15px}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
+.station-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;color:#fff}
+.station-head.green{background:var(--green)}
+.station-head.orange{background:var(--orange);color:#493207}
+.station-head .small{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.station-head h3{font-size:22px;line-height:1.1;margin:2px 0 0}
+.time{font-size:13px;font-weight:900;padding:7px 10px;border-radius:999px;background:#ffffff25}
+.orange .time{background:#ffffff66}
+.note{background:#f1f6fa;border-radius:13px;padding:11px 12px;margin-bottom:13px;font-size:13px;color:var(--muted)}
+.steps{display:grid;gap:13px}
+.step{border:1px solid var(--line);border-radius:16px;background:#fcfdff;padding:13px}
+.stephead{display:grid;grid-template-columns:39px 1fr;gap:10px;align-items:center;margin-bottom:9px}
+.num{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:900}
+.steptime{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#718699}
+.step h4{margin:2px 0 0;font-size:18px}
+.pitch{background:linear-gradient(180deg,#7bbd77,#69a966);border-radius:15px;overflow:hidden;box-shadow:inset 0 0 0 3px #ffffffd9,0 0 0 1px #c5d3dc;margin:8px 0 10px}
+.pitch svg{display:block;width:100%;height:auto}
+.desc{font-size:13px;color:var(--muted);line-height:1.43}
+.change{margin-top:8px;border-radius:11px;padding:9px 10px;background:#eaf6ee;color:#216944;font-size:12px;font-weight:800}
+.coach{margin-top:13px;border-radius:13px;background:#f7fbff;padding:11px 12px}
+.coach b{display:block;margin-bottom:5px}.coach ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.45}
+.game{border-left:5px solid var(--navy2)}
+.gamegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.gamegrid div{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fbfdff;font-size:12px;color:var(--muted)}
+.gamegrid b{display:block;color:var(--text);margin-bottom:2px}
+.cycle{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:11px}
+@media(max-width:700px){.cycle{grid-template-columns:1fr}.hero{display:block}.hero .chip{display:inline-block;margin-top:10px}}
+.cyclebox{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}
+.cyclebox.current{border:2px solid var(--green);background:#f3fbf6}
+.cyclebox b{display:block;margin-bottom:4px}
+.archive{border:1px solid var(--line);border-radius:13px;padding:12px;margin-top:9px}
+.archive b{display:block;margin-bottom:3px}
+.feedbackbox{display:grid;gap:8px;margin-top:12px}
+.feedbackbox textarea{width:100%;min-height:90px;border:1px solid #cfdbe4;border-radius:12px;padding:11px;font:inherit;color:var(--text);resize:vertical}
+.btn{border:0;border-radius:12px;padding:12px 14px;font-weight:900;cursor:pointer}
+.primary{background:var(--navy);color:#fff}.secondary{background:#e8f0f5;color:var(--navy)}
+.status{text-align:center;color:var(--muted);font-size:12px;min-height:18px}
+.footer{text-align:center;color:#8294a2;font-size:11px;padding:4px 0 25px}
 </style>
 </head>
 <body>
-<div class="wrap"><div class="poster">
-<header class="hero"><div class="heroTop"><div><div class="brand">U11 TRÆNING ⚽</div><div style="font-size:13px;margin-top:6px">Hobro · træningskort til banen</div></div><div><div class="focusTitle">FOKUS DE NÆSTE 2–3 UGER:</div><div class="focusBig">BOLDKONTROL & SAMSPIL MOD MODSTANDER</div></div></div><div class="todayBox"><div><b>I DAG SKAL VI:</b><br><span>✅ Have bolden tæt · ✅ turde spille 1-2 · ✅ vende ud af pres · ✅ presse straks ved boldtab</span></div><div class="cycleBadge">UGE 1 / 3<br><span style="font-size:11px">Fundament</span></div></div></header>
-<section class="coachStrip"><div class="coachDay"><div class="dayTitle">MANDAG</div><div class="coaches"><div class="coach"><div class="face"><i class="hair"></i></div><div><div class="coachName">Jacob</div><div class="coachSub">træner</div></div></div><div class="coach"><div class="face bald"><i class="hair"></i></div><div><div class="coachName">Allan</div><div class="coachSub">træner</div></div></div></div></div><div class="coachDay"><div class="dayTitle">ONSDAG</div><div class="coaches"><div class="coach"><div class="face glasses"><i class="hair"></i></div><div><div class="coachName">Lars</div><div class="coachSub">træner</div></div></div><div class="coach"><div class="face moustache"><i class="hair"></i></div><div><div class="coachName">Mads</div><div class="coachSub">træner</div></div></div></div></div></section>
-<nav class="nav"><button id="btnMon" onclick="showDay('mon')">MANDAG</button><button id="btnWed" class="on" onclick="showDay('wed')">ONSDAG</button><button id="btnArc" onclick="showDay('arc')">ARKIV</button></nav>
-<main class="content">
-<div id="wed">
-<div class="sectionTitle"><span>HOVEDDEL · 2 STATIONER</span><span>↔ Byt efter ca. 15 min</span></div>
-<div class="stationGrid">
-<section class="station"><div class="stationHead"><span class="letter">A</span>DRIBLING, VENDING & 1-MOD-1<div class="meta">Bane ca. 15 × 20 m · 1 bold pr. spiller i starten</div></div>
-<div class="stage"><div class="copy"><span class="time">0–4 MIN.</span><div class="stepName">TEKNIK</div><p>Dribl mod den centrale kegle, lav vending og accelerér ud gennem et af de to porte.</p><div class="focusline">Fokus: kontrol ind → fart ud</div></div><div class="pitchWrap"><div class="pitch"><i class="player" style="left:12%;top:72%"></i><span class="ball" style="left:18%;top:72%">⚽</span><i class="cone" style="left:48%;top:51%"></i><i class="cone" style="left:82%;top:22%"></i><i class="cone" style="left:82%;top:76%"></i><i class="arrow" style="left:22%;top:69%;width:27%;transform:rotate(-12deg)"></i><i class="arrow" style="left:51%;top:48%;width:29%;transform:rotate(-39deg)"></i><span class="lab" style="left:5%;top:86%">START</span></div></div></div>
-<div class="stage"><div class="copy"><span class="time">4–8 MIN.</span><div class="stepName">BESLUTNING</div><p>Samme bane. Træneren viser sent højre/venstre. Spilleren skal kigge op, reagere og vælge.</p><div class="focusline">Fokus: kig op → hurtig beslutning</div></div><div class="pitchWrap"><div class="pitch"><i class="player" style="left:12%;top:72%"></i><span class="ball" style="left:18%;top:72%">⚽</span><i class="cone" style="left:48%;top:51%"></i><i class="cone" style="left:82%;top:22%"></i><i class="cone" style="left:82%;top:76%"></i><span class="lab" style="left:45%;top:12%;background:#0b3158;color:white">TRÆNER: HØJRE!</span><i class="arrow" style="left:22%;top:69%;width:27%;transform:rotate(-12deg)"></i><i class="arrow" style="left:51%;top:53%;width:29%;transform:rotate(36deg)"></i></div></div></div>
-<div class="stage"><div class="copy"><span class="time">8–15 MIN.</span><div class="stepName">1-MOD-1</div><p>Fjern kun midterkeglen og sæt en forsvarer ind. Angriberen scorer ved at drible gennem en af portene.</p><div class="focusline">Fokus: lok → skift retning → accelerér</div></div><div class="pitchWrap"><div class="pitch"><i class="player" style="left:12%;top:72%"></i><span class="ball" style="left:18%;top:72%">⚽</span><i class="player red" style="left:48%;top:51%"></i><i class="cone" style="left:82%;top:22%"></i><i class="cone" style="left:82%;top:76%"></i><i class="arrow yellow" style="left:22%;top:69%;width:27%;transform:rotate(-12deg)"></i><i class="arrow yellow" style="left:52%;top:49%;width:29%;transform:rotate(-39deg)"></i><i class="arrow yellow" style="left:52%;top:54%;width:29%;transform:rotate(36deg)"></i></div></div></div>
-<div class="coachPoints"><b>🎯 COACHING POINTS</b><ul><li>Bolden tæt på fødderne, når der er pres</li><li>Hovedet op inden vendingen</li><li>Første berøring efter vending skal skabe fart</li></ul></div></section>
-<section class="station"><div class="stationHead"><span class="letter">B</span>1-2, MODLØB & GENPRES<div class="meta">Bane ca. 15 × 20 m · 2–4 spillere pr. gruppe</div></div>
-<div class="stage"><div class="copy"><span class="time">0–4 MIN.</span><div class="stepName">1-2-AFLEVERING</div><p>A spiller på B, løber forbi keglen og får bolden retur i løbet. Byt roller.</p><div class="focusline">Fokus: aflever → løb med det samme</div></div><div class="pitchWrap"><div class="pitch"><i class="player" style="left:14%;top:72%"></i><span class="ball" style="left:20%;top:72%">⚽</span><i class="player" style="left:54%;top:28%"></i><i class="cone" style="left:51%;top:67%"></i><i class="arrow dash" style="left:23%;top:68%;width:35%;transform:rotate(-28deg)"></i><i class="arrow dash" style="left:54%;top:34%;width:34%;transform:rotate(142deg)"></i><i class="arrow" style="left:23%;top:62%;width:38%;transform:rotate(-4deg)"></i></div></div></div>
-<div class="stage"><div class="copy"><span class="time">4–8 MIN.</span><div class="stepName">MODLØB + VENDING</div><p>B laver modløb, modtager på forreste fod og vender ud. A fortsætter frem som ny spillemulighed.</p><div class="focusline">Fokus: timing og åben krop</div></div><div class="pitchWrap"><div class="pitch"><i class="player" style="left:14%;top:72%"></i><span class="ball" style="left:20%;top:72%">⚽</span><i class="player" style="left:63%;top:24%"></i><i class="cone" style="left:51%;top:67%"></i><i class="arrow dash" style="left:58%;top:30%;width:29%;transform:rotate(126deg)"></i><i class="arrow dash" style="left:23%;top:67%;width:44%;transform:rotate(-28deg)"></i><i class="arrow" style="left:52%;top:55%;width:30%;transform:rotate(-8deg)"></i></div></div></div>
-<div class="stage"><div class="copy"><span class="time">8–15 MIN.</span><div class="stepName">2-MOD-1 + 3 SEK.</div><p>To angribere mod én forsvarer. Mister de bolden, har de tre sekunder til at vinde den tilbage.</p><div class="focusline">Fokus: spil forbi → pres straks ved tab</div></div><div class="pitchWrap"><div class="pitch"><i class="player" style="left:13%;top:70%"></i><span class="ball" style="left:19%;top:70%">⚽</span><i class="player" style="left:22%;top:23%"></i><i class="player red" style="left:52%;top:49%"></i><i class="goal" style="left:84%;top:39%"></i><i class="arrow dash" style="left:24%;top:67%;width:39%;transform:rotate(-33deg)"></i><i class="arrow dash" style="left:24%;top:27%;width:42%;transform:rotate(25deg)"></i></div></div></div>
-<div class="coachPoints"><b>🎯 COACHING POINTS</b><ul><li>Præcis aflevering på den rigtige fod</li><li>Bevæg dig straks efter aflevering</li><li>Nærmeste spiller presser straks ved boldtab</li></ul></div></section>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="blue" viewBox="-20 -34 40 68">
+ <circle cx="0" cy="-20" r="9" fill="#f4c9a0"/><path d="M-11 -10 Q0 -18 11 -10 L9 6 Q0 10 -9 6 Z" fill="#1974d2"/>
+ <rect x="-8" y="6" width="16" height="8" rx="3" fill="#fff"/><line x1="-7" y1="14" x2="-8" y2="28" stroke="#293b4b" stroke-width="3" stroke-linecap="round"/>
+ <line x1="7" y1="14" x2="8" y2="28" stroke="#293b4b" stroke-width="3" stroke-linecap="round"/><line x1="-11" y1="-3" x2="-18" y2="8" stroke="#f4c9a0" stroke-width="3" stroke-linecap="round"/><line x1="11" y1="-3" x2="18" y2="6" stroke="#f4c9a0" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="red" viewBox="-20 -34 40 68">
+ <circle cx="0" cy="-20" r="9" fill="#f4c9a0"/><path d="M-11 -10 Q0 -18 11 -10 L9 6 Q0 10 -9 6 Z" fill="#d8574d"/>
+ <rect x="-8" y="6" width="16" height="8" rx="3" fill="#fff"/><line x1="-7" y1="14" x2="-8" y2="28" stroke="#293b4b" stroke-width="3" stroke-linecap="round"/>
+ <line x1="7" y1="14" x2="8" y2="28" stroke="#293b4b" stroke-width="3" stroke-linecap="round"/><line x1="-11" y1="-3" x2="-18" y2="8" stroke="#f4c9a0" stroke-width="3" stroke-linecap="round"/><line x1="11" y1="-3" x2="18" y2="6" stroke="#f4c9a0" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="coach" viewBox="-20 -34 40 68">
+ <circle cx="0" cy="-20" r="9" fill="#f4c9a0"/><path d="M-11 -10 Q0 -18 11 -10 L9 6 Q0 10 -9 6 Z" fill="#4c5c69"/>
+ <rect x="-8" y="6" width="16" height="8" rx="3" fill="#fff"/><line x1="-7" y1="14" x2="-8" y2="28" stroke="#293b4b" stroke-width="3"/><line x1="7" y1="14" x2="8" y2="28" stroke="#293b4b" stroke-width="3"/>
+</symbol>
+<symbol id="cone" viewBox="-10 -10 20 20"><path d="M-8 8 L0 -8 L8 8 Z" fill="#f4a338" stroke="#fff" stroke-width="1.7"/></symbol>
+<symbol id="ball" viewBox="-9 -9 18 18"><circle r="8" fill="#fff" stroke="#2d4051" stroke-width="1.5"/><polygon points="0,-3 3,0 1,4 -1,4 -3,0" fill="#2d4051"/></symbol>
+<symbol id="goal" viewBox="0 0 40 30"><path d="M2 25 V4 H33 V25" fill="none" stroke="#fff" stroke-width="3"/><line x1="33" y1="4" x2="38" y2="9" stroke="#fff" stroke-width="2"/><line x1="33" y1="25" x2="38" y2="20" stroke="#fff" stroke-width="2"/></symbol>
+</defs></svg>
+
+<header><div class="wrap">
+ <div class="eyebrow">U11 · Trænerkort · Version 2</div>
+ <div class="hero">
+   <div><h1>U11 Træning</h1><div class="subtitle">Fast format · tydelig progression · minimalt baneskift · hurtigt at aflæse på mobilen</div></div>
+   <div class="chip">Fokus 1/3 · Boldkontrol & samspil</div>
+ </div>
+ <div class="chips"><div class="chip">Mandag · Jacob & Allan</div><div class="chip">Onsdag · Lars & Mads</div><div class="chip">2 stationer × 15 min</div><div class="chip">Feedback → næste træning</div></div>
+ <div class="tabs"><button class="tab active" onclick="showView('wed',this)">Onsdag</button><button class="tab" onclick="showView('mon',this)">Mandag</button><button class="tab" onclick="showView('archive',this)">Forløb & arkiv</button></div>
+</div></header>
+
+<main class="wrap">
+<section class="card focus"><div class="pad">
+ <div class="kicker">Aktuelt fokus · uge 1 af 3</div><h2>Boldkontrol → samspil → modstander</h2>
+ <div class="muted">Spillerne skal først lykkes med bolden selv, derefter sammen med en medspiller og til sidst under pres. Jacobs ønsker om <b>1-2-afleveringer, vendinger, modløb og presspil</b> er bygget ind i progressionen.</div>
+ <div class="progress"><span></span></div>
+ <div class="quick"><div><b>Trin 1</b>Teknik</div><div><b>Trin 2</b>Valg</div><div><b>Trin 3</b>Modstander</div></div>
+</div></section>
+
+<div id="wed" class="view active">
+<div class="grid">
+
+<section class="station">
+<div class="station-head green"><div><div class="small">Station A · Onsdag</div><h3>Vendinger & 1v1</h3></div><div class="time">15 min</div></div>
+<div class="pad"><div class="note"><b>Opsæt én gang:</b> startkø nederst, arbejdsområde i midten og to små keglemål i modsatte side. Kun én ting ændres mellem trinene.</div>
+<div class="steps">
+
+<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Vending + acceleration</h4></div></div>
+<div class="pitch"><svg viewBox="0 0 360 220"><rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/><use href="#blue" transform="translate(55 158)"/><use href="#ball" transform="translate(77 174)"/><use href="#cone" transform="translate(172 112)"/><use href="#cone" transform="translate(304 70)"/><use href="#cone" transform="translate(304 152)"/><path d="M86 156 C112 154 130 143 151 125" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><text x="148" y="130" fill="#fff" font-size="22">➜</text><path d="M185 110 C220 107 251 89 282 78" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><text x="279" y="83" fill="#fff" font-size="22">➜</text><text x="34" y="194" fill="#fff" font-size="13" font-weight="900">START</text></svg></div>
+<div class="desc">Dribl mod midterkeglen. Lav en tydelig vending/finte tæt på keglen og accelerér gennem et af de to mål.</div>
+<div class="change">ÆNDRING: Grundopstilling. Fokus på tæt kontrol ind – fart ud.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>Se op – vælg sent</h4></div></div>
+<div class="pitch"><svg viewBox="0 0 360 220"><rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/><use href="#blue" transform="translate(55 158)"/><use href="#ball" transform="translate(77 174)"/><use href="#coach" transform="translate(174 56)"/><use href="#cone" transform="translate(172 112)"/><use href="#cone" transform="translate(304 70)"/><use href="#cone" transform="translate(304 152)"/><path d="M86 156 C112 154 130 143 151 125" stroke="#fff" stroke-width="4" fill="none"/><text x="148" y="130" fill="#fff" font-size="22">➜</text><path d="M186 115 C223 119 252 135 282 148" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="278" y="153" fill="#ffe65d" font-size="22">➜</text><text x="149" y="31" fill="#fff" font-size="13" font-weight="900">TRÆNER</text></svg></div>
+<div class="desc">Samme start. Træneren peger sent mod højre eller venstre mål. Spilleren skal orientere sig, ændre retning og accelerere.</div>
+<div class="change">ÆNDRING FRA TRIN 1: Kun trænerens signal tilføjes. Ingen kegler flyttes.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>1v1 til to mål</h4></div></div>
+<div class="pitch"><svg viewBox="0 0 360 220"><rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/><use href="#blue" transform="translate(55 158)"/><use href="#ball" transform="translate(77 174)"/><use href="#red" transform="translate(178 118)"/><use href="#cone" transform="translate(304 70)"/><use href="#cone" transform="translate(304 152)"/><path d="M86 156 C119 153 140 143 160 128" stroke="#fff" stroke-width="4" fill="none"/><text x="157" y="133" fill="#fff" font-size="22">➜</text><path d="M193 109 C225 92 254 83 282 77" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="279" y="82" fill="#ffe65d" font-size="22">➜</text><path d="M193 124 C226 136 253 145 282 150" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="279" y="155" fill="#ffe65d" font-size="22">➜</text></svg></div>
+<div class="desc">Forsvareren overtager midterpositionen. Angriberen scorer ved kontrolleret at drible gennem et af de to mål.</div>
+<div class="change">ÆNDRING FRA TRIN 2: Midterkeglen/træneren erstattes af en forsvarer.</div></article>
+
+</div><div class="coach"><b>Coaching points</b><ul><li>Små berøringer, når modstanderen er tæt på</li><li>Hoved op før beslutningen</li><li>Eksplosiv første berøring efter vending/finte</li></ul></div></div>
+</section>
+
+<section class="station">
+<div class="station-head orange"><div><div class="small">Station B · Onsdag</div><h3>1-2, modløb & genpres</h3></div><div class="time">15 min</div></div>
+<div class="pad"><div class="note"><b>Rød tråd:</b> aflever → bevæg dig → modtag igen. Til sidst kommer en forsvarer på, og boldtab udløser fælles genpres.</div>
+<div class="steps">
+
+<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>1-2 i fart</h4></div></div>
+<div class="pitch"><svg viewBox="0 0 360 220"><rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/><use href="#blue" transform="translate(62 160)"/><use href="#ball" transform="translate(84 176)"/><use href="#blue" transform="translate(208 96)"/><use href="#cone" transform="translate(178 160)"/><path d="M92 159 C121 151 153 133 186 111" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="182" y="116" fill="#ffe65d" font-size="22">➜</text><path d="M201 109 C180 125 150 147 116 166" stroke="#fff" stroke-width="4" fill="none"/><text x="113" y="171" fill="#fff" font-size="22">➜</text><path d="M69 149 C95 132 122 130 153 145" stroke="#fff" stroke-width="3" stroke-dasharray="7 6" fill="none"/></svg></div>
+<div class="desc">A spiller ind på B og løber straks forbi keglen. B lægger af i A's løbebane. Skift roller efter aktionen.</div>
+<div class="change">ÆNDRING: Grundopstilling med A, B og én løbekegle.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>Modløb + vending</h4></div></div>
+<div class="pitch"><svg viewBox="0 0 360 220"><rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/><use href="#blue" transform="translate(62 160)"/><use href="#ball" transform="translate(84 176)"/><use href="#blue" transform="translate(253 84)"/><use href="#cone" transform="translate(178 160)"/><path d="M92 159 C141 148 187 122 232 94" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="228" y="99" fill="#ffe65d" font-size="22">➜</text><path d="M244 94 C229 121 215 143 192 157" stroke="#fff" stroke-width="4" fill="none"/><text x="188" y="163" fill="#fff" font-size="22">➜</text></svg></div>
+<div class="desc">B starter højere og kommer aktivt i modløb. Modtag på forreste fod, vend ud og fortsæt. A bevæger sig efter sin aflevering.</div>
+<div class="change">ÆNDRING FRA TRIN 1: B starter længere væk og skal aktivt komme mod bolden.</div></article>
+
+<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>2v1 + 3 sek. genpres</h4></div></div>
+<div class="pitch"><svg viewBox="0 0 360 220"><rect x="10" y="10" width="340" height="200" rx="16" fill="none" stroke="#ffffffdd" stroke-width="3"/><use href="#blue" transform="translate(62 158)"/><use href="#ball" transform="translate(84 174)"/><use href="#blue" transform="translate(164 94)"/><use href="#red" transform="translate(214 139)"/><use href="#goal" transform="translate(299 102)"/><path d="M92 157 C120 147 135 130 148 109" stroke="#ffe65d" stroke-width="4" fill="none"/><text x="145" y="114" fill="#ffe65d" font-size="22">➜</text><path d="M177 103 C215 96 254 98 294 110" stroke="#fff" stroke-width="4" fill="none"/><text x="288" y="115" fill="#fff" font-size="22">➜</text><path d="M204 151 C186 158 170 163 148 167" stroke="#ffe65d" stroke-width="3" stroke-dasharray="6 6" fill="none"/></svg></div>
+<div class="desc">2 angribere mod 1 forsvarer til mål. Ved boldtab har de 3 sekunder til at vinde bolden igen. Nærmeste presser, makkeren lukker næste mulighed.</div>
+<div class="change">ÆNDRING FRA TRIN 2: Tilføj én forsvarer og et mål. Samme relation mellem A og B.</div></article>
+
+</div><div class="coach"><b>Coaching points</b><ul><li>Aflevering skal udløse bevægelse</li><li>Modtag med åben krop, når det er muligt</li><li>Ved tab: nærmeste spiller presser med det samme</li></ul></div></div>
+</section>
 </div>
-<div class="bottomGrid"><section class="panel"><h3>📈 SÅDAN BYGGER VI PÅ</h3><div class="cycle"><div class="cy now"><b>UGE 1 · FUNDAMENT</b>Boldkontrol, vendinger, simple 1-2'ere og første genpres.</div><div class="cy"><b>UGE 2 · SAMSPIL</b>1-2 i fart, modløb, 2v1/3v2 og tydeligere pres.</div><div class="cy"><b>UGE 3 · SPILNÆRT</b>Flere valg, modstander fra start og småspil med principperne.</div></div></section><section class="panel"><h3>💬 FEEDBACK ER GULD</h3><p class="small">Efter træning: hvad virkede? Hvad var for let, svært eller kedeligt? Det bruger vi til næste forslag.</p><button class="feedbackBtn" onclick="copyFeedback()">KOPIÉR FEEDBACK-SKABELON</button><div id="copied" class="small" style="margin-top:7px;text-align:center">Fx: “A3 god · B2 for svært · mere pres næste gang”</div></section></div>
+
+<section class="card game"><div class="pad"><div class="kicker">Fælles afslutning</div><h2>Kampblok · 15–20 min</h2><div class="muted">Spil så frit som muligt. Stop kun kort, når dagens fokus kan fremhæves naturligt. Giv ekstra ros, når spillerne selv bruger vending, 1-2 eller genpres fra stationerne.</div><div class="gamegrid"><div><b>Bonusmål</b>1 ekstra point efter 1-2 eller vending forbi modstander.</div><div><b>Ved boldtab</b>Se efter, om nærmeste spiller reagerer med pres.</div></div></div></section>
 </div>
-<div id="mon" class="hidden"><div class="sectionTitle"><span>MANDAG · SAMME FOKUS</span><span>Jacob & Allan</span></div><section class="panel" style="border-radius:0 0 10px 10px"><h3>Mandagens træning</h3><p class="small">Mandagen bygges i samme visuelle format som onsdag: tre trin pr. station, minimal omstilling og progression fra teknik til valg og modstander. Næste mandagsforslag udfyldes her automatisk.</p></section><section class="panel" style="margin-top:12px"><h3>Ugens røde tråd</h3><p class="small">Boldkontrol → vending → 1-2/modløb → modstander → genpres. Mandag og onsdag arbejder mod samme mål, men med små variationer.</p></section></div>
-<div id="arc" class="hidden"><div class="sectionTitle"><span>ARKIV</span><span>Gem det der virker</span></div><section class="panel" style="border-radius:0 0 10px 10px"><h3>Tidligere træninger</h3><div class="archiveItem"><b>UGE 33 · Fokus 1/3 · Boldkontrol & samspil</b><span class="small">Onsdag · vending, 1v1, 1-2, modløb og genpres</span></div><div class="archiveItem"><b>Arkivet vokser herfra</b><span class="small">Hver ny træning gemmes med fokus, stationer, progression og jeres feedback, så de bedste øvelser kan genbruges.</span></div></section></div>
+
+<div id="mon" class="view">
+<div class="grid">
+<section class="station"><div class="station-head green"><div><div class="small">Station A · Mandag</div><h3>Kontrol & fart forbi</h3></div><div class="time">15 min</div></div><div class="pad">
+<div class="note"><b>Mandag = fundament:</b> enklere version, så onsdag kan bygge videre uden at starte forfra.</div>
+<div class="steps">
+<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Dribl og vend</h4></div></div><div class="desc">Små berøringer mod en kegle, tydelig vending og fart væk.</div><div class="change">Grundopstilling.</div></article>
+<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>Vælg retning</h4></div></div><div class="desc">Træner viser sent retningen. Spilleren skal kigge op før vendingen.</div><div class="change">Kun trænersignal tilføjes.</div></article>
+<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>1v1 med kontrol</h4></div></div><div class="desc">Forsvarer på. Scoring kræver kontrolleret dribling gennem mål.</div><div class="change">Forsvarer erstatter kegle/træner.</div></article>
+</div></div></section>
+
+<section class="station"><div class="station-head orange"><div><div class="small">Station B · Mandag</div><h3>Pasning & bevægelse</h3></div><div class="time">15 min</div></div><div class="pad">
+<div class="note"><b>Mandag = relation:</b> lær rytmen aflever → bevæg dig → modtag igen.</div>
+<div class="steps">
+<article class="step"><div class="stephead"><div class="num">1</div><div><div class="steptime">0–5 min</div><h4>Spil og følg</h4></div></div><div class="desc">Aflever og løb direkte til næste position.</div><div class="change">Grundopstilling.</div></article>
+<article class="step"><div class="stephead"><div class="num">2</div><div><div class="steptime">5–10 min</div><h4>1-2 og modløb</h4></div></div><div class="desc">Spil ind, kom i modløb, læg af og bevæg videre.</div><div class="change">Modløbet tilføjes.</div></article>
+<article class="step"><div class="stephead"><div class="num">3</div><div><div class="steptime">10–15 min</div><h4>3v2 med pres</h4></div></div><div class="desc">Overtalsspil. Ved boldtab skal nærmeste spiller presse med det samme.</div><div class="change">To forsvarere og retning/mål tilføjes.</div></article>
+</div></div></section>
+</div>
+</div>
+
+<div id="archive" class="view">
+<section class="card"><div class="pad"><div class="kicker">2–3 ugers fokuscyklus</div><h2>Samme tema – stigende kompleksitet</h2>
+<div class="cycle">
+<div class="cyclebox current"><b>Uge 1 · Fundament</b><span class="muted">Boldkontrol, vendinger, simple 1-2'ere og første genpres.</span></div>
+<div class="cyclebox"><b>Uge 2 · Flere valg</b><span class="muted">Modløb, 1-2 i fart, 2v1/3v2 og tydeligere beslutninger.</span></div>
+<div class="cyclebox"><b>Uge 3 · Spilnært</b><span class="muted">Småspil med flere modstandere, retning, mål og fokus på genpres.</span></div>
+</div>
+<div class="archive"><b>Aktuel · Boldkontrol & samspil</b><span class="muted">Version 2. Jacobs input er integreret, og stationsskiftene er gjort mere enkle.</span></div>
+<div class="archive"><b>Næste arkivpost</b><span class="muted">Efter træning gemmes kort: hvad virkede, hvad var svært, og hvad skal gentages.</span></div>
+</div></section>
+</div>
+
+<section class="card"><div class="pad"><div class="kicker">Feedback-loop</div><h2>Efter træning · 30 sekunder</h2>
+<div class="muted">Skriv stikord. Det er nok til at justere næste version uden at ændre hele formatet.</div>
+<div class="feedbackbox">
+<textarea id="feedback" placeholder="Fx: Station B trin 2 fungerede godt. 1v1 var for let. Mere genpres næste onsdag."></textarea>
+<button class="btn primary" onclick="copyFeedback()">Kopiér feedback</button>
+<button class="btn secondary" onclick="fillTemplate()">Indsæt skabelon</button>
+<div id="status" class="status"></div>
+</div></div></section>
+
+<div class="footer">U11 Træning · Version 2 · fast projektformat</div>
 </main>
-<footer class="footer">HUSK: Det handler ikke om at være bedst – men om at blive bedre sammen ⚽</footer>
-</div></div>
+
 <script>
-function showDay(d){['mon','wed','arc'].forEach(x=>document.getElementById(x).classList.add('hidden'));document.getElementById(d).classList.remove('hidden');['btnMon','btnWed','btnArc'].forEach(x=>document.getElementById(x).classList.remove('on'));document.getElementById(d==='mon'?'btnMon':d==='wed'?'btnWed':'btnArc').classList.add('on')}
-function copyFeedback(){const t='U11 feedback\n• Hvad virkede godt?\n• Hvad var for let/svært/kedeligt?\n• Hvad skal vi have mere/mindre af næste gang?\n• Andet:';navigator.clipboard.writeText(t).then(()=>document.getElementById('copied').textContent='✓ Feedback-skabelonen er kopieret')}
+function showView(id,btn){
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function fillTemplate(){
+ document.getElementById('feedback').value='Hvad virkede godt?\n- \n\nHvad var for let/svært?\n- \n\nHvad skal vi have mere/mindre af næste gang?\n- ';
+}
+async function copyFeedback(){
+ const el=document.getElementById('feedback');
+ if(!el.value.trim()) fillTemplate();
+ try{await navigator.clipboard.writeText(el.value);document.getElementById('status').textContent='✓ Feedback kopieret';}
+ catch(e){document.getElementById('status').textContent='Markér teksten og kopiér den manuelt.';}
+}
 </script>
-</body></html>
+</body>
+</html>

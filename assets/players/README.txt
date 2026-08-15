@@ -1,0 +1,1 @@
+Player assets are standalone transparent PNGs. Do not use sprite cropping or CSS-drawn player markers.

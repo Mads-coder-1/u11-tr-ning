@@ -7,77 +7,39 @@
 <style>
 :root{--navy:#061d3d;--blue:#0f4d98;--green:#168b3d;--bg:#edf2f7;--text:#0d2a46}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--text)}
-.wrap{max-width:1040px;margin:auto;padding:10px}
-.toolbar{position:sticky;top:0;z-index:20;display:flex;gap:8px;align-items:center;justify-content:space-between;background:#061d3df2;color:#fff;padding:10px 12px;border-radius:0 0 12px 12px;backdrop-filter:blur(8px)}
-.toolbar strong{font-size:14px}.buttons{display:flex;gap:7px}.btn{border:1px solid #ffffff55;background:#ffffff16;color:#fff;border-radius:9px;padding:8px 10px;font-weight:800;text-decoration:none;font-size:12px}
-.poster-wrap{position:relative;margin-top:10px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 5px 22px #06264d20}
-.poster{display:block;width:100%;height:auto}
-.hot{position:absolute;background:transparent;border:0;cursor:pointer}
-.hot:focus-visible{outline:4px solid #ffd426;outline-offset:-4px}
-.a1{left:1.6%;top:28.5%;width:47%;height:15.5%}.a2{left:1.6%;top:44%;width:47%;height:15.4%}.a3{left:1.6%;top:59.4%;width:47%;height:16.8%}
-.b1{left:50.2%;top:28.5%;width:48%;height:15.5%}.b2{left:50.2%;top:44%;width:48%;height:15.4%}.b3{left:50.2%;top:59.4%;width:48%;height:16.8%}
-.hint{text-align:center;font-size:12px;color:#607286;margin:8px 0 3px}
-.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-radius:20px 20px 0 0;box-shadow:0 -12px 38px #001a3350;transform:translateY(105%);transition:.2s ease;max-height:78vh;overflow:auto}
-.sheet.open{transform:none}.grab{width:50px;height:5px;background:#c8d1db;border-radius:99px;margin:9px auto 3px}
-.head{background:var(--navy);color:#fff;padding:13px 16px;display:flex;align-items:center;justify-content:space-between}.head b{font-size:17px}.close{border:0;background:none;color:#fff;font-size:26px;cursor:pointer}
-.body{padding:15px}.id{display:inline-block;background:#0e4c98;color:#fff;border-radius:6px;padding:5px 8px;font-size:12px;font-weight:900}.body h2{margin:8px 0 4px;font-size:20px}.muted{color:#62768a;font-size:13px}.section{border-top:1px solid #dbe3ea;margin-top:12px;padding-top:11px}.section h3{font-size:13px;margin:0 0 6px;color:#0e3f79}.section p,.section li{font-size:14px;line-height:1.45}.feedback{display:block;text-align:center;background:var(--green);color:#fff;text-decoration:none;border-radius:10px;padding:12px;font-weight:900;margin-top:14px}
-.backdrop{position:fixed;inset:0;background:#001b3355;z-index:40;display:none}.backdrop.on{display:block}
-@media(min-width:900px){.sheet{left:auto;width:440px;top:0;max-height:none;border-radius:0;transform:translateX(105%)}.sheet.open{transform:none}.grab{display:none}.backdrop.on{display:block}}
-@media print{body{background:#fff}.toolbar,.hint,.hot,.sheet,.backdrop{display:none!important}.wrap{max-width:none;padding:0}.poster-wrap{box-shadow:none;border-radius:0}}
+.wrap{max-width:1040px;margin:auto;padding:10px}.toolbar{position:sticky;top:0;z-index:20;display:flex;gap:8px;align-items:center;justify-content:space-between;background:#061d3df2;color:#fff;padding:10px 12px;border-radius:0 0 12px 12px;backdrop-filter:blur(8px)}
+.toolbar strong{font-size:14px}.buttons{display:flex;gap:7px}.btn{border:1px solid #ffffff55;background:#ffffff16;color:#fff;border-radius:9px;padding:8px 10px;font-weight:800;text-decoration:none;font-size:12px;cursor:pointer}.btn:disabled{opacity:.5;cursor:wait}
+.poster-wrap{position:relative;margin-top:10px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 5px 22px #06264d20;min-height:240px}.poster{display:block;width:100%;height:auto}.loading{position:absolute;inset:0;display:grid;place-items:center;color:#607286;font-weight:700;background:#fff;z-index:2}.loading.hide{display:none}
+.hot{position:absolute;background:transparent;border:0;cursor:pointer;z-index:3}.hot:focus-visible{outline:4px solid #ffd426;outline-offset:-4px}.a1{left:1.6%;top:28.5%;width:47%;height:15.5%}.a2{left:1.6%;top:44%;width:47%;height:15.4%}.a3{left:1.6%;top:59.4%;width:47%;height:16.8%}.b1{left:50.2%;top:28.5%;width:48%;height:15.5%}.b2{left:50.2%;top:44%;width:48%;height:15.4%}.b3{left:50.2%;top:59.4%;width:48%;height:16.8%}
+.hint{text-align:center;font-size:12px;color:#607286;margin:8px 0 3px}.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-radius:20px 20px 0 0;box-shadow:0 -12px 38px #001a3350;transform:translateY(105%);transition:.2s ease;max-height:78vh;overflow:auto}.sheet.open{transform:none}.grab{width:50px;height:5px;background:#c8d1db;border-radius:99px;margin:9px auto 3px}.head{background:var(--navy);color:#fff;padding:13px 16px;display:flex;align-items:center;justify-content:space-between}.head b{font-size:17px}.close{border:0;background:none;color:#fff;font-size:26px;cursor:pointer}.body{padding:15px}.id{display:inline-block;background:#0e4c98;color:#fff;border-radius:6px;padding:5px 8px;font-size:12px;font-weight:900}.body h2{margin:8px 0 4px;font-size:20px}.muted{color:#62768a;font-size:13px}.section{border-top:1px solid #dbe3ea;margin-top:12px;padding-top:11px}.section h3{font-size:13px;margin:0 0 6px;color:#0e3f79}.section p,.section li{font-size:14px;line-height:1.45}.feedback{display:block;text-align:center;background:var(--green);color:#fff;text-decoration:none;border-radius:10px;padding:12px;font-weight:900;margin-top:14px}.backdrop{position:fixed;inset:0;background:#001b3355;z-index:40;display:none}.backdrop.on{display:block}
+@media(min-width:900px){.sheet{left:auto;width:440px;top:0;max-height:none;border-radius:0;transform:translateX(105%)}.sheet.open{transform:none}.grab{display:none}}
+@media print{body{background:#fff}.toolbar,.hint,.hot,.sheet,.backdrop,.loading{display:none!important}.wrap{max-width:none;padding:0}.poster-wrap{box-shadow:none;border-radius:0}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="toolbar">
-    <strong>U11 · Trænerkort</strong>
-    <div class="buttons">
-      <a class="btn" href="assets/master/u11-master-v2.jpg" download>HENT TRÆNERKORT</a>
-      <button class="btn" onclick="alert('Arkivet kobles på i næste lag')">ARKIV</button>
-    </div>
-  </div>
-  <div class="poster-wrap">
-    <img class="poster" src="assets/master/u11-master-v2.jpg" alt="U11 træningskort">
-    <button class="hot a1" aria-label="Åbn A1 detaljer" onclick="openDrill('A1')"></button>
-    <button class="hot a2" aria-label="Åbn A2 detaljer" onclick="openDrill('A2')"></button>
-    <button class="hot a3" aria-label="Åbn A3 detaljer" onclick="openDrill('A3')"></button>
-    <button class="hot b1" aria-label="Åbn B1 detaljer" onclick="openDrill('B1')"></button>
-    <button class="hot b2" aria-label="Åbn B2 detaljer" onclick="openDrill('B2')"></button>
-    <button class="hot b3" aria-label="Åbn B3 detaljer" onclick="openDrill('B3')"></button>
-  </div>
-  <div class="hint">Tryk direkte på en øvelse i trænerkortet for detaljer og feedback.</div>
+ <div class="toolbar"><strong>U11 · Trænerkort</strong><div class="buttons"><button class="btn" id="downloadBtn" onclick="downloadPoster()" disabled>HENT TRÆNERKORT</button><button class="btn" onclick="alert('Arkivet kobles på i næste lag')">ARKIV</button></div></div>
+ <div class="poster-wrap"><div class="loading" id="loading">Henter trænerkort…</div><img class="poster" id="poster" alt="U11 træningskort">
+  <button class="hot a1" aria-label="Åbn A1 detaljer" onclick="openDrill('A1')"></button><button class="hot a2" aria-label="Åbn A2 detaljer" onclick="openDrill('A2')"></button><button class="hot a3" aria-label="Åbn A3 detaljer" onclick="openDrill('A3')"></button><button class="hot b1" aria-label="Åbn B1 detaljer" onclick="openDrill('B1')"></button><button class="hot b2" aria-label="Åbn B2 detaljer" onclick="openDrill('B2')"></button><button class="hot b3" aria-label="Åbn B3 detaljer" onclick="openDrill('B3')"></button>
+ </div><div class="hint">Tryk direkte på en øvelse i trænerkortet for detaljer og feedback.</div>
 </div>
 <div class="backdrop" id="backdrop" onclick="closeSheet()"></div>
-<aside class="sheet" id="sheet">
-  <div class="grab"></div>
-  <div class="head"><b id="stitle">Øvelsesdetaljer</b><button class="close" onclick="closeSheet()">×</button></div>
-  <div class="body">
-    <span class="id" id="sid"></span>
-    <h2 id="name"></h2>
-    <div class="muted" id="meta"></div>
-    <div class="section"><h3>OPSTILLING</h3><p id="setup"></p></div>
-    <div class="section"><h3>SÅDAN GØR VI</h3><ol id="steps"></ol></div>
-    <div class="section"><h3>COACHING</h3><p id="coach"></p></div>
-    <div class="section"><h3>PROGRESSION</h3><p id="prog"></p></div>
-    <a class="feedback" id="feedback" href="#">GIV FEEDBACK PÅ DENNE ØVELSE</a>
-  </div>
-</aside>
+<aside class="sheet" id="sheet"><div class="grab"></div><div class="head"><b id="stitle">Øvelsesdetaljer</b><button class="close" onclick="closeSheet()">×</button></div><div class="body"><span class="id" id="sid"></span><h2 id="name"></h2><div class="muted" id="meta"></div><div class="section"><h3>OPSTILLING</h3><p id="setup"></p></div><div class="section"><h3>SÅDAN GØR VI</h3><ol id="steps"></ol></div><div class="section"><h3>COACHING</h3><p id="coach"></p></div><div class="section"><h3>PROGRESSION</h3><p id="prog"></p></div><a class="feedback" id="feedback" href="#">GIV FEEDBACK PÅ DENNE ØVELSE</a></div></aside>
 <script>
+let posterData='';
+async function loadPoster(){
+ const files=['assets/master/poster-01.txt','assets/master/poster-02.txt','assets/master/poster-03.txt','assets/master/poster-04.txt','assets/master/poster-05.txt'];
+ try{const parts=[];for(const f of files){const r=await fetch(f+'?v=2',{cache:'no-store'});if(!r.ok)throw new Error(f);parts.push((await r.text()).trim())}posterData='data:image/webp;base64,'+parts.join('');const img=document.getElementById('poster');img.onload=()=>{document.getElementById('loading').classList.add('hide');document.getElementById('downloadBtn').disabled=false};img.onerror=()=>{document.getElementById('loading').textContent='Trænerkortet kunne ikke indlæses – genindlæs siden.'};img.src=posterData}catch(e){document.getElementById('loading').textContent='Trænerkortet kunne ikke indlæses – genindlæs siden.'}}
+function downloadPoster(){if(!posterData)return;const a=document.createElement('a');a.href=posterData;a.download='U11-traenerkort.webp';document.body.appendChild(a);a.click();a.remove()}
 const D={
 A1:{id:'U33-MA-A1',name:'Teknik – dribling og retningsskift',meta:'0–6 min · Station A',setup:'Ca. 15 × 20 m. 1 bold pr. spiller. Kø ved START. Keglerne bliver stående til næste progression.',steps:['Første spiller starter med bold fra START.','Dribl ind mod keglerne med små berøringer.','Lav retningsskift omkring keglerne.','Accelerér ud af vendingen og gennem slutområdet.'],coach:'Bold tæt på fødderne. Kig op før keglen. Tydelig vending og fart bagefter.',prog:'Næste trin ændrer ikke banen – trænerens højre/venstre-signal lægges bare ovenpå.'},
 A2:{id:'U33-MA-A2',name:'Beslutning – vending og valg',meta:'6–12 min · Station A',setup:'Samme bane som A1. Træneren står i siden, så spilleren kan se signalet uden at stoppe.',steps:['Spilleren starter præcis som i A1.','Træneren råber HØJRE eller VENSTRE sent.','Spilleren orienterer sig, vælger retning og vender.','Fart ud af vendingen. Næste spiller starter bagefter.'],coach:'Kig op inden signalet. Reagér hurtigt uden at miste boldkontrol.',prog:'Gør den lettere ved at signalere tidligere. Gør den sværere ved at erstatte signalet med en forsvarer.'},
 A3:{id:'U33-MA-A3',name:'1-mod-1 til to mål',meta:'12–20 min · Station A',setup:'Samme område. To små mål i enden. En angriber med bold og én forsvarer centralt.',steps:['Angriberen starter med bold.','Forsvareren må presse aktivt.','Angriberen lokker forsvareren til en side.','Skift retning og scor ved at drible/spille i det ledige mål.'],coach:'Lok forsvareren. Retningsskift tæt på pres. Eksplodér når vejen er åben.',prog:'Juster forsvarerens startafstand. Kort afstand = sværere, større afstand = lettere.'},
 B1:{id:'U33-MA-B1',name:'Teknik – pasninger to og to',meta:'0–6 min · Station B',setup:'Ca. 15 × 20 m. 2–4 spillere pr. gruppe. To par arbejder samtidig.',steps:['Stå overfor hinanden.','Spil en præcis aflevering langs jorden.','Modtag med førsteberøring ind i næste aktion.','Brug begge fødder.'],coach:'Kig før du spiller. Spil på den rigtige fod. God fart i afleveringen.',prog:'Næste trin tilføjer bevægelse efter afleveringen – uden stor omstilling.'},
 B2:{id:'U33-MA-B2',name:'Bevægelse – aflever og flyt dig',meta:'6–12 min · Station B',setup:'Fire positioner i samme firkant. Spillerne flytter efter deres aflevering.',steps:['Spil til næste spiller.','Bevæg dig straks til en ny position.','Modtageren orienterer sig før bolden kommer.','Fortsæt i samme retning og hold tempo.'],coach:'Aflevering skal udløse bevægelse. Kom væk fra din gamle position og gør dig spilbar igen.',prog:'Tilføj modløb eller en 1-2, så relationen bliver mere kampnær.'},
-B3:{id:'U33-MA-B3',name:'Småspil – 3v1',meta:'12–20 min · Station B',setup:'Tre blå spillere omkring en rød forsvarer. Bolden holdes i gruppen.',steps:['De tre angribere holder bolden væk fra forsvareren.','Flyt dig efter aflevering og skab ny vinkel.','Spil hurtigt når presset kommer.','Ved boldtab bytter den spiller, der mistede bolden, med forsvareren.'],coach:'Brug hele området. Hurtige afleveringer. Se næste løsning før du modtager.',prog:'Gør banen mindre for mere pres eller gå til 3v2, når gruppen er klar.'}
-};
-function openDrill(k){
- const d=D[k]; document.getElementById('sid').textContent=d.id;document.getElementById('name').textContent=d.name;
- document.getElementById('meta').textContent=d.meta;document.getElementById('setup').textContent=d.setup;
- const ol=document.getElementById('steps');ol.innerHTML='';d.steps.forEach(x=>{const li=document.createElement('li');li.textContent=x;ol.appendChild(li)});
- document.getElementById('coach').textContent=d.coach;document.getElementById('prog').textContent=d.prog;
- document.getElementById('feedback').href='mailto:mail@madsmnielsen.dk?subject='+encodeURIComponent('U11 feedback · '+d.id)+'&body='+encodeURIComponent('Øvelse: '+d.id+'\n\nFeedback:\n');
- document.getElementById('sheet').classList.add('open');document.getElementById('backdrop').classList.add('on');
-}
+B3:{id:'U33-MA-B3',name:'Småspil – 3v1',meta:'12–20 min · Station B',setup:'Tre blå spillere omkring en rød forsvarer. Bolden holdes i gruppen.',steps:['De tre angribere holder bolden væk fra forsvareren.','Flyt dig efter aflevering og skab ny vinkel.','Spil hurtigt når presset kommer.','Ved boldtab bytter den spiller, der mistede bolden, med forsvareren.'],coach:'Brug hele området. Hurtige afleveringer. Se næste løsning før du modtager.',prog:'Gør banen mindre for mere pres eller gå til 3v2, når gruppen er klar.'}};
+function openDrill(k){const d=D[k];document.getElementById('sid').textContent=d.id;document.getElementById('name').textContent=d.name;document.getElementById('meta').textContent=d.meta;document.getElementById('setup').textContent=d.setup;const ol=document.getElementById('steps');ol.innerHTML='';d.steps.forEach(x=>{const li=document.createElement('li');li.textContent=x;ol.appendChild(li)});document.getElementById('coach').textContent=d.coach;document.getElementById('prog').textContent=d.prog;document.getElementById('feedback').href='mailto:mail@madsmnielsen.dk?subject='+encodeURIComponent('U11 feedback · '+d.id)+'&body='+encodeURIComponent('Øvelse: '+d.id+'\n\nFeedback:\n');document.getElementById('sheet').classList.add('open');document.getElementById('backdrop').classList.add('on')}
 function closeSheet(){document.getElementById('sheet').classList.remove('open');document.getElementById('backdrop').classList.remove('on')}
+loadPoster();
 </script>
 </body></html>

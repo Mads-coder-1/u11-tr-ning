@@ -1,1 +1,0 @@
-Ready to swap index.html to the fixed one-pager and replace blue-player.png with the standalone full-player asset.

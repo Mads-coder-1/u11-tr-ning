@@ -1,0 +1,1 @@
+Mobile one-pager fix prepared: preserve full two-column trainer card on phones by scaling the 1200px master sheet instead of stacking sections. Player asset must use the standalone transparent full-player PNG.

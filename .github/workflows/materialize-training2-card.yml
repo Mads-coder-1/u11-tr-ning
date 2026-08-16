@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/materialize-training2-card.yml'
-      - 'assets/training2/u11-training2-master.svg'
+      - 'assets/training2/u11-training2-card.webp'
   workflow_dispatch:
 
 permissions:
@@ -17,48 +17,42 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Extract embedded WebP
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import base64, re, sys
-
-          src = Path('assets/training2/u11-training2-master.svg')
-          dst = Path('assets/training2/u11-training2-card.webp')
-          text = src.read_text(encoding='utf-8')
-          m = re.search(r'data:image/webp;base64,([^"\']+)', text)
-          if not m:
-              sys.exit('No embedded WebP found in SVG')
-          payload = re.sub(r'[^A-Za-z0-9+/=]', '', m.group(1))
-          payload += '=' * (-len(payload) % 4)
-          raw = base64.b64decode(payload, validate=False)
-          if len(raw) < 1000 or raw[:4] != b'RIFF' or raw[8:12] != b'WEBP':
-              sys.exit(f'Invalid WebP payload: {len(raw)} bytes')
-          dst.write_bytes(raw)
-          print(f'Created {dst}: {len(raw)} bytes')
-          PY
-
-      - name: Verify artwork
+      - name: Validate source WebP
         run: |
           test -s assets/training2/u11-training2-card.webp
           file assets/training2/u11-training2-card.webp
           python3 - <<'PY'
           from pathlib import Path
-          p=Path('assets/training2/u11-training2-card.webp')
-          b=p.read_bytes()
+          b=Path('assets/training2/u11-training2-card.webp').read_bytes()
           assert b[:4] == b'RIFF' and b[8:12] == b'WEBP'
-          assert len(b) > 1000
-          print('Verified valid WebP:', len(b), 'bytes')
+          assert len(b) > 50000
+          print('Source WebP:', len(b), 'bytes')
           PY
 
-      - name: Commit real image
+      - name: Convert to Safari-safe PNG
         run: |
-          if git diff --quiet -- assets/training2/u11-training2-card.webp && git ls-files --error-unmatch assets/training2/u11-training2-card.webp >/dev/null 2>&1; then
-            echo 'Artwork already current.'
-            exit 0
-          fi
+          ffmpeg -y -v error -i assets/training2/u11-training2-card.webp -frames:v 1 assets/training2/u11-training2-card.png
+
+      - name: Verify PNG
+        run: |
+          test -s assets/training2/u11-training2-card.png
+          file assets/training2/u11-training2-card.png
+          python3 - <<'PY'
+          from pathlib import Path
+          b=Path('assets/training2/u11-training2-card.png').read_bytes()
+          assert b[:8] == b'\x89PNG\r\n\x1a\n'
+          assert len(b) > 50000
+          print('Verified PNG:', len(b), 'bytes')
+          PY
+
+      - name: Commit PNG
+        run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/training2/u11-training2-card.webp
-          git commit -m 'Materialize Training 2 illustrated WebP'
+          git add assets/training2/u11-training2-card.png
+          if git diff --cached --quiet; then
+            echo 'PNG already current.'
+            exit 0
+          fi
+          git commit -m 'Add Safari-safe Training 2 PNG'
           git push

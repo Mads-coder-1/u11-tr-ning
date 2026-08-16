@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/materialize-training2-card.yml'
-      - 'assets/training2/u11-training2-card.webp'
+      - 'assets/training2/source/card-*.txt'
   workflow_dispatch:
 
 permissions:
@@ -17,42 +17,65 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate source WebP
+      - name: Rebuild verified illustrated WebP
         run: |
-          test -s assets/training2/u11-training2-card.webp
-          file assets/training2/u11-training2-card.webp
           python3 - <<'PY'
           from pathlib import Path
-          b=Path('assets/training2/u11-training2-card.webp').read_bytes()
-          assert b[:4] == b'RIFF' and b[8:12] == b'WEBP'
-          assert len(b) > 50000
-          print('Source WebP:', len(b), 'bytes')
+          import base64, hashlib
+
+          source = Path('assets/training2/source')
+          parts = []
+          for i in range(10):
+              p = source / f'card-{i:02d}.txt'
+              text = p.read_text(encoding='utf-8').strip()
+              # card-07 was accidentally committed with an extra duplicate chunk;
+              # the verified source chunk is its first 10,000 characters.
+              if i == 7:
+                  text = text[:10000]
+              parts.append(text)
+
+          payload = ''.join(parts)
+          assert len(payload) == 95868, len(payload)
+          raw = base64.b64decode(payload, validate=True)
+          digest = hashlib.sha256(raw).hexdigest()
+          assert digest == '99f147a803381a9aca8035e0090506182b4f353d6fd6c769376ee8a2e7877c76', digest
+          assert raw[:4] == b'RIFF' and raw[8:12] == b'WEBP'
+          assert len(raw) == 71900, len(raw)
+          out = Path('assets/training2/u11-training2-card.webp')
+          out.write_bytes(raw)
+          print('Verified WebP:', len(raw), 'bytes, sha256', digest)
           PY
+          file assets/training2/u11-training2-card.webp
 
       - name: Convert to Safari-safe PNG
         run: |
           ffmpeg -y -v error -i assets/training2/u11-training2-card.webp -frames:v 1 assets/training2/u11-training2-card.png
 
-      - name: Verify PNG
+      - name: Verify rendered artwork
         run: |
-          test -s assets/training2/u11-training2-card.png
-          file assets/training2/u11-training2-card.png
           python3 - <<'PY'
           from pathlib import Path
+          import subprocess
           b=Path('assets/training2/u11-training2-card.png').read_bytes()
           assert b[:8] == b'\x89PNG\r\n\x1a\n'
-          assert len(b) > 50000
-          print('Verified PNG:', len(b), 'bytes')
+          assert len(b) > 100000, len(b)
+          probe=subprocess.check_output([
+              'ffprobe','-v','error','-select_streams','v:0',
+              '-show_entries','stream=width,height','-of','csv=p=0:s=x',
+              'assets/training2/u11-training2-card.png'
+          ], text=True).strip()
+          assert probe == '1200x799', probe
+          print('Verified PNG:', len(b), 'bytes,', probe)
           PY
 
-      - name: Commit PNG
+      - name: Commit real artwork files
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/training2/u11-training2-card.png
+          git add assets/training2/u11-training2-card.webp assets/training2/u11-training2-card.png
           if git diff --cached --quiet; then
-            echo 'PNG already current.'
+            echo 'Artwork already current.'
             exit 0
           fi
-          git commit -m 'Add Safari-safe Training 2 PNG'
+          git commit -m 'Publish verified Training 2 illustrated artwork'
           git push

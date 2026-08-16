@@ -28,8 +28,6 @@ jobs:
           for i in range(10):
               p = source / f'card-{i:02d}.txt'
               text = p.read_text(encoding='utf-8').strip()
-              # card-07 was accidentally committed with an extra duplicate chunk;
-              # the verified source chunk is its first 10,000 characters.
               if i == 7:
                   text = text[:10000]
               parts.append(text)
@@ -46,6 +44,11 @@ jobs:
           print('Verified WebP:', len(raw), 'bytes, sha256', digest)
           PY
           file assets/training2/u11-training2-card.webp
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
 
       - name: Convert to Safari-safe PNG
         run: |

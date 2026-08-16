@@ -1,0 +1,68 @@
+{
+  "session": 2,
+  "sessionTotal": 6,
+  "focus": "Boldkontrol og dribling mod modstandere",
+  "cardTitle": "U11 · TRÆNING 2 AF 6",
+  "exercises": {
+    "A": {
+      "id": "T2-A",
+      "cardName": "1 MOD 1 – DRIBLING I BANEN",
+      "role": "Station A · 20 min.",
+      "pictureMatch": "På kortet ses én angriber med bold og én forsvarer i en afgrænset bane med et lille mål i hver ende. Angriberen går mod det ene mål; vinder forsvareren bolden, angriber forsvareren det modsatte mål.",
+      "setup": "Lav en smal 1-mod-1-bane med et lille mål i hver ende. Én angriber starter med bold, én forsvarer starter foran. Spilleren med bold angriber ét mål; ved erobring må forsvareren straks score i det modsatte mål. Skift roller efter hver duel.",
+      "progression": [
+        {"time": "0–4 min.", "title": "Få bevægelsen i gang", "text": "Spil 1 mod 1 med let/passivt pres. Angriberen skal udfordre fremad, holde bolden tæt og bruge kroppen mellem modstander og bold."},
+        {"time": "4–9 min.", "title": "Aktiv forsvarer", "text": "Forsvareren må nu gå fuldt i duel. Angriberen skal vælge mellem temposkift, retningsskift eller finte og accelerere, når der opstår plads."},
+        {"time": "9–14 min.", "title": "Erobring giver modangreb", "text": "Ved boldtab vender spillet med det samme: forsvareren bliver angriber og må score i det modsatte mål. Fokus på hurtig omstilling og at beskytte bolden efter vending."},
+        {"time": "14–20 min.", "title": "Konkurrence", "text": "Kør korte dueller til scoring eller bold ude. 1 point for mål. Spillerne roterer hurtigt, så intensiteten holdes høj. Træneren roser modige 1-mod-1-forsøg – ikke kun scoringer."}
+      ],
+      "coaching": ["Udfordr 1 mod 1", "Dribl med fart og tæt bold", "Beskyt bolden med kroppen", "Accelerér, når du er forbi"],
+      "audio": "Station A er 1 mod 1 – dribling i banen. På kortet ser du en angriber med bold, en forsvarer og et lille mål i hver ende. Vi starter med let pres, gør derefter forsvareren aktiv, lægger omstilling på ved boldtab og slutter med korte konkurrencedueller."
+    },
+    "B": {
+      "id": "T2-B",
+      "cardName": "DRIBLE OG AFSLUTTE",
+      "role": "Station B · 20 min.",
+      "pictureMatch": "På kortet ses en spiller, der dribler igennem en keglebane med tydelige retningsskift og derefter afslutter på mål mod en målmand.",
+      "setup": "Lav samme keglebane som på kortet foran et mål. Spillerne starter med bold, dribler gennem keglerne, skifter retning undervejs og afslutter på mål. Hent bolden og gå tilbage i køen.",
+      "progression": [
+        {"time": "0–5 min.", "title": "Tæt bold gennem banen", "text": "Dribl roligt gennem hele keglebanen. Mange små berøringer, bolden tæt på foden og blik op mellem keglerne."},
+        {"time": "5–10 min.", "title": "Retningsskift og begge fødder", "text": "Ved hver markeret kegle skiftes retning tydeligt. Brug både højre og venstre fod og sæt lidt mere fart på efter hvert skift."},
+        {"time": "10–15 min.", "title": "Dribling + afslutning", "text": "Efter sidste retningsskift accelererer spilleren mod mål og afslutter. Første fokus er kontrol; derefter præcision i afslutningen."},
+        {"time": "15–20 min.", "title": "Fart og valg", "text": "Spilleren vælger selv finte eller retningsskift i banen og forsøger at gennemføre hele sekvensen i højere fart. Målmanden er aktiv. Variér afslutningsfod, når niveauet tillader det."}
+      ],
+      "coaching": ["Tæt boldkontrol gennem keglerne", "Skift retning og fart", "Kig op før afslutningen", "Afslut med præcision"],
+      "audio": "Station B er drible og afslutte. På kortet ser du en spiller gennem keglebanen og videre til afslutning mod målmand. Vi starter med tæt kontrol, tilføjer tydelige retningsskift, kobler afslutningen på og slutter med mere fart og frit valg af finte eller vending."
+    },
+    "C": {
+      "id": "T2-C",
+      "cardName": "2 MOD 1 – OVERTAL",
+      "role": "Alternativ til A",
+      "pictureMatch": "På kortet ses to angribere i blåt mod én forsvarer i rødt. De to angribere skal samarbejde om at skabe en fri spiller og score i et af målene.",
+      "setup": "To angribere starter med bold mod én forsvarer i samme type afgrænsede bane. Angriberne skal samarbejde og score. Forsvareren må ved erobring vende spillet og angribe den anden vej.",
+      "progression": [
+        {"time": "0–5 min.", "title": "Se overtalssituationen", "text": "Forsvareren presser moderat. Boldholderen søger først den frie medspiller og lærer at skabe en god afleveringsvinkel."},
+        {"time": "5–10 min.", "title": "Aktivt pres", "text": "Forsvareren spiller fuldt. Angriberne skal afgøre, om de skal aflevere eller drible, afhængigt af hvor forsvareren placerer sig."},
+        {"time": "10–15 min.", "title": "Dribl når rummet er der", "text": "Beløn boldholderen for at drive frem, når forsvareren beskytter afleveringen. Medspilleren skal flytte sig for at skabe ny vinkel."},
+        {"time": "15–20 min.", "title": "Hurtig konkurrence", "text": "Korte 2-mod-1-angreb med hurtig rotation. Point for mål; ekstra ros for det rigtige valg mellem aflevering og dribling."}
+      ],
+      "coaching": ["Spil sammen og skab overtal", "Find den frie medspiller", "Drible når der er rum", "Skab ny vinkel efter aflevering"],
+      "audio": "Alternativ C er 2 mod 1 – overtal. Kortet viser to angribere mod én forsvarer. Fokus er at finde den frie spiller, men også at turde drible frem, når forsvareren lukker afleveringen."
+    },
+    "D": {
+      "id": "T2-D",
+      "cardName": "DRIBLE – FINTE – AFSLUTTE",
+      "role": "Alternativ til B",
+      "pictureMatch": "På kortet ses én spiller, der dribler frem gennem en markeret bane, laver en finte eller vending ved en kegle/pæl og derefter afslutter på mål mod målmand.",
+      "setup": "Lav den viste driblebane med en tydelig kegle eller pæl som 'modstander' og et mål for enden. Spilleren dribler frem, laver finte eller vending ved markøren, skaber plads og afslutter.",
+      "progression": [
+        {"time": "0–5 min.", "title": "Lær finten", "text": "Gå roligt frem mod markøren, lav én aftalt finte eller vending og skub bolden fri på den anden side."},
+        {"time": "5–10 min.", "title": "Fart efter finten", "text": "Samme bevægelse, men nu med tydelig acceleration umiddelbart efter finten. Brug kroppen til at sælge bevægelsen."},
+        {"time": "10–15 min.", "title": "Finte + afslutning", "text": "Efter finten tages bolden hurtigt med mod mål, og spilleren afslutter med fokus på præcision."},
+        {"time": "15–20 min.", "title": "Frit valg", "text": "Spilleren vælger selv finte eller vending og afslutningsside. Øg farten, men behold kontrol nok til en god afslutning."}
+      ],
+      "coaching": ["Brug finter og vendinger", "Skab plads med kroppen", "Fart efter bevægelsen", "Afslut med kraft og præcision"],
+      "audio": "Alternativ D er drible, finte og afslutte. Kortet viser en spiller, der dribler frem, laver en finte ved en markør og afslutter på mål. Vi bygger fra selve finten til fart efter bevægelsen og til sidst en fri, kampnær afslutning."
+    }
+  }
+}

@@ -79,3 +79,6 @@ jobs:
           fi
           git commit -m 'Publish verified Training 2 illustrated artwork'
           git push
+
+      - name: Publish verification marker
+        run: echo 'Training 2 artwork verification completed.'

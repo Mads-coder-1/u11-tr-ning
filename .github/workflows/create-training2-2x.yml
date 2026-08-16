@@ -1,0 +1,57 @@
+name: Create Training 2 2x display card
+
+on:
+  push:
+    paths:
+      - '.github/workflows/create-training2-2x.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  create-2x:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq imagemagick
+
+      - name: Build 2x screen version without changing layout
+        run: |
+          convert assets/training2/u11-training2-card.png \
+            -colorspace sRGB \
+            -filter Lanczos \
+            -resize 200% \
+            -unsharp 0x0.55+0.65+0.015 \
+            -strip \
+            assets/training2/u11-training2-card-2x.png
+
+      - name: Verify 2x artwork
+        run: |
+          identify assets/training2/u11-training2-card-2x.png
+          python3 - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          p=Path('assets/training2/u11-training2-card-2x.png')
+          im=Image.open(p)
+          assert im.size == (2400,1598), im.size
+          assert p.stat().st_size > 500000, p.stat().st_size
+          print('2x card verified:', im.size, p.stat().st_size, 'bytes')
+          PY
+
+      - name: Commit 2x card
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/training2/u11-training2-card-2x.png
+          if git diff --cached --quiet; then
+            echo '2x card already current.'
+            exit 0
+          fi
+          git commit -m 'Add sharper 2x Training 2 display card'
+          git push

@@ -33,16 +33,11 @@ jobs:
 
       - name: Verify 2x artwork
         run: |
-          identify assets/training2/u11-training2-card-2x.png
-          python3 - <<'PY'
-          from PIL import Image
-          from pathlib import Path
-          p=Path('assets/training2/u11-training2-card-2x.png')
-          im=Image.open(p)
-          assert im.size == (2400,1598), im.size
-          assert p.stat().st_size > 500000, p.stat().st_size
-          print('2x card verified:', im.size, p.stat().st_size, 'bytes')
-          PY
+          dimensions=$(identify -format '%wx%h' assets/training2/u11-training2-card-2x.png)
+          bytes=$(stat -c%s assets/training2/u11-training2-card-2x.png)
+          test "$dimensions" = "2400x1598"
+          test "$bytes" -gt 500000
+          echo "2x card verified: $dimensions, $bytes bytes"
 
       - name: Commit 2x card
         run: |

@@ -1,0 +1,76 @@
+{
+  "session": 3,
+  "sessionTotal": 6,
+  "date": "2026-08-24",
+  "coaches": ["Jacob", "Allan"],
+  "focus": "Boldkontrol og dribling mod modstandere",
+  "cardTitle": "U11 · TRÆNING 3 AF 6",
+  "progressionStage": "Træning 3-4: flere valg, kombinationer, timing og mere aktiv modstand",
+  "feedbackBasis": "Ingen gemt feedback fundet i repository/Issues. Bygger videre på Træning 2 og bevarer fokusblokken.",
+  "exercises": {
+    "A": {
+      "id": "T3-A",
+      "cardName": "1 MOD 1 – VÆLG PORT",
+      "role": "Station A · 20 min.",
+      "visibleSetup": "Rektangulær 1-mod-1-bane ca. 14 x 18 m. Én angriber med bold starter centralt i den ene ende, én aktiv forsvarer centralt 5-6 m foran. To små kegleporte ligger diagonalt i modsatte ende, én til venstre og én til højre. En pil viser angriberens mulighed for at true midten og drible gennem enten venstre eller højre port.",
+      "pictureMatch": "På kortet skal ses én blå angriber med bold mod én rød forsvarer og to tydelige scoringsporte. Begge valg skal være synlige, så billedet viser beslutningen: læs forsvareren, skift retning og accelerér gennem den frie port.",
+      "setup": "Lav én 1-mod-1-bane med to scoringsporte i enden. Angriberen starter med bold, forsvareren starter centralt. Angriberen scorer ved kontrolleret dribling gennem en af portene. Skift roller efter hver duel.",
+      "progression": [
+        {"time": "0–4 min.", "title": "Teknik med styret pres", "text": "Forsvareren presser let og viser bevidst én side. Angriberen holder bolden tæt, kigger op og tager den åbne port."},
+        {"time": "4–9 min.", "title": "Frit valg mod aktiv forsvarer", "text": "Forsvareren går aktivt i duel. Angriberen må bruge finte, stop-start eller retningsskift og skal accelerere gennem den valgte port."},
+        {"time": "9–14 min.", "title": "Sen beslutning", "text": "Forsvareren starter tættere på. Angriberen skal true én side og kunne skifte sent, hvis forsvareren lukker porten."},
+        {"time": "14–20 min.", "title": "Konkurrence", "text": "Korte dueller. 1 point for dribling gennem en port, 1 point til forsvareren ved erobring og kontrolleret dribling over startlinjen. Hurtig rotation."}
+      ],
+      "coaching": ["Kig på forsvarerens hofter", "Threat én side før du skifter", "Bold tæt før du udfordrer", "Eksplodér gennem den frie port"],
+      "audio": "Station A er 1 mod 1 – vælg port. Vi bruger samme bane hele tiden. Først viser forsvareren en side, så går han aktivt i duel, derefter gør vi beslutningen senere, og til sidst konkurrerer vi. Fokus er at læse forsvareren, skifte retning og accelerere gennem den frie port."
+    },
+    "B": {
+      "id": "T3-B",
+      "cardName": "2 MOD 1 – DRIBL ELLER SPIL",
+      "role": "Station B · 20 min.",
+      "visibleSetup": "Bane ca. 16 x 22 m mod ét mål med målmand. To blå angribere starter side om side med én bold. Én rød forsvarer starter centralt foran dem. Pile viser både en diagonal aflevering og boldholderens mulighed for at drible forbi, så valget mellem dribling og aflevering fremgår tydeligt.",
+      "pictureMatch": "På kortet skal ses to blå angribere mod én rød forsvarer og et mål med målmand. Boldholderen har to tydelige muligheder: drive forbi forsvareren eller spille medspilleren fri.",
+      "setup": "To angribere angriber ét mål mod én forsvarer. Boldholderen skal først drive frem og binde forsvareren; derefter vælges dribling eller aflevering. Nyt hold starter straks efter afslutning eller boldtab.",
+      "progression": [
+        {"time": "0–5 min.", "title": "Bind forsvareren", "text": "Forsvareren presser moderat. Boldholderen driver frem mod forsvareren, så medspilleren bliver en reel mulighed."},
+        {"time": "5–10 min.", "title": "Dribl eller aflever", "text": "Forsvareren er aktiv. Hvis forsvareren lukker afleveringen, dribler boldholderen. Hvis forsvareren går på bolden, spilles medspilleren."},
+        {"time": "10–15 min.", "title": "Timing og overlap", "text": "Medspilleren må ændre løberetning og lave overlap eller krydsløb. Boldholderen skal holde kontrollen længe nok til at læse bevægelsen."},
+        {"time": "15–20 min.", "title": "Kampnære bølger", "text": "Kør angreb i hurtige bølger med 8-10 sekunder til afslutning. Point for mål og ekstra ros for korrekt valg mellem dribling og aflevering."}
+      ],
+      "coaching": ["Driv mod forsvareren før du vælger", "Kig op mens du dribler", "Dribl hvis afleveringen lukkes", "Spil hvis forsvareren går på bolden"],
+      "audio": "Station B er 2 mod 1 – dribl eller spil. Boldholderen skal drive frem og binde forsvareren. Derefter vælges dribling eller aflevering ud fra forsvarerens placering. Vi lægger timing og overlap på og slutter med hurtige kampnære angreb."
+    },
+    "C": {
+      "id": "T3-C",
+      "cardName": "1 MOD 1 – VEND OG SLIP VÆK",
+      "role": "Alternativ til A · 20 min.",
+      "visibleSetup": "Kvadratisk bane ca. 12 x 12 m. Én blå spiller med bold står med ryg eller side til én rød forsvarer. Fire kegleporte er markeret på siderne af firkanten. Pile viser en vending og acceleration mod en fri port.",
+      "pictureMatch": "På kortet skal ses én boldholder under tæt pres fra én forsvarer og flere udgange. Illustrationens kerne er boldbeskyttelse, vending og eksplosiv udgang gennem en fri port.",
+      "setup": "Lav en firkant med fire små porte. Angriberen starter med bold under tæt pres. Score ved at vende væk fra forsvareren og drible kontrolleret gennem en fri port.",
+      "progression": [
+        {"time": "0–5 min.", "title": "Beskyt og vend", "text": "Forsvareren presser let. Angriberen bruger kroppen, førsteberøringen og en enkel vending til at skabe plads."},
+        {"time": "5–10 min.", "title": "Aktivt pres", "text": "Forsvareren må erobre. Angriberen skal mærke presset og vælge den port, der åbner sig."},
+        {"time": "10–15 min.", "title": "Porten kan lukkes", "text": "Træneren kan kalde én port lukket lige før start. Angriberen må orientere sig og ændre valg."},
+        {"time": "15–20 min.", "title": "Dueller til point", "text": "1 point for udgang gennem port, 1 point til forsvareren ved erobring. Skift roller hurtigt."}
+      ],
+      "coaching": ["Krop mellem modstander og bold", "Orientér før vending", "Første touch væk fra pres", "Fart efter vending"],
+      "audio": "Alternativ C er 1 mod 1 – vend og slip væk. Boldholderen starter under tæt pres, beskytter bolden, vender og finder en fri port. Progressionen går fra let pres til aktive dueller og sene valg."
+    },
+    "D": {
+      "id": "T3-D",
+      "cardName": "2 MOD 2 – DRIBL FREM OG OMSTIL",
+      "role": "Alternativ til B · 20 min.",
+      "visibleSetup": "Rektangulær bane ca. 18 x 24 m med to små mål, ét i hver ende. To blå spillere angriber mod to røde. Boldholderen vises i fremadrettet dribling, med medspiller i støtte og tydelige pile mod både dribling og kombination. En modsat pil viser hurtig omstilling ved erobring.",
+      "pictureMatch": "På kortet skal ses 2 mod 2 med to mål og tydelig mulighed for både at drible sin direkte modstander og kombinere med medspilleren. Omstilling efter boldtab/erobring skal fremgå visuelt.",
+      "setup": "Spil 2 mod 2 på to små mål. Holdet i boldbesiddelse skal søge fremadrettet dribling først, men bruge medspilleren når modstanderen lukker rummet. Ved erobring angribes straks den anden vej.",
+      "progression": [
+        {"time": "0–5 min.", "title": "Fremad med bold", "text": "Forsvarerne presser kontrolleret. Boldholderen søger først at drive frem og udfordre sin direkte modstander."},
+        {"time": "5–10 min.", "title": "Aktive dueller", "text": "Frit 2 mod 2. Brug dribling til at skabe overtal eller tvinge en forsvarer ud, og spil derefter medspilleren hvis rummet åbner."},
+        {"time": "10–15 min.", "title": "Omstilling", "text": "Ved erobring skal det nye hold angribe inden for få sekunder. Første tanke er fremadrettet kontrol og dribling."},
+        {"time": "15–20 min.", "title": "Konkurrence", "text": "Spil korte kampe til 2 mål. Bonusros for vellykket fremadrettet dribling, der skaber chance eller overtalsmoment."}
+      ],
+      "coaching": ["Første tanke fremad", "Udfordr når du har 1 mod 1", "Brug medspilleren når rummet lukkes", "Reagér hurtigt ved erobring"],
+      "audio": "Alternativ D er 2 mod 2 – dribl frem og omstil. Vi starter med kontrolleret pres, går til frie dueller, lægger hurtig omstilling på og slutter med korte konkurrencer. Fokus er stadig boldkontrol og dribling mod modstandere, men nu i en mere kampnær situation."
+    }
+  }
+}

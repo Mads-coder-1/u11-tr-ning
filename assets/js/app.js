@@ -114,7 +114,7 @@
     $('showDay').textContent = `${d.label}s øvelser`;
     $('showDay').setAttribute('aria-pressed', mode === 'day');
     $('showAll').setAttribute('aria-pressed', mode === 'all');
-    const order = mode === 'day' && sel.length ? sel.concat(LETTERS.filter(x => !sel.includes(x))) : LETTERS;
+    const order = LETTERS; // kortene står altid A, B, C, D
     order.forEach(L => {
       const el = $('station-' + L);
       $('stations').appendChild(el);

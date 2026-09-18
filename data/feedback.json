@@ -1,6 +1,11 @@
 {
-  "_om": "Feedback fra trænerne. Udfyld formUrl, fields og csvUrl, så viser siden 1-5-knapperne på hvert stationskort.",
-  "formUrl": "",
-  "fields": { "station": "", "score": "", "comment": "" },
-  "csvUrl": ""
+  "_om": "Feedback fra trænerne. Knapperne vises, når formUrl er udfyldt.",
+  "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfkT8zeWBzK6pN0DtIY1pNaod7WVQv3Nw6DXWJnkG2BnnmlaA/formResponse",
+  "fields": {
+    "station": "entry.1588420679",
+    "score": "entry.670827668",
+    "comment": "entry.129910610"
+  },
+  "formViewUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfkT8zeWBzK6pN0DtIY1pNaod7WVQv3Nw6DXWJnkG2BnnmlaA/viewform",
+  "sheetNavn": "U11 Feedback (svar)"
 }

@@ -1,0 +1,6 @@
+{
+  "_om": "Feedback fra trænerne. Udfyld formUrl, fields og csvUrl, så viser siden 1-5-knapperne på hvert stationskort.",
+  "formUrl": "",
+  "fields": { "station": "", "score": "", "comment": "" },
+  "csvUrl": ""
+}

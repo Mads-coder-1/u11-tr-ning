@@ -147,8 +147,6 @@
   function openSheet(L) {
     const s = DATA.stations[L];
     $('sh-title').textContent = `STATION ${L} · ${s.name}`;
-    const subject = encodeURIComponent(`U11 feedback · Træning ${DATA.session} · Station ${L} · ${s.name}`);
-    const body = encodeURIComponent(`Station ${L}: ${s.name}\nFase/minutter: \n\nHvad virkede?\n\nHvad skal ændres?\n`);
     $('sh-body').innerHTML = `
       <p style="margin-top:0"><b>Formål:</b> ${esc(s.purpose)}</p>
       <h3>OPSTILLING</h3><p>${esc(s.setup)}</p>
@@ -158,7 +156,6 @@
       <h3>COACHINGPUNKTER</h3><ul>${s.coaching.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
       <div class="st-btns" style="margin-top:14px">
         <button class="btn primary" type="button" data-read="${L}">🔊 Læs station ${L} op</button>
-        <a class="btn light" href="mailto:mail@madsmnielsen.dk?subject=${subject}&body=${body}">Giv feedback</a>
       </div>`;
     $('sheet').classList.add('open');
     $('sheet').setAttribute('aria-hidden', 'false');

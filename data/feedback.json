@@ -1,5 +1,5 @@
 {
-  "_om": "Feedback fra trænerne. Knapperne vises, når formUrl er udfyldt.",
+  "_om": "Feedback fra trænerne. Knapperne vises, når formUrl er udfyldt. csvUrl læses af routinen.",
   "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfkT8zeWBzK6pN0DtIY1pNaod7WVQv3Nw6DXWJnkG2BnnmlaA/formResponse",
   "fields": {
     "station": "entry.1588420679",
@@ -7,5 +7,6 @@
     "comment": "entry.129910610"
   },
   "formViewUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfkT8zeWBzK6pN0DtIY1pNaod7WVQv3Nw6DXWJnkG2BnnmlaA/viewform",
-  "sheetNavn": "U11 Feedback (svar)"
+  "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQUEygm_8WlRibm-1KpixDVG01y1zc7nLEGqEgEDIMtVd5qJgjSdlnXDm-y5z4Zdq5JbB_XUccFjRRG/pub?gid=1934842311&single=true&output=csv",
+  "csvKolonner": "Tidsstempel, Station (fx T3-C · Onsdag), Score (1-5), Kommentar"
 }

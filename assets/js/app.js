@@ -1,8 +1,9 @@
-/* U11 træningsside – alt (kort, detaljer, oplæsning) bygges fra data/training2.json */
+/* U11 træningsside – alt (kort, detaljer, oplæsning) bygges fra data/trainingN.json.
+   Aktuel uge peges ud af data/current.json, eller af ?uge=N i adressen (bruges af arkivet). */
 (function () {
   const $ = id => document.getElementById(id);
   const LETTERS = ['A', 'B', 'C', 'D'];
-  const STORE = 'u11-t2-plan';
+  let STORE = 'u11-t-plan';
   let DATA = null, day = null, mode = 'day', plan = {};
 
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -24,6 +25,7 @@
   }
 
   function loadPlan() {
+    STORE = `u11-t${DATA.session}-plan`;
     plan = {};
     Object.keys(DATA.days).forEach(k => { plan[k] = DATA.days[k].default.slice(); });
     const saved = store.get();
@@ -240,7 +242,16 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
 
-  fetch('data/training2.json?v=20260916', { cache: 'no-cache' })
+  function trainingFile() {
+    const uge = new URLSearchParams(location.search).get('uge');
+    if (uge && /^\d+$/.test(uge)) return Promise.resolve(`data/training${uge}.json`);
+    return fetch('data/current.json', { cache: 'no-cache' })
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(c => `data/${c.file}`);
+  }
+
+  trainingFile()
+    .then(file => fetch(`${file}?v=20260918`, { cache: 'no-cache' }))
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(d => {
       DATA = d; loadPlan(); renderStatic(); renderPlan();

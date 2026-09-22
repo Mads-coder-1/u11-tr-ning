@@ -1,0 +1,55 @@
+name: Hent trænerfeedback
+
+# Henter svarene fra Google-arket og gemmer dem i data/feedback.csv,
+# så routinen kan læse dem uden at gå på nettet.
+# Kører søndag og tirsdag kl. 16 UTC (18:00 dansk sommertid), en time før routinen.
+
+on:
+  schedule:
+    - cron: '0 16 * * 0'
+    - cron: '0 16 * * 2'
+  push:
+    paths:
+      - '.github/workflows/hent-feedback.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hent-feedback
+  cancel-in-progress: false
+
+jobs:
+  hent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Hent CSV fra Google
+        run: |
+          url=$(python3 -c "import json;print(json.load(open('data/feedback.json'))['csvUrl'])")
+          curl -fsSL --retry 3 --max-time 60 "$url" -o /tmp/feedback.csv
+          # Sikkerhed: det skal være CSV med den rigtige overskrift, ikke en fejlside
+          head -c 200 /tmp/feedback.csv
+          if head -c 300 /tmp/feedback.csv | grep -qi '<html'; then echo 'Fik HTML i stedet for CSV'; exit 1; fi
+          head -1 /tmp/feedback.csv | grep -q 'Station' || { echo 'Mangler kolonnen Station'; exit 1; }
+          cp /tmp/feedback.csv data/feedback.csv
+          echo "Rækker (inkl. overskrift): $(wc -l < data/feedback.csv)"
+
+      - name: Gem i repoet
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/feedback.csv
+          if git diff --cached --quiet; then
+            echo 'Ingen nye svar.'
+            exit 0
+          fi
+          git commit -m "Opdater trænerfeedback (data/feedback.csv)"
+          for i in 1 2 3; do
+            git pull --rebase -q origin main && git push origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1

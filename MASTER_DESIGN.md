@@ -50,7 +50,8 @@
 - Trykker træneren på en knap, sendes resten automatisk med: uge, dag (mandag eller onsdag, ud fra dagsvælgeren) og station, fx `T3-B`.
 - Træneren ser "Tak! ✓". Der er ingen formular at udfylde og intet login.
 - En kommentar er frivillig. Efter trykket vises et lille tekstfelt ("Noget vi skal ændre?"), som man kan springe over.
-- Svarene sendes i baggrunden til en **Google Formular** og samles i et Google-ark. Arket er **publiceret som CSV**, og det er den adresse, robotten læser.
+- Svarene sendes i baggrunden til en **Google Formular** og samles i et Google-ark. Arket er **publiceret som CSV**.
+- **Robotten læser svarene fra filen `data/feedback.csv` i repoet** (kolonner: Tidsstempel, Station, Score, Kommentar). Filen hentes automatisk fra Google af GitHub-workflowet `.github/workflows/hent-feedback.yml` søndag og tirsdag kl. 18, en time før routinen. Robotten skal **ikke** selv hente `csvUrl`, for routinens netværk må ikke nå Google. Brug kun rækker, hvis Station starter med den aktuelle ugens `T<nummer>-`. Mangler filen eller relevante rækker, gælder "Ingen feedback" i afsnit 6.
 - Opsætningen ligger i `data/feedback.json`:
   `{"formUrl": "...", "fields": {"station": "entry.X", "score": "entry.Y", "comment": "entry.Z"}, "csvUrl": "..."}`
   Er `formUrl` tom, vises knapperne ikke, og siden fungerer som nu. Når feltet er udfyldt, virker de.

@@ -3,15 +3,40 @@
 (function () {
   const $ = id => document.getElementById(id);
   const LETTERS = ['A', 'B', 'C', 'D'];
-  const SQUADS = [{ k: '12', label: '12 børn' }, { k: '16', label: '16 børn' }, { k: '20', label: '20+ børn' }];
-  const SQ_KEY = 'u11-squad';
-  let squad = '16';
-  try { const v = localStorage.getItem(SQ_KEY); if (v && SQUADS.some(x => x.k === v)) squad = v; } catch (e) {}
-  // Kort og opvarmning kan have en 'sizes'-blok, der overskriver bane, spillere, udstyr og opstilling
-  function sized(o) {
-    const v = o && o.sizes && o.sizes[squad];
-    return v ? Object.assign({}, o, v) : o;
+  // Holdet i dag: antal børn, antal trænere og hvor mange baner/grupper pr. station
+  const SETUP_KEY = 'u11-setup';
+  let setup = { kids: 16, coaches: 2, groups: 0 }; // groups 0 = lad siden regne den ud
+  try {
+    const v = JSON.parse(localStorage.getItem(SETUP_KEY) || 'null');
+    if (v && v.kids) setup = Object.assign(setup, v);
+  } catch (e) {}
+  const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+
+  // Hvor mange er der på én station, når trænerne deler holdet mellem sig
+  function perStation() {
+    return Math.max(2, Math.ceil(setup.kids / Math.max(1, setup.coaches)));
   }
+  // Antal baner/grupper på en station ud fra øvelsens naturlige gruppestørrelse
+  function lanes(unit) {
+    const ideal = (unit && unit.ideal) || 4;
+    if (setup.groups > 0) return setup.groups;
+    return clamp(Math.round(perStation() / ideal), 1, 8);
+  }
+  function spread(total, n) {
+    const lo = Math.floor(total / n), hi = Math.ceil(total / n);
+    return lo === hi ? String(lo) : lo + '–' + hi;
+  }
+  // Tekstlinjen øverst på kortet
+  function laneNote(unit, all) {
+    if (!unit) return '';
+    const total = all ? setup.kids : perStation();
+    const n = all ? clamp(Math.round(setup.kids / ((unit.ideal) || 5)), 1, 8) : lanes(unit);
+    const each = spread(total, n);
+    const avg = total / n, ideal = (unit.ideal) || 4;
+    const warn = avg > ideal + 1.5 ? ' · flere end øvelsen er tænkt til – lav en gruppe mere' : '';
+    return `${n} ${n === 1 ? (unit.word || 'bane') : (unit.words || 'baner')} à ${each} spillere${unit.per ? ' · ' + unit.per : ''}${warn}`;
+  }
+
   let STORE = 'u11-t-plan';
   let DATA = null, day = null, mode = 'day', plan = {};
 
@@ -68,7 +93,7 @@
     renderWarmup();
 
     $('stations').innerHTML = LETTERS.map(L => {
-      const s = sized(DATA.stations[L]);
+      const s = DATA.stations[L], u = s.unit;
       return `<article class="station" id="station-${L}" data-letter="${L}">
         <button class="st-head" type="button" data-open="${L}" aria-label="Detaljer for station ${L}">
           <span class="st-letter">${L}</span>
@@ -79,7 +104,7 @@
             <span class="st-days" id="days-${L}"></span>
           </span>
         </button>
-        ${s.note ? `<div class="sq-note"><b>${esc(SQUADS.find(x => x.k === squad).label)}:</b> ${esc(s.note)}</div>` : ''}
+        ${u ? `<div class="sq-note"><b>I dag:</b> ${esc(laneNote(u))}${u.rot ? ' · ' + esc(u.rot) : ''}</div>` : ''}
         ${s.say ? `<div class="saybox">
           <h4>Sig det sådan</h4>
           <ol class="saylines">${s.say.lines.map(l => `<li>${esc(l)}</li>`).join('')}</ol>
@@ -88,14 +113,14 @@
           ${s.flex ? `<div class="sayrow flex"><b>Bliver I flere eller færre</b>${esc(s.flex)}</div>` : ''}
         </div>` : ''}
         <div class="st-meta">
-          <div><b>Bane</b>${esc(s.pitch)}</div>
-          <div><b>Spillere</b>${esc(s.players)}</div>
-          <div><b>Progression</b>4 faser · 20 min.</div>
+          <div><b>Bane</b>${esc(u && u.pitch ? u.pitch : s.pitch)}</div>
+          <div><b>Spillere</b>${esc(u ? laneNote(u) : s.players)}</div>
+          <div><b>Forløb</b>${esc(s.frame || (s.phases.length + ' faser · 20 min.'))}</div>
         </div>
         <div class="phases">${s.phases.map((p, i) => `
           <section class="phase">
             <div class="ph-top"><span class="time">${esc(p.time)}</span><span class="ph-title">${esc(p.title)}</span></div>
-            ${window.PitchDiagram.render(s.dims ? Object.assign({}, p.diagram, { size: s.dims }) : p.diagram, { step: i + 1, label: `Station ${L}, fase ${i + 1}: ${p.title}` })}
+            ${window.PitchDiagram.render(u && u.dims ? Object.assign({}, p.diagram, { size: u.dims }) : p.diagram, { step: i + 1, label: `Station ${L}, fase ${i + 1}: ${p.title}` })}
             <p class="ph-text">${esc(p.text)}</p>
             ${p.rule ? `<div class="ph-rule"><b>Regel:</b> ${esc(p.rule)}</div>` : ''}
             <div class="ph-focus"><b>Fokus:</b> ${esc(p.focus)}</div>
@@ -116,15 +141,50 @@
     }).join('');
   }
 
+  function saveSetup() {
+    try { localStorage.setItem(SETUP_KEY, JSON.stringify(setup)); } catch (e) {}
+  }
+
+  document.addEventListener('change', e => {
+    const f = e.target.dataset && e.target.dataset.field;
+    if (!f) return;
+    setup[f] = clamp(Number(e.target.value) || setup[f], 4, 40);
+    saveSetup(); renderStatic(); renderPlan();
+  });
+
   function renderSquad() {
     const box = $('squad');
     if (!box) return;
-    box.innerHTML = `<span class="sq-lab">Vi er i dag</span>` + SQUADS.map(x =>
-      `<button type="button" data-squad="${x.k}" aria-pressed="${x.k === squad}">${esc(x.label)}</button>`).join('');
+    const sug = DATA ? '' : '';
+    box.innerHTML = `
+      <div class="sq-field">
+        <label for="sq-kids">Børn i dag</label>
+        <div class="sq-num">
+          <button type="button" data-step="kids:-1" aria-label="Færre børn">–</button>
+          <input id="sq-kids" type="number" inputmode="numeric" min="4" max="40" value="${setup.kids}" data-field="kids">
+          <button type="button" data-step="kids:1" aria-label="Flere børn">+</button>
+        </div>
+      </div>
+      <div class="sq-field">
+        <label>Trænere</label>
+        <div class="sq-seg">${[1, 2, 3].map(n =>
+          `<button type="button" data-set="coaches:${n}" aria-pressed="${setup.coaches === n}">${n}</button>`).join('')}</div>
+      </div>
+      <div class="sq-field">
+        <label>Grupper pr. station</label>
+        <div class="sq-seg wide">
+          <button type="button" data-set="groups:0" aria-pressed="${setup.groups === 0}">Auto</button>
+          ${[1, 2, 3, 4, 5].map(n =>
+          `<button type="button" data-set="groups:${n}" aria-pressed="${setup.groups === n}">${n}</button>`).join('')}
+        </div>
+      </div>
+      <p class="sq-sum">${setup.coaches === 1
+        ? `Alle ${setup.kids} børn er på én station ad gangen.`
+        : `${setup.kids} børn fordelt på ${setup.coaches} stationer: ca. ${perStation()} pr. station.`}</p>`;
   }
 
   function renderWarmup() {
-    const w = sized(DATA.warmup), sec = $('warmup-sec');
+    const w = DATA.warmup, wu = w && w.unit, sec = $('warmup-sec');
     if (!sec) return;
     if (!w || !Array.isArray(w.phases) || !w.phases.length) { sec.hidden = true; return; }
     sec.hidden = false;
@@ -142,14 +202,14 @@
         ${w.flex ? `<div class="sayrow flex"><b>Bliver I flere eller færre</b>${esc(w.flex)}</div>` : ''}
       </div>` : ''}
       <div class="st-meta">
-        <div><b>Bane</b>${esc(w.pitch)}</div>
-        <div><b>Spillere</b>${esc(w.players)}</div>
+        <div><b>Bane</b>${esc(wu && wu.pitch ? wu.pitch : w.pitch)}</div>
+        <div><b>Spillere</b>${esc(wu ? laneNote(wu, true) : w.players)}</div>
         <div><b>Udstyr</b>${esc(w.gear)}</div>
       </div>
       <div class="phases">${w.phases.map((p, i) => `
         <section class="phase">
           <div class="ph-top"><span class="time">${esc(p.time)}</span><span class="ph-title">${esc(p.title)}</span></div>
-          ${window.PitchDiagram.render(w.dims ? Object.assign({}, p.diagram, { size: w.dims }) : p.diagram, { step: i + 1, label: `Opvarmning, del ${i + 1}: ${p.title}` })}
+          ${window.PitchDiagram.render(wu && wu.dims ? Object.assign({}, p.diagram, { size: wu.dims }) : p.diagram, { step: i + 1, label: `Opvarmning, del ${i + 1}: ${p.title}` })}
           <p class="ph-text">${esc(p.text)}</p>
           <div class="ph-focus"><b>Fokus:</b> ${esc(p.focus)}</div>
         </section>`).join('')}</div>`;
@@ -209,7 +269,7 @@
 
   // Sheet
   function openSheet(L) {
-    const s = sized(DATA.stations[L]);
+    const s = DATA.stations[L];
     $('sh-title').textContent = `STATION ${L} · ${s.name}`;
     $('sh-body').innerHTML = `
       <p style="margin-top:0"><b>Formål:</b> ${esc(s.purpose)}</p>
@@ -234,7 +294,7 @@
   // Oplæsning – teksten bygges fra samme data som kortene
   const spokenTime = t => t.replace('–', ' til ').replace('min.', 'minutter');
   function stationSpeech(L) {
-    const s = sized(DATA.stations[L]);
+    const s = DATA.stations[L];
     const parts = [`Station ${L}: ${s.name}.`, `Formål: ${s.purpose}`, `Opstilling: ${s.setup}`];
     if (s.say) parts.push(`Sig det sådan: ${s.say.lines.join(' ')}${s.say.check ? ' Tjek: ' + s.say.check : ''}`);
     if (s.flex) parts.push(`Bliver I flere eller færre: ${s.flex}`);
@@ -244,7 +304,7 @@
     return parts;
   }
   function warmupSpeech() {
-    const w = sized(DATA.warmup);
+    const w = DATA.warmup;
     if (!w) return [];
     const parts = [`${w.name}. ${w.purpose}`, `Bane: ${w.pitch}. Udstyr: ${w.gear}.`];
     w.phases.forEach((p, i) => parts.push(`Del ${i + 1}, ${spokenTime(p.time)}: ${p.title}. ${p.text} Fokus: ${p.focus}`));
@@ -293,12 +353,13 @@
   }
 
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-squad],[data-day],[data-pick],[data-open],[data-read]');
+    const t = e.target.closest('[data-step],[data-set],[data-day],[data-pick],[data-open],[data-read],[data-readwarm]');
     if (!t) return;
-    if (t.dataset.squad) {
-      squad = t.dataset.squad;
-      try { localStorage.setItem(SQ_KEY, squad); } catch (e) {}
-      renderStatic(); renderPlan();
+    if (t.dataset.step || t.dataset.set) {
+      const [f, v] = (t.dataset.step || t.dataset.set).split(':');
+      if (t.dataset.step) setup[f] = clamp(setup[f] + Number(v), 4, 40);
+      else setup[f] = Number(v);
+      saveSetup(); renderStatic(); renderPlan();
       return;
     }
     if (t.dataset.day) { day = t.dataset.day; renderPlan(); }
@@ -336,5 +397,5 @@
       DATA = d; loadPlan(); renderStatic(); renderPlan();
       $('status').textContent = 'Vælg dag og øvelser – oplæsningen følger dit valg.';
     })
-    .catch(() => { $('status').textContent = 'Træningen kunne ikke indlæses. Prøv at genindlæse siden.'; });
+    .catch(e => { console.error('U11', e); $('status').textContent = 'Træningen kunne ikke indlæses. Prøv at genindlæse siden.'; });
 })();

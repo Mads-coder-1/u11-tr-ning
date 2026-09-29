@@ -177,3 +177,4 @@ button{font:inherit}
 .sq-plan b{font-size:13px;font-weight:900;color:var(--blue)}
 .sq-plan span.wu b{color:#15793a}
 .sq-note{font-size:13px;font-weight:700}
+.sq-fixed{background:var(--yellow,#ffc928);color:#3a2a00;border-radius:6px;padding:1px 5px;font-size:10px;letter-spacing:.4px}

@@ -32,8 +32,10 @@
     const total = all ? setup.kids : perStation();
     const n = all ? clamp(Math.round(setup.kids / ((unit.ideal) || 5)), 1, 8) : lanes(unit);
     const each = spread(total, n);
-    const avg = total / n, ideal = (unit.ideal) || 4;
-    const warn = avg > ideal + 1.5 ? ' · flere end øvelsen er tænkt til – lav en gruppe mere' : '';
+    const avg = total / n, ideal = (unit.ideal) || 4, min = unit.min || Math.max(2, ideal - 1);
+    let warn = '';
+    if (avg > ideal + 1.5) warn = ' · flere end øvelsen er tænkt til – lav en gruppe mere';
+    else if (avg < min) warn = ` · for få pr. ${unit.word || 'bane'} til ${unit.per || 'øvelsen'} – vælg færre grupper`;
     return `${n} ${n === 1 ? (unit.word || 'bane') : (unit.words || 'baner')} à ${each} spillere${unit.per ? ' · ' + unit.per : ''}${warn}`;
   }
 
@@ -178,6 +180,13 @@
           `<button type="button" data-set="groups:${n}" aria-pressed="${setup.groups === n}">${n}</button>`).join('')}
         </div>
       </div>
+      <div class="sq-plan">${LETTERS.map(L => {
+        const u = DATA && DATA.stations[L] && DATA.stations[L].unit;
+        if (!u) return '';
+        const n = lanes(u);
+        return `<span><b>${L}</b>${n} ${n === 1 ? (u.word || 'bane') : (u.words || 'baner')}</span>`;
+      }).join('')}${DATA && DATA.warmup && DATA.warmup.unit
+        ? `<span class="wu"><b>Opv.</b>${clamp(Math.round(setup.kids / (DATA.warmup.unit.ideal || 5)), 1, 8)} ${DATA.warmup.unit.words || 'firkanter'}</span>` : ''}</div>
       <p class="sq-sum">${setup.coaches === 1
         ? `Alle ${setup.kids} børn er på én station ad gangen.`
         : `${setup.kids} børn fordelt på ${setup.coaches} stationer: ca. ${perStation()} pr. station.`}</p>`;

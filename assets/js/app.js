@@ -151,6 +151,7 @@
     const f = e.target.dataset && e.target.dataset.field;
     if (!f) return;
     setup[f] = clamp(Number(e.target.value) || setup[f], 4, 40);
+    setup.groups = 0;
     saveSetup(); renderStatic(); renderPlan();
   });
 
@@ -173,7 +174,7 @@
           `<button type="button" data-set="coaches:${n}" aria-pressed="${setup.coaches === n}">${n}</button>`).join('')}</div>
       </div>
       <div class="sq-field">
-        <label>Grupper pr. station</label>
+        <label>Grupper pr. station${setup.groups ? ' <span class="sq-fixed">fast</span>' : ''}</label>
         <div class="sq-seg wide">
           <button type="button" data-set="groups:0" aria-pressed="${setup.groups === 0}">Auto</button>
           ${[1, 2, 3, 4, 5].map(n =>
@@ -368,6 +369,8 @@
       const [f, v] = (t.dataset.step || t.dataset.set).split(':');
       if (t.dataset.step) setup[f] = clamp(setup[f] + Number(v), 4, 40);
       else setup[f] = Number(v);
+      // Ændrer man antal børn eller trænere, går grupperne tilbage til Auto
+      if (f === 'kids' || f === 'coaches') setup.groups = 0;
       saveSetup(); renderStatic(); renderPlan();
       return;
     }

@@ -3,6 +3,15 @@
 (function () {
   const $ = id => document.getElementById(id);
   const LETTERS = ['A', 'B', 'C', 'D'];
+  const SQUADS = [{ k: '12', label: '12 børn' }, { k: '16', label: '16 børn' }, { k: '20', label: '20+ børn' }];
+  const SQ_KEY = 'u11-squad';
+  let squad = '16';
+  try { const v = localStorage.getItem(SQ_KEY); if (v && SQUADS.some(x => x.k === v)) squad = v; } catch (e) {}
+  // Kort og opvarmning kan have en 'sizes'-blok, der overskriver bane, spillere, udstyr og opstilling
+  function sized(o) {
+    const v = o && o.sizes && o.sizes[squad];
+    return v ? Object.assign({}, o, v) : o;
+  }
   let STORE = 'u11-t-plan';
   let DATA = null, day = null, mode = 'day', plan = {};
 
@@ -55,8 +64,11 @@
       <span><svg width="30" height="10"><rect width="30" height="10" rx="3" fill="#43ad4a"/><path d="M2 5 H22" stroke="#fff" stroke-width="1.8" stroke-dasharray="4 3"/><path d="M22 1.5 l6 3.5 -6 3.5z" fill="#fff"/></svg>Aflevering/skud</span>
       <span><svg width="30" height="10"><rect width="30" height="10" rx="3" fill="#43ad4a"/><path d="M2 5 H22" stroke="#ffe066" stroke-width="2" stroke-dasharray="1.5 3" stroke-linecap="round"/><path d="M22 1.5 l6 3.5 -6 3.5z" fill="#ffe066"/></svg>Løb uden bold</span>`;
 
+    renderSquad();
+    renderWarmup();
+
     $('stations').innerHTML = LETTERS.map(L => {
-      const s = DATA.stations[L];
+      const s = sized(DATA.stations[L]);
       return `<article class="station" id="station-${L}" data-letter="${L}">
         <button class="st-head" type="button" data-open="${L}" aria-label="Detaljer for station ${L}">
           <span class="st-letter">${L}</span>
@@ -67,6 +79,14 @@
             <span class="st-days" id="days-${L}"></span>
           </span>
         </button>
+        ${s.note ? `<div class="sq-note"><b>${esc(SQUADS.find(x => x.k === squad).label)}:</b> ${esc(s.note)}</div>` : ''}
+        ${s.say ? `<div class="saybox">
+          <h4>Sig det sådan</h4>
+          <ol class="saylines">${s.say.lines.map(l => `<li>${esc(l)}</li>`).join('')}</ol>
+          ${s.say.check ? `<div class="sayrow"><b>Tjek</b>${esc(s.say.check)}</div>` : ''}
+          ${s.say.help ? `<div class="sayrow"><b>Fanger de den ikke</b>${esc(s.say.help)}</div>` : ''}
+          ${s.flex ? `<div class="sayrow flex"><b>Bliver I flere eller færre</b>${esc(s.flex)}</div>` : ''}
+        </div>` : ''}
         <div class="st-meta">
           <div><b>Bane</b>${esc(s.pitch)}</div>
           <div><b>Spillere</b>${esc(s.players)}</div>
@@ -75,13 +95,18 @@
         <div class="phases">${s.phases.map((p, i) => `
           <section class="phase">
             <div class="ph-top"><span class="time">${esc(p.time)}</span><span class="ph-title">${esc(p.title)}</span></div>
-            ${window.PitchDiagram.render(p.diagram, { step: i + 1, label: `Station ${L}, fase ${i + 1}: ${p.title}` })}
+            ${window.PitchDiagram.render(s.dims ? Object.assign({}, p.diagram, { size: s.dims }) : p.diagram, { step: i + 1, label: `Station ${L}, fase ${i + 1}: ${p.title}` })}
             <p class="ph-text">${esc(p.text)}</p>
+            ${p.rule ? `<div class="ph-rule"><b>Regel:</b> ${esc(p.rule)}</div>` : ''}
             <div class="ph-focus"><b>Fokus:</b> ${esc(p.focus)}</div>
           </section>`).join('')}
         </div>
         <div class="st-foot">
           <div class="coachbox"><span class="whistle">${WHISTLE}</span><div><h4>COACHINGPUNKTER</h4><ul>${s.coaching.map(c => `<li>${esc(c)}</li>`).join('')}</ul></div></div>
+          ${s.variants ? `<div class="variants">
+            <div class="vr up"><b>Gør det sværere</b>${esc(s.variants.harder)}</div>
+            <div class="vr down"><b>Gør det lettere</b>${esc(s.variants.easier)}</div>
+          </div>` : ''}
           <div class="st-btns">
             <button class="btn light" type="button" data-open="${L}">Opstilling &amp; detaljer</button>
             <button class="btn light" type="button" data-read="${L}">🔊 Læs station ${L} op</button>
@@ -89,6 +114,45 @@
         </div>
       </article>`;
     }).join('');
+  }
+
+  function renderSquad() {
+    const box = $('squad');
+    if (!box) return;
+    box.innerHTML = `<span class="sq-lab">Vi er i dag</span>` + SQUADS.map(x =>
+      `<button type="button" data-squad="${x.k}" aria-pressed="${x.k === squad}">${esc(x.label)}</button>`).join('');
+  }
+
+  function renderWarmup() {
+    const w = sized(DATA.warmup), sec = $('warmup-sec');
+    if (!sec) return;
+    if (!w || !Array.isArray(w.phases) || !w.phases.length) { sec.hidden = true; return; }
+    sec.hidden = false;
+    $('warmup-dur').textContent = w.duration || '';
+    $('warmup').innerHTML = `
+      <div class="wu-head">
+        <div><div class="wu-name">${esc(w.name)}</div><div class="wu-purpose">${esc(w.purpose)}</div></div>
+        <button class="btn light" type="button" data-readwarm="1">🔊 Læs op</button>
+      </div>
+      ${w.say ? `<div class="saybox">
+        <h4>Sig det sådan</h4>
+        <ol class="saylines">${w.say.lines.map(l => `<li>${esc(l)}</li>`).join('')}</ol>
+        ${w.say.check ? `<div class="sayrow"><b>Tjek</b>${esc(w.say.check)}</div>` : ''}
+        ${w.say.help ? `<div class="sayrow"><b>Fanger de den ikke</b>${esc(w.say.help)}</div>` : ''}
+        ${w.flex ? `<div class="sayrow flex"><b>Bliver I flere eller færre</b>${esc(w.flex)}</div>` : ''}
+      </div>` : ''}
+      <div class="st-meta">
+        <div><b>Bane</b>${esc(w.pitch)}</div>
+        <div><b>Spillere</b>${esc(w.players)}</div>
+        <div><b>Udstyr</b>${esc(w.gear)}</div>
+      </div>
+      <div class="phases">${w.phases.map((p, i) => `
+        <section class="phase">
+          <div class="ph-top"><span class="time">${esc(p.time)}</span><span class="ph-title">${esc(p.title)}</span></div>
+          ${window.PitchDiagram.render(w.dims ? Object.assign({}, p.diagram, { size: w.dims }) : p.diagram, { step: i + 1, label: `Opvarmning, del ${i + 1}: ${p.title}` })}
+          <p class="ph-text">${esc(p.text)}</p>
+          <div class="ph-focus"><b>Fokus:</b> ${esc(p.focus)}</div>
+        </section>`).join('')}</div>`;
   }
 
   function renderPlan() {
@@ -145,7 +209,7 @@
 
   // Sheet
   function openSheet(L) {
-    const s = DATA.stations[L];
+    const s = sized(DATA.stations[L]);
     $('sh-title').textContent = `STATION ${L} · ${s.name}`;
     $('sh-body').innerHTML = `
       <p style="margin-top:0"><b>Formål:</b> ${esc(s.purpose)}</p>
@@ -170,16 +234,27 @@
   // Oplæsning – teksten bygges fra samme data som kortene
   const spokenTime = t => t.replace('–', ' til ').replace('min.', 'minutter');
   function stationSpeech(L) {
-    const s = DATA.stations[L];
+    const s = sized(DATA.stations[L]);
     const parts = [`Station ${L}: ${s.name}.`, `Formål: ${s.purpose}`, `Opstilling: ${s.setup}`];
-    s.phases.forEach((p, i) => parts.push(`Fase ${i + 1}, ${spokenTime(p.time)}: ${p.title}. ${p.text} Fokus: ${p.focus}`));
+    if (s.say) parts.push(`Sig det sådan: ${s.say.lines.join(' ')}${s.say.check ? ' Tjek: ' + s.say.check : ''}`);
+    if (s.flex) parts.push(`Bliver I flere eller færre: ${s.flex}`);
+    s.phases.forEach((p, i) => parts.push(`Fase ${i + 1}, ${spokenTime(p.time)}: ${p.title}. ${p.text}${p.rule ? ' Regel: ' + p.rule : ''} Fokus: ${p.focus}`));
+    if (s.variants) parts.push(`Sværere: ${s.variants.harder}. Lettere: ${s.variants.easier}.`);
     parts.push(`Coachingpunkter: ${s.coaching.join('. ')}.`);
+    return parts;
+  }
+  function warmupSpeech() {
+    const w = sized(DATA.warmup);
+    if (!w) return [];
+    const parts = [`${w.name}. ${w.purpose}`, `Bane: ${w.pitch}. Udstyr: ${w.gear}.`];
+    w.phases.forEach((p, i) => parts.push(`Del ${i + 1}, ${spokenTime(p.time)}: ${p.title}. ${p.text} Fokus: ${p.focus}`));
     return parts;
   }
   function daySpeech() {
     const d = DATA.days[day], sel = plan[day];
     const parts = [`${DATA.team}, træning ${DATA.session} af ${DATA.sessionTotal}. Fokus: ${DATA.focus}.`,
       `${d.label} med ${d.coaches.replace('&', 'og')}.`];
+    parts.push(...warmupSpeech());
     if (!sel.length) parts.push('Der er ikke valgt nogen øvelser endnu.');
     else parts.push(`Vi laver ${sel.length === 1 ? 'station ' + sel[0] : 'stationerne ' + sel.slice(0, -1).join(', ') + ' og ' + sel[sel.length - 1]}, 20 minutter hver.`);
     sel.forEach(L => parts.push(...stationSpeech(L)));
@@ -218,8 +293,14 @@
   }
 
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-day],[data-pick],[data-open],[data-read]');
+    const t = e.target.closest('[data-squad],[data-day],[data-pick],[data-open],[data-read]');
     if (!t) return;
+    if (t.dataset.squad) {
+      squad = t.dataset.squad;
+      try { localStorage.setItem(SQ_KEY, squad); } catch (e) {}
+      renderStatic(); renderPlan();
+      return;
+    }
     if (t.dataset.day) { day = t.dataset.day; renderPlan(); }
     else if (t.dataset.pick) {
       const L = t.dataset.pick, sel = plan[day];
@@ -228,6 +309,7 @@
     }
     else if (t.dataset.open) openSheet(t.dataset.open);
     else if (t.dataset.read) speak(stationSpeech(t.dataset.read), `Station ${t.dataset.read}`);
+    else if (t.dataset.readwarm) speak(warmupSpeech(), 'Opvarmningen');
   });
   $('readBtn').onclick = () => { if (DATA) speak(daySpeech(), `${DATA.days[day].label}s træning`); };
   $('stopBtn').onclick = stop;

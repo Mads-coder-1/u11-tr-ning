@@ -186,21 +186,59 @@
 
   function path(it) {
     let pts = sample(it.pts);
+    const badge = it.n ? seqBadge(pts, it.n) : '';
     const d = p => 'M' + p.map(q => f(q[0]) + ' ' + f(q[1])).join(' L');
     const op = it.alt ? ' opacity=".5"' : '';
     if (it.t === 'dribble') {
       const wp = wavy(pts.slice(0, -2)).concat(pts.slice(-2));
       return `<g${op}><path d="${d(wp)}" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
-        <path d="${d(wp)}" fill="none" stroke="#0b1f3a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>${arrowHead(pts, '#0b1f3a', 7)}</g>`;
+        <path d="${d(wp)}" fill="none" stroke="#0b1f3a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>${arrowHead(pts, '#0b1f3a', 7)}${badge}</g>`;
     }
     if (it.t === 'pass' || it.t === 'shot') {
       const col = it.t === 'shot' ? '#ffffff' : '#ffffff';
       const w = it.t === 'shot' ? 2.4 : 1.8;
       return `<g${op}><path d="${d(pts)}" fill="none" stroke="#0b1f3a" stroke-opacity=".35" stroke-width="${w + 1.6}" stroke-dasharray="${it.t === 'shot' ? '0' : '6 4'}"/>
-        <path d="${d(pts)}" fill="none" stroke="${col}" stroke-width="${w}" stroke-dasharray="${it.t === 'shot' ? '0' : '6 4'}" stroke-linecap="round"/>${arrowHead(pts, col, it.t === 'shot' ? 9 : 7.5)}</g>`;
+        <path d="${d(pts)}" fill="none" stroke="${col}" stroke-width="${w}" stroke-dasharray="${it.t === 'shot' ? '0' : '6 4'}" stroke-linecap="round"/>${arrowHead(pts, col, it.t === 'shot' ? 9 : 7.5)}${badge}</g>`;
     }
     // løb uden bold
-    return `<g${op}><path d="${d(pts)}" fill="none" stroke="#ffe066" stroke-width="2" stroke-dasharray="1.5 3.2" stroke-linecap="round"/>${arrowHead(pts, '#ffe066', 7)}</g>`;
+    return `<g${op}><path d="${d(pts)}" fill="none" stroke="#ffe066" stroke-width="2" stroke-dasharray="1.5 3.2" stroke-linecap="round"/>${arrowHead(pts, '#ffe066', 7)}${badge}</g>`;
+  }
+
+  // Zone: markeret område på banen (fx slutzone eller startfelt)
+  function zone(it) {
+    const a = P(it.u0, it.v0), b = P(it.u1, it.v0), c = P(it.u1, it.v1), d2 = P(it.u0, it.v1);
+    const col = COL[it.c] || '#ffffff';
+    let s = `<polygon points="${f(a[0])},${f(a[1])} ${f(b[0])},${f(b[1])} ${f(c[0])},${f(c[1])} ${f(d2[0])},${f(d2[1])}" fill="${col}" opacity="${it.op || .18}" stroke="${col}" stroke-width="1.4" stroke-dasharray="5 4" stroke-opacity=".9"/>`;
+    if (it.label) {
+      const [lx, ly] = P(it.u0 + (it.lu !== undefined ? it.lu : 0.2), (it.v0 + it.v1) / 2);
+      s += tag(lx, ly, it.label, '#0b1f3a', 6.5);
+    }
+    return s;
+  }
+
+  // Målene på banen i meter
+  function dims(sz) {
+    let s = '';
+    const txt = (x, y, t) => `<text x="${f(x)}" y="${f(y)}" text-anchor="middle" font-size="8.5" font-weight="900" fill="#ffffff" stroke="#0b3d1c" stroke-width="2.4" paint-order="stroke" opacity=".95">${esc(t)}</text>`;
+    if (sz.w) { const [x, y] = P(0.17, 0.955); s += txt(x, y, '\u2194 ' + sz.w); }
+    if (sz.h) { const [x, y] = P(0.045, 0.5); s += txt(x + 10, y, sz.h); }
+    return s;
+  }
+
+  // Kø / venteplads: små spillere med skilt
+  function queue(it) {
+    let s = '';
+    const n = Math.min(it.n || 3, 5);
+    for (let k = 0; k < n; k++) s += player({ t: 'p', u: it.u + k * 0.055, v: it.v, team: it.team || 'blue' }, k + 3);
+    const [x, y] = P(it.u + (n - 1) * 0.0275, it.v);
+    return s + tag(x, y + 11, it.label || 'KØ', '#0b1f3a', 6.5);
+  }
+
+  // Rækkefølgenummer på en aflevering, dribling eller løb
+  function seqBadge(pts, n) {
+    const m = pts[Math.floor(pts.length / 2)];
+    return `<g><circle cx="${f(m[0])}" cy="${f(m[1] - 10)}" r="6.6" fill="#ffffff" stroke="#0b1f3a" stroke-width="1.5"/>
+      <text x="${f(m[0])}" y="${f(m[1] - 7.2)}" text-anchor="middle" font-size="9" font-weight="900" fill="#0b1f3a">${esc(n)}</text></g>`;
   }
 
   function render(diagram, opts = {}) {
@@ -208,7 +246,7 @@
     const items = diagram.items || [];
     const flat = [], people = [], over = [];
     items.forEach((it, i) => {
-      if (['line'].includes(it.t)) flat.unshift([it, i]);
+      if (['zone', 'line'].includes(it.t)) flat.unshift([it, i]);
       else if (['dribble', 'pass', 'run', 'shot'].includes(it.t)) flat.push([it, i]);
       else if (it.t === 'tag') over.push([it, i]);
       else people.push([it, i]);
@@ -216,15 +254,17 @@
     people.sort((a, b) => a[0].v - b[0].v);
     let s = `<svg class="pitch-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(opts.label || 'Banetegning')}" font-family="Inter, Arial, sans-serif">`;
     s += pitch(id);
-    flat.forEach(([it]) => { s += it.t === 'line' ? hline(it) : path(it); });
+    flat.forEach(([it]) => { s += it.t === 'zone' ? zone(it) : it.t === 'line' ? hline(it) : path(it); });
     people.forEach(([it, i]) => {
       if (it.t === 'cone') s += cone(it.u, it.v, it.c);
       else if (it.t === 'pole') s += pole(it.u, it.v);
       else if (it.t === 'gate') s += gate(it);
       else if (it.t === 'goal') s += goal(it);
       else if (it.t === 'ball') { const [x, y] = P(it.u, it.v); s += ballAt(x, y, sc(it.v)); }
+      else if (it.t === 'queue') s += queue(it);
       else if (it.t === 'p' || it.t === 'coach') s += player(it, i);
     });
+    if (diagram.size) s += dims(diagram.size);
     over.forEach(([it]) => { const [x, y] = P(it.u, it.v); s += tag(x, y, it.text); });
     if (opts.step) s += `<g><circle cx="17" cy="17" r="11" fill="#0b1f3a"/><text x="17" y="21" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">${opts.step}</text></g>`;
     return s + '</svg>';

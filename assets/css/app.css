@@ -133,3 +133,36 @@ button{font:inherit}
   body{background:#fff}.top,.planner,.view,.st-btns,.footer,.coaches-sec,.goals-sec{display:none!important}
   .station{box-shadow:none;break-inside:avoid;border:1px solid #ccd}
 }
+/* Opvarmning */
+.wu{padding:0;overflow:hidden}
+.wu-dur{background:var(--blue);color:#fff;border-radius:6px;padding:2px 7px;font-size:11px;letter-spacing:.4px}
+.wu-head{display:flex;align-items:flex-start;gap:10px;justify-content:space-between;padding:12px 14px;background:var(--navy);color:#fff}
+.wu-name{font-size:19px;font-weight:900;line-height:1.15}
+.wu-purpose{font-size:13px;color:#cfe0f7;margin-top:3px}
+.wu-head .btn{flex:0 0 auto}
+/* Regel pr. fase og differentiering */
+.ph-rule{background:#fff6e0;border-left:3px solid var(--yellow,#f5b301);border-radius:0 8px 8px 0;padding:7px 10px;font-size:13px;margin:6px 0 0}
+.ph-rule b{letter-spacing:.3px}
+.variants{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.vr{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12.5px;background:#fff}
+.vr b{display:block;font-size:10px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:3px}
+.vr.up{border-left:4px solid #b3261e}
+.vr.up b{color:#b3261e}
+.vr.down{border-left:4px solid #15793a}
+.vr.down b{color:#15793a}
+@media (max-width:420px){.variants{grid-template-columns:1fr}}
+/* Hvor mange er vi i dag */
+.squad{display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:var(--card);border-radius:var(--r);box-shadow:0 4px 18px #06264d14;padding:10px 12px;margin:0 0 14px}
+.sq-lab{font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.squad button{flex:1;min-width:88px;border:2px solid var(--line);background:#fff;color:var(--navy2);border-radius:11px;padding:10px 8px;font:inherit;font-weight:900;font-size:14px;cursor:pointer;min-height:44px}
+.squad button[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.sq-note{background:#eaf2ff;border-bottom:1px solid var(--line);padding:8px 12px;font-size:12.5px;color:var(--navy2)}
+.sq-note b{letter-spacing:.2px}
+/* Sig det sådan */
+.saybox{background:#0e2d55;color:#fff;padding:12px 14px;border-bottom:1px solid var(--line)}
+.saybox h4{margin:0 0 7px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--yellow,#ffc928)}
+.saylines{margin:0;padding-left:18px;display:grid;gap:5px}
+.saylines li{font-size:14.5px;font-weight:700;line-height:1.3}
+.sayrow{margin-top:8px;font-size:12.5px;color:#d5e3f7;display:grid;gap:2px}
+.sayrow b{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:#8fb4e8}
+.sayrow.flex b{color:#ffc928}

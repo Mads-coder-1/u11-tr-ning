@@ -1,0 +1,1552 @@
+{
+  "version": "2026-10-11",
+  "team": "U11",
+  "session": 1,
+  "sessionTotal": 6,
+  "cardTitle": "U11 · TRÆNING 1 AF 6",
+  "focus": "Afleveringer og første berøring under pres",
+  "goals": [
+    "Aflevere præcist med indersiden og modtage med en første berøring, der tager én væk fra presset",
+    "Kigge op før modtagelsen og vælge den fri makker",
+    "Bevæge sig i ny plads efter en aflevering, så bolden kan komme tilbage"
+  ],
+  "coaches": [
+    {
+      "name": "Jacob",
+      "day": "Mandag",
+      "photo": null
+    },
+    {
+      "name": "Allan",
+      "day": "Mandag",
+      "photo": null
+    },
+    {
+      "name": "Mads",
+      "day": "Onsdag",
+      "photo": null
+    },
+    {
+      "name": "Lars",
+      "day": "Onsdag",
+      "photo": null
+    }
+  ],
+  "days": {
+    "man": {
+      "label": "Mandag",
+      "coaches": "Jacob & Allan",
+      "default": [
+        "A",
+        "B"
+      ]
+    },
+    "ons": {
+      "label": "Onsdag",
+      "coaches": "Mads & Lars",
+      "default": [
+        "C",
+        "D"
+      ]
+    }
+  },
+  "warmup": {
+    "name": "Opvarmning: dribleleg, kongens bold og firkanter",
+    "purpose": "Mange boldberøringer og hovedet oppe fra første minut – og en blød vej ind til dagens afleveringer og første berøring. Alle er aktive hele tiden.",
+    "duration": "15 min.",
+    "pitch": "Ét stort felt på ca. 30 × 20 m til de to første dele, derefter 3 firkanter à 10 × 10 m",
+    "players": "15 spillere – alle med bold i de to første dele, derefter 3 firkanter med 5 i hver (4 på keglerne, 1 i midten)",
+    "gear": "16 kegler, 15 bolde, 3 veste til jægerne",
+    "phases": [
+      {
+        "time": "0–4 min.",
+        "title": "Dribleleg med kommandoer",
+        "text": "Alle 15 dribler frit rundt i det store felt, hver med sin egen bold. Træneren råber: \"Vend!\" – drej bolden væk med indersiden. \"Stop!\" – bolden under sålen. \"Byt!\" – rul din bold til den nærmeste og tag hans i stedet, med en blød berøring. \"Find en fri plads!\" – så ingen dribler ind i andre.",
+        "focus": "Hovedet op mellem berøringerne – og en blød første berøring på den nye bold.",
+        "diagram": {
+          "items": [
+            {
+              "t": "cone",
+              "u": 0.1,
+              "v": 0.22,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.9,
+              "v": 0.22,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.1,
+              "v": 0.96,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.9,
+              "v": 0.96,
+              "c": "orange"
+            },
+            {
+              "t": "dribble",
+              "n": 1,
+              "pts": [
+                [
+                  0.24,
+                  0.82
+                ],
+                [
+                  0.16,
+                  0.64
+                ],
+                [
+                  0.26,
+                  0.46
+                ]
+              ]
+            },
+            {
+              "t": "dribble",
+              "n": 2,
+              "pts": [
+                [
+                  0.74,
+                  0.7
+                ],
+                [
+                  0.84,
+                  0.52
+                ],
+                [
+                  0.72,
+                  0.36
+                ]
+              ]
+            },
+            {
+              "t": "p",
+              "u": 0.24,
+              "v": 0.84,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.74,
+              "v": 0.72,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.46,
+              "v": 0.94,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "coach",
+              "u": 0.58,
+              "v": 0.4,
+              "say": "BYT!"
+            },
+            {
+              "t": "tag",
+              "u": 0.5,
+              "v": 0.99,
+              "text": "ALLE HAR BOLD · TRÆNEREN RÅBER KOMMANDOER"
+            }
+          ]
+        }
+      },
+      {
+        "time": "4–7 min.",
+        "title": "Kongens bold",
+        "text": "Alle har bold i det store felt. Hver især dribler og forsøger at sparke de andres bolde ud af feltet, mens de beskytter deres egen. Mister du din bold, henter du den og dribler to ture rundt om en kegle ved sidelinjen, før du er med igen. Ingen står og venter. Den sidste, der stadig har bold i feltet, er konge.",
+        "focus": "Bolden tæt på foden og kroppen mellem bolden og modstanderen – kig, før du sparker.",
+        "diagram": {
+          "items": [
+            {
+              "t": "cone",
+              "u": 0.08,
+              "v": 0.2,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.92,
+              "v": 0.2,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.08,
+              "v": 0.96,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.92,
+              "v": 0.96,
+              "c": "orange"
+            },
+            {
+              "t": "dribble",
+              "n": 1,
+              "pts": [
+                [
+                  0.3,
+                  0.74
+                ],
+                [
+                  0.38,
+                  0.6
+                ],
+                [
+                  0.46,
+                  0.5
+                ]
+              ]
+            },
+            {
+              "t": "dribble",
+              "n": 2,
+              "pts": [
+                [
+                  0.74,
+                  0.34
+                ],
+                [
+                  0.66,
+                  0.46
+                ],
+                [
+                  0.58,
+                  0.52
+                ]
+              ]
+            },
+            {
+              "t": "p",
+              "u": 0.3,
+              "v": 0.76,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.76,
+              "v": 0.32,
+              "team": "red",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.4,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.78,
+              "team": "red",
+              "ball": true
+            },
+            {
+              "t": "tag",
+              "u": 0.5,
+              "v": 0.99,
+              "text": "ALLE HAR BOLD · SPARK ANDRES BOLDE UD · BESKYT DIN EGEN"
+            }
+          ]
+        }
+      },
+      {
+        "time": "7–11 min.",
+        "title": "Firkant: spil rundt og følg din aflevering",
+        "text": "Tre firkanter med fem i hver: fire spillere står ved hver sin kegle og én i midten. Bolden spilles rundt med indersiden, og den i midten er hele tiden en del af spillet. Først fri aflevering. Efter to minutter gælder det: efter din aflevering løber du til en ny kegle og tager den ledige plads, mens nogen andre træder ind på din.",
+        "focus": "Kig op, før bolden kommer – og løb i ny plads straks efter din aflevering.",
+        "diagram": {
+          "items": [
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "pass",
+              "n": 1,
+              "pts": [
+                [
+                  0.24,
+                  0.34
+                ],
+                [
+                  0.74,
+                  0.34
+                ]
+              ]
+            },
+            {
+              "t": "pass",
+              "n": 2,
+              "pts": [
+                [
+                  0.8,
+                  0.38
+                ],
+                [
+                  0.8,
+                  0.8
+                ]
+              ]
+            },
+            {
+              "t": "run",
+              "n": 3,
+              "pts": [
+                [
+                  0.22,
+                  0.42
+                ],
+                [
+                  0.22,
+                  0.8
+                ]
+              ]
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.34,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.34,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.5,
+              "v": 0.58,
+              "team": "blue"
+            },
+            {
+              "t": "tag",
+              "u": 0.5,
+              "v": 0.99,
+              "text": "4 PÅ KEGLERNE + 1 I MIDTEN · LØB EFTER AFLEVERINGEN"
+            }
+          ]
+        }
+      },
+      {
+        "time": "11–15 min.",
+        "title": "Firkant med jæger i midten – frem mod dagens øvelser",
+        "text": "Samme firkanter, men nu er den i midten jæger: han forsøger at røre bolden. De fire på keglerne spiller bolden rundt med højst to berøringer og flytter sig efter hver aflevering. Rører jægeren bolden, bytter han med den, der mistede den. Skift roller, så alle får prøvet at være jæger. Drikkepause bagefter.",
+        "focus": "Brug jægerens position: spil til den, jægeren ikke kan nå, og tag imod væk fra ham.",
+        "diagram": {
+          "items": [
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "pass",
+              "n": 1,
+              "pts": [
+                [
+                  0.24,
+                  0.34
+                ],
+                [
+                  0.76,
+                  0.34
+                ]
+              ]
+            },
+            {
+              "t": "pass",
+              "n": 2,
+              "pts": [
+                [
+                  0.8,
+                  0.38
+                ],
+                [
+                  0.8,
+                  0.82
+                ]
+              ]
+            },
+            {
+              "t": "run",
+              "n": 3,
+              "pts": [
+                [
+                  0.22,
+                  0.42
+                ],
+                [
+                  0.22,
+                  0.8
+                ]
+              ]
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.34,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.34,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.46,
+              "v": 0.54,
+              "team": "red",
+              "label": "JÆGER"
+            },
+            {
+              "t": "tag",
+              "u": 0.5,
+              "v": 0.99,
+              "text": "JÆGER I MIDTEN · MAKS. 2 BERØRINGER · LØB EFTER AFLEVERINGEN"
+            }
+          ]
+        }
+      }
+    ],
+    "say": {
+      "lines": [
+        "\"Alle med bold. Når jeg råber, gør I det med det samme.\"",
+        "\"Fire på keglerne, én i midten. Bolden skal rundt – og I skal kigge op, før I afleverer.\""
+      ],
+      "check": "\"Hvem i firkanten er fri lige nu – og hvordan kan du se det?\"",
+      "help": "Dribl selv med i feltet og råb kommandoerne højt, så de kopierer dig. Gå rundt mellem firkanterne og ros dem, der kigger op."
+    },
+    "flex": "Er I 12-14, så lav to firkanter à 6-7 (5-6 på keglerne og 1 i midten) eller tre firkanter à 4 og tag jægeren fra de andre. Er I 18, så brug tre firkanter à 6 med to i midten. Flyt ikke kegler midt i legen – luk en del af feltet i stedet.",
+    "unit": {
+      "ideal": 5,
+      "min": 4,
+      "word": "firkant",
+      "words": "firkanter",
+      "per": "4 på keglerne + 1 i midten",
+      "pitch": "10 × 10 m firkanter",
+      "dims": {
+        "w": "10 m",
+        "h": "10 m"
+      },
+      "rot": "midterspilleren skifter hvert minut"
+    }
+  },
+  "stations": {
+    "A": {
+      "name": "4 mod 2 i firkant: Hold bolden",
+      "purpose": "Træne afleveringer og første berøring, mens to modstandere presser rigtigt – og lære at kigge op og finde den fri makker.",
+      "pitch": "12 × 12 m firkant med en kegle i hvert hjørne (to små porte kommer til i anden spilfase)",
+      "players": "4–6 spillere (4 mod 2, resten tæller afleveringer og skifter ind)",
+      "gear": "4 hjørnekegler, 4 kegler til to porte, 1 bold pr. firkant, veste i to farver",
+      "setup": "En firkant på 12 × 12 m. Fire blå spillere står rundt om firkanten, én ved hver kegle. To røde forsvarere er inde i firkanten og presser rigtigt. Rører en rød bolden, eller går bolden ud, bytter han med den blå, der mistede den. Tæl afleveringerne højt. De to porte lægges først ind efter 10 minutter.",
+      "coaching": [
+        "Kig op, før bolden kommer – hvem er fri?",
+        "Modtag med indersiden og tag første berøring væk fra presset",
+        "Åbn kroppen, så du kan se hele firkanten",
+        "Aflevér hårdt nok, og ret i fodens retning"
+      ],
+      "say": {
+        "lines": [
+          "\"Fire mod to. I tæller afleveringerne højt – ti i træk er et point.\"",
+          "\"Mister I bolden, bytter I med den røde, der tog den.\""
+        ],
+        "check": "\"Hvem er fri, før bolden kommer til dig?\"",
+        "help": "Gå ind som femte spiller i første runde og vis, hvordan man modtager væk fra presset."
+      },
+      "flex": "En firkant kører med 5 eller 6. Med 5: 3 mod 2, og forsvarerne må ikke vinde bolden på første aflevering. Med 6: 4 mod 2 og to på sidelinjen, der tæller afleveringer og skifter ind hvert andet minut. Er I kun 4, så spil 3 mod 1. Luk en firkant i stedet for at flytte kegler.",
+      "unit": {
+        "ideal": 6,
+        "min": 4,
+        "per": "4 mod 2 i firkant",
+        "pitch": "12 × 12 m firkant",
+        "dims": {
+          "w": "12 m",
+          "h": "12 m"
+        },
+        "rot": "den, der mister bolden, bytter med den røde, der tog den"
+      },
+      "variants": {
+        "harder": "Gør firkanten 3 m mindre, og tillad kun to berøringer pr. spiller.",
+        "easier": "Gør firkanten 3 m større, og lad de røde starte med at presse først efter den første aflevering."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Hold bolden: tæl afleveringer",
+          "text": "Fire blå står ved hver sin kegle, og to røde forsvarere presser inde i firkanten. De blå spiller bolden rundt og tæller højt. Ti afleveringer i træk giver ét point. Rører en rød bolden, eller går bolden ud, bytter han med den, der mistede den, og tællingen starter forfra. De blå må flytte sig langs sidelinjen mellem keglerne.",
+          "focus": "Kig op, og tag første berøring væk fra presset.",
+          "rule": "Ti afleveringer i træk giver 1 point. Maks. tre berøringer pr. spiller.",
+          "diagram": {
+            "items": [
+              {
+                "t": "cone",
+                "u": 0.12,
+                "v": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.88,
+                "v": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.88,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.12,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.16,
+                    0.2
+                  ],
+                  [
+                    0.8,
+                    0.2
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 2,
+                "pts": [
+                  [
+                    0.86,
+                    0.26
+                  ],
+                  [
+                    0.86,
+                    0.82
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.12,
+                "v": 0.2,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.88,
+                "v": 0.2,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.88,
+                "v": 0.86,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.12,
+                "v": 0.86,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.44,
+                "v": 0.4,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.58,
+                "v": 0.62,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "4 MOD 2 · TÆL AFLEVERINGER · 10 I TRÆK = 1 POINT"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "Porte: aflevering mellem de røde",
+          "text": "Samme firkant med to små porte (to kegler) midt på de lange sider. Nu tæller en aflevering gennem en port til en blå makker på den anden side af porten 2 point. Forsvarerne presser stadig rigtigt. Mister de blå bolden, bytter de med den røde, der tog den. Maks. to berøringer pr. spiller – tag første berøring i retning af den fri makker.",
+          "focus": "Se porten, før du modtager – og tag første berøring derhen, hvor næste aflevering skal gå.",
+          "rule": "Aflevering gennem en port tæller 2 point. Maks. to berøringer pr. spiller.",
+          "diagram": {
+            "items": [
+              {
+                "t": "cone",
+                "u": 0.12,
+                "v": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.88,
+                "v": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.88,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.12,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.12,
+                "v": 0.53,
+                "w": 0.2,
+                "c": "yellow"
+              },
+              {
+                "t": "gate",
+                "u": 0.88,
+                "v": 0.53,
+                "w": 0.2,
+                "c": "yellow"
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.16,
+                    0.2
+                  ],
+                  [
+                    0.12,
+                    0.53
+                  ],
+                  [
+                    0.14,
+                    0.84
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 2,
+                "pts": [
+                  [
+                    0.2,
+                    0.86
+                  ],
+                  [
+                    0.8,
+                    0.86
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.12,
+                "v": 0.2,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.88,
+                "v": 0.2,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.88,
+                "v": 0.86,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.12,
+                "v": 0.88,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.44,
+                "v": 0.42,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.6,
+                "v": 0.64,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "AFLEVERING GENNEM PORTEN = 2 POINT · MAKS. 2 BERØRINGER"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "B": {
+      "name": "2 mod 2 med porte: Aflever gennem porten",
+      "purpose": "Træne afleveringer og bevægelse efter aflevering i et lille spil med rigtig modstand – og finde den fri plads bag modstanderne.",
+      "pitch": "18 × 14 m bane med to porte i hver ende",
+      "players": "4–6 spillere (2 mod 2, resten skifter ind)",
+      "gear": "8 kegler til fire porte, 4 kegler til banen, bolde, veste i to farver",
+      "setup": "To porte (to kegler hver) i hver ende af banen. To hold på to spillere. Man scorer ved at aflevere bolden gennem en af modstandernes porte til sin makker, der modtager bolden på den anden side. Mister I bolden, skifter I med det samme til at forsvare. Bolden ud = ny bold fra træneren.",
+      "coaching": [
+        "Aflevér, og løb straks i ny plads – giv din makker en mulighed",
+        "Kig op: er den ene port mere åben end den anden?",
+        "Modtag bolden med indersiden og tag første berøring ind mod banen",
+        "Tal højt: sig, hvor du vil have bolden"
+      ],
+      "say": {
+        "lines": [
+          "\"To mod to. I scorer ved at spille bolden gennem en port til jeres makker.\"",
+          "\"Efter en aflevering løber I i ny plads – ikke stå og kig.\""
+        ],
+        "check": "\"Hvilken port er åben, og hvordan får du bolden derhen?\"",
+        "help": "Fløjt hver gang bolden skifter hold de første to minutter, og sig højt: nu forsvarer I."
+      },
+      "flex": "En bane kører med 4, 5 eller 6. Med 5: 2 mod 2 og én tæller point og skifter ind hvert andet minut. Med 6: 3 mod 3 på en 20 × 16 m bane. Er I kun 4, så kør én bane og skift hver 3. minut. Luk en bane i stedet for at flytte porte.",
+      "unit": {
+        "ideal": 4,
+        "min": 4,
+        "per": "2 mod 2 med fire porte",
+        "pitch": "18 × 14 m med to porte i hver ende",
+        "dims": {
+          "w": "18 m",
+          "h": "14 m"
+        },
+        "rot": "kampe på 3 min., vinderen bliver"
+      },
+      "variants": {
+        "harder": "Gør banen 3 m smallere, og tæl kun mål efter maks. to berøringer pr. spiller.",
+        "easier": "Gør banen 4 m bredere, og lad makkeren stå fri bag porten, før I starter."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Spil gennem porten",
+          "text": "To mod to på banen med to porte i hver ende. Blå angriber de to porte i den fjerne ende og forsvarer de to porte ved den nære ende; rød gør det modsatte. Man scorer ved at aflevere bolden gennem en port, så makkeren modtager den på den anden side. Forsvarerne presser rigtigt, så I skal løbe fri.",
+          "focus": "Afleveringen først, så bevægelsen: løb i ny plads, så makkeren har et valg.",
+          "rule": "Aflevering gennem en port til makkeren på den anden side tæller 1 point. Mål i samme port to gange i træk tæller ikke.",
+          "diagram": {
+            "items": [
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.12,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.12,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.92,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.92,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.4,
+                    0.58
+                  ],
+                  [
+                    0.3,
+                    0.05
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.42,
+                "v": 0.62,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.04,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.52,
+                "v": 0.42,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.72,
+                "v": 0.3,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "2 MOD 2 · AFLEVER GENNEM EN PORT TIL MAKKEREN"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "To berøringer og skift port",
+          "text": "Samme spil, men nu med maks. to berøringer pr. spiller. Og vil I score igen, skal bolden gå gennem den anden port end sidst – så I er nødt til at skifte side og kigge op. Spil kampe på tre minutter. Vinderholdet bliver på banen.",
+          "focus": "Tænk, før du får bolden – hvilken port er åben, og hvor skal første berøring hen?",
+          "rule": "Maks. to berøringer pr. spiller. Mål i den anden port end sidst tæller 2 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.12,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.12,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.92,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.92,
+                "w": 0.18,
+                "c": "orange"
+              },
+              {
+                "t": "run",
+                "n": 1,
+                "pts": [
+                  [
+                    0.36,
+                    0.7
+                  ],
+                  [
+                    0.52,
+                    0.4
+                  ],
+                  [
+                    0.7,
+                    0.08
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 2,
+                "pts": [
+                  [
+                    0.64,
+                    0.56
+                  ],
+                  [
+                    0.7,
+                    0.05
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.34,
+                "v": 0.72,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.62,
+                "v": 0.6,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.46,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.3,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "MAKS. 2 BERØRINGER · SKIFT PORT HVER GANG"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "C": {
+      "name": "Modtag og vend: 2 mod 2 med spiller i ryggen",
+      "purpose": "Træne første berøring og at vende væk fra en modstander, der presser bagfra – og vælge mellem at score og spille makkeren fri.",
+      "pitch": "20 × 16 m bane med mål i den fjerne ende og en midterzone",
+      "players": "4–6 spillere (2 mod 2 + afleveringsspiller)",
+      "gear": "1 mål, 4 kegler til midterzonen, 4 kegler til banen, bolde, veste i to farver",
+      "setup": "Mål i den fjerne ende. Midterzonen markeres af fire kegler midt på banen. En blå afleveringsspiller står ved den nære endelinje med bolde. To blå angribere og to røde forsvarere spiller i og omkring zonen. Afleveringsspilleren spiller bolden ind til en blå angriber, hvorefter spillet er i gang. Skift roller efter hvert angreb.",
+      "coaching": [
+        "Kig over skulderen, før bolden kommer – hvor er presset?",
+        "Modtag med den fod, der er længst væk fra forsvareren",
+        "Første berøring tager dig væk fra modstanderen",
+        "Vend og se: skud, makker eller drible"
+      ],
+      "say": {
+        "lines": [
+          "\"Afleveringsspilleren spiller ind. Den røde presser, så snart bolden er afleveret.\"",
+          "\"Vend væk fra presset – og så kig efter målet eller din makker.\""
+        ],
+        "check": "\"Hvilken side er forsvareren på, og hvor skal første berøring hen?\"",
+        "help": "Stil dig som angriber en gang og vis, hvordan man kigger over skulderen og modtager væk."
+      },
+      "flex": "En bane kører med 4, 5 eller 6. Med 4: 1 mod 1 og afleveringsspilleren går ind, når bolden er spillet. Med 5: 2 mod 2 og afleveringsspilleren skifter ind. Med 6: en ekstra afleveringsspiller på modsat side. Luk en bane i stedet for at flytte kegler.",
+      "unit": {
+        "ideal": 5,
+        "min": 4,
+        "per": "2 mod 2 + afleveringsspiller",
+        "pitch": "20 × 16 m med mål og midterzone",
+        "dims": {
+          "w": "20 m",
+          "h": "16 m"
+        },
+        "rot": "skift roller efter hvert angreb"
+      },
+      "variants": {
+        "harder": "Lad forsvareren starte helt tæt på angriberen og gør zonen 3 m kortere.",
+        "easier": "Lad forsvareren starte 2 m tilbage og tillad et ekstra sekund, før han presser."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Modtag og vend mod én forsvarer",
+          "text": "Afleveringsspilleren (blå) spiller bolden ind til en blå angriber i midterzonen. En rød forsvarer står lige bag ham og presser, så snart bolden er afleveret. Angriberen tager første berøring væk fra presset og vender mod målet. Han kan score, dribble eller spille til den anden blå, der løber fri. Den anden røde er klar til at hjælpe og er rigtig forsvarer.",
+          "focus": "Første berøring væk fra forsvareren – kig over skulderen, før bolden kommer.",
+          "rule": "Mål efter at have vendt væk fra presset tæller 2 point. Efter den første aflevering må angriberen maks. røre bolden tre gange.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.3
+              },
+              {
+                "t": "zone",
+                "u0": 0.2,
+                "v0": 0.4,
+                "u1": 0.8,
+                "v1": 0.7,
+                "c": "yellow",
+                "label": "MIDTERZONE",
+                "lu": 0.06
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.5,
+                    0.88
+                  ],
+                  [
+                    0.46,
+                    0.62
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 2,
+                "pts": [
+                  [
+                    0.48,
+                    0.54
+                  ],
+                  [
+                    0.5,
+                    0.05
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.9,
+                "team": "blue",
+                "ball": true,
+                "label": "AFLEVERER"
+              },
+              {
+                "t": "p",
+                "u": 0.46,
+                "v": 0.64,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.58,
+                "v": 0.72,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.42,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.7,
+                "v": 0.4,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "MODTAG OG VEND · AFLEVERING INDEFRA · SCOR ELLER SPIL MAKKEREN"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "Modtag og vend – 2 mod 2 om målet",
+          "text": "Samme opstilling, men nu spiller de to blå mod de to røde, så snart bolden er afleveret ind. Mister blå bolden, kan de røde score i en port ved den nære endelinje. Alle bevæger sig i ny plads efter afleveringen. Skift roller efter hvert angreb.",
+          "focus": "Efter din aflevering: løb i ny plads, så den, der vender, har et valg.",
+          "rule": "Kontra mod porten bag dem tæller 3 point. Maks. to berøringer pr. spiller efter første aflevering.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.3
+              },
+              {
+                "t": "zone",
+                "u0": 0.2,
+                "v0": 0.4,
+                "u1": 0.8,
+                "v1": 0.7,
+                "c": "yellow",
+                "label": "MIDTERZONE",
+                "lu": 0.06
+              },
+              {
+                "t": "gate",
+                "u": 0.5,
+                "v": 0.96,
+                "w": 0.24,
+                "c": "orange"
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.5,
+                    0.88
+                  ],
+                  [
+                    0.4,
+                    0.6
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 2,
+                "pts": [
+                  [
+                    0.42,
+                    0.56
+                  ],
+                  [
+                    0.7,
+                    0.36
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 3,
+                "pts": [
+                  [
+                    0.7,
+                    0.32
+                  ],
+                  [
+                    0.54,
+                    0.05
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.9,
+                "team": "blue",
+                "ball": true,
+                "label": "AFLEVERER"
+              },
+              {
+                "t": "p",
+                "u": 0.4,
+                "v": 0.62,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.72,
+                "v": 0.38,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.74,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.36,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "2 MOD 2 · KONTRA MOD PORTEN BAG DEM = 3 POINT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "D": {
+      "name": "3 mod 3: Tre afleveringer før mål",
+      "purpose": "Spille kampnært 3 mod 3 med rigtig modstand og lære, at afleveringer og bevægelse skaber chancer – og at der er tid til at kigge op.",
+      "pitch": "24 × 18 m bane med et mål i hver ende",
+      "players": "6 spillere (3 mod 3)",
+      "gear": "2 mål (eller 4 kegler), 4 kegler til banen, bolde, veste i to farver",
+      "setup": "Et mål i hver ende. To hold på tre spillere. Alle har samme opgave: spil bolden rundt og skab chancer. Et hold må kun skyde, når bolden har været afleveret mindst tre gange i træk i eget hold. Mister de bolden, starter tællingen forfra. Bolden ud = ny bold fra træneren.",
+      "coaching": [
+        "Tal højt: sig, hvem der er fri",
+        "Aflevér og løb – giv makkeren et valg",
+        "Modtag i bevægelse, og tag første berøring ind mod banen",
+        "Skift side, hvis den ene side er lukket"
+      ],
+      "say": {
+        "lines": [
+          "\"Tre mod tre. I skal aflevere tre gange, før I må skyde.\"",
+          "\"Mister I bolden, starter tællingen forfra for dem, der vinder den.\""
+        ],
+        "check": "\"Hvem er fri lige nu – og hvem kan give dig en aflevering?\"",
+        "help": "Gå med som dommer og tæl afleveringerne højt de første to minutter."
+      },
+      "flex": "En bane kører med 4, 5 eller 6. Med 4: 2 mod 2, to afleveringer før mål. Med 5: 3 mod 2 og rotér hver anden minut. Er I 6, kan I køre 3 mod 3. Med 10-12 børn laves to baner side om side – flyt aldrig målene.",
+      "unit": {
+        "ideal": 6,
+        "min": 4,
+        "per": "3 mod 3",
+        "pitch": "24 × 18 m med mål i hver ende",
+        "dims": {
+          "w": "24 m",
+          "h": "18 m"
+        },
+        "rot": "kampe på 3 min., vinderen bliver"
+      },
+      "variants": {
+        "harder": "Gør banen 4 m smallere, eller kræv fire afleveringer før mål.",
+        "easier": "Kræv kun to afleveringer før mål, og gør banen 4 m bredere."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Tre afleveringer før mål",
+          "text": "Kamp 3 mod 3 med mål i hver ende. Et hold må først skyde, når bolden har været afleveret tre gange i træk i eget hold. Forsvarerne presser rigtigt og må gerne vinde bolden når som helst. Vinder et hold bolden, starter tællingen forfra. Vinderholdet efter tre minutter bliver på banen.",
+          "focus": "Kig op og tæl afleveringerne højt – så ved I, hvornår I må skyde.",
+          "rule": "Der må kun skydes efter tre afleveringer i træk i eget hold.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.3
+              },
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 1,
+                "w": 0.3
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.3,
+                    0.72
+                  ],
+                  [
+                    0.5,
+                    0.56
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 2,
+                "pts": [
+                  [
+                    0.52,
+                    0.54
+                  ],
+                  [
+                    0.74,
+                    0.62
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.74,
+                    0.62
+                  ],
+                  [
+                    0.54,
+                    0.56
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.5,
+                    0.52
+                  ],
+                  [
+                    0.5,
+                    0.05
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.28,
+                "v": 0.74,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.58,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.76,
+                "v": 0.66,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.58,
+                "v": 0.46,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.34,
+                "v": 0.42,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.68,
+                "v": 0.36,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "3 MOD 3 · 3 AFLEVERINGER, SÅ SKUD"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "Aflever og løb – to berøringer",
+          "text": "Samme kamp, men nu med maks. to berøringer pr. spiller. Og når du har afleveret, skal du løbe ind i ny plads, før du må røre bolden igen. Skud efter tre afleveringer tæller 1 point, og mål efter en aflevering, hvor afgiveren løb i ny plads og fik bolden tilbage, tæller 2 point.",
+          "focus": "Modtag i bevægelse, og tag første berøring ind mod banen.",
+          "rule": "Maks. to berøringer pr. spiller. Mål efter en aflevering og et løb, hvor afgiveren får bolden tilbage, tæller 2 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.3
+              },
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 1,
+                "w": 0.3
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.3,
+                    0.72
+                  ],
+                  [
+                    0.52,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.28,
+                    0.74
+                  ],
+                  [
+                    0.36,
+                    0.52
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.5,
+                    0.48
+                  ],
+                  [
+                    0.38,
+                    0.46
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.38,
+                    0.42
+                  ],
+                  [
+                    0.5,
+                    0.05
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.28,
+                "v": 0.74,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.52,
+                "v": 0.52,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.76,
+                "v": 0.62,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.58,
+                "v": 0.4,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.38,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.74,
+                "v": 0.34,
+                "team": "red"
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "MAKS. 2 BERØRINGER · AFLEVER OG LØB I NY PLADS"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

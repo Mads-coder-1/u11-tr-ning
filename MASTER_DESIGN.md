@@ -47,6 +47,11 @@
   - dagsvælgeren
   - stationskortene A→D under hinanden og lige store
 - Trænerne vises som silhuetter, indtil der er et foto (`coaches[].photo`).
+- **Tegningerne kan afspilles [NY].** Hver tegning med nummererede stier har knapperne ▶/⏸, ⏮ (forfra) og 1×/½× (hastighed), og spillere og bold følger stierne som en lille video. Reglerne for data, så animationen virker:
+  - Rækkefølgen er `n`. Et `run` starter samtidig med trinnet før, og det gør også en sti med `"with": true` (fx to driblinger på samme tid).
+  - Den nærmeste angriber ved stiens start er den, der bevæger sig. Bolden følger afgiveren og skifter til den spiller, der står nærmest afleveringens slutpunkt. Start altså stierne ved spillerne, og slut afleveringer ved modtageren.
+  - **Forsvarere og jæger skal også bevæge sig**, så man ser presset: `{"t":"run","d":true,"at":N,"pts":[[u,v],…]}`. `at` er det trin, løbet starter sammen med. De tegnes lyserøde, og stien starter ved forsvarerens plads (eller der, hvor han sidst endte). Lav mindst ét forsvarerløb pr. fase, hvor der er forsvarere, og husk at målmanden bliver stående.
+  - Teksten skal stadig passe 1:1 til tegningen, og animationen må ikke vise noget, teksten ikke siger.
 - **Tegning og tekst skal passe 1:1.** Står der "passiv forsvarer" i teksten, skal tegningen vise en rød spiller mærket PASSIV. Det samme gælder antal spillere, mål, kegler og spilleretning.
 
 ## 5. Feedback **[NY]**

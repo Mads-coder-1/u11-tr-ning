@@ -115,8 +115,9 @@
       <circle cx="${1.8 * facing}" cy="-35" r=".7" fill="#1b1b1b"/>`;
     if (it.t === 'coach') g += `<path d="M-2.2 -27.6 L0 -22 L2.2 -27.6" stroke="#fff" stroke-width=".8" fill="none"/><circle cx="0" cy="-22" r="1" fill="#c9d3de"/>`;
     g += `</g>`;
-    if (it.ball) g += ballAt(x + 7 * s * facing, y - 1, s);
     if (it.label) g += tag(x, y + 9 * s, it.label, it.team === 'red' ? '#b3261e' : '#0b1f3a', 6.5);
+    g = `<g data-pid="${i}">${g}</g>`;
+    if (it.ball) g += `<g data-bid="${i}">${ballAt(x + 7 * s * facing, y - 1, s)}</g>`;
     if (it.say) g += bubble(x, y - 44 * s, it.say, it.u > .6 ? -1 : 1);
     return g;
   }
@@ -201,7 +202,8 @@
         <path d="${d(pts)}" fill="none" stroke="${col}" stroke-width="${w}" stroke-dasharray="${it.t === 'shot' ? '0' : '6 4'}" stroke-linecap="round"/>${arrowHead(pts, col, it.t === 'shot' ? 9 : 7.5)}${badge}</g>`;
     }
     // løb uden bold
-    return `<g${op}><path d="${d(pts)}" fill="none" stroke="#ffe066" stroke-width="2" stroke-dasharray="1.5 3.2" stroke-linecap="round"/>${arrowHead(pts, '#ffe066', 7)}${badge}</g>`;
+    const rc = it.d ? '#ffb4ac' : '#ffe066';
+    return `<g${op}><path d="${d(pts)}" fill="none" stroke="${rc}" stroke-width="${it.d ? 1.6 : 2}" stroke-dasharray="1.5 3.2" stroke-linecap="round"/>${arrowHead(pts, rc, it.d ? 6 : 7)}${badge}</g>`;
   }
 
   // Zone: markeret område på banen (fx slutzone eller startfelt)
@@ -241,6 +243,158 @@
       <text x="${f(m[0])}" y="${f(m[1] - 7.2)}" text-anchor="middle" font-size="9" font-weight="900" fill="#0b1f3a">${esc(n)}</text></g>`;
   }
 
+
+  /* ---------- Afspilning: spillere og bold følger de tegnede stier ----------
+     Rækkefølgen er trinnumrene (n). Et løb (run) starter samtidig med trinnet før, og det gør
+     også en sti med with:true. Forsvarerløb (d:true, uden n) starter sammen med trin "at".
+     Hvem der løber, er den nærmeste spiller ved stiens start; bolden følger afgiveren. */
+  const SPD = { pass: 150, shot: 200, dribble: 55, run: 70 };
+  const plans = {};
+  const isAtt = it => it.t === 'p' && (it.team === 'blue' || (it.team === 'keeper' && it.label));
+  const isDef = it => it.t === 'p' && it.team === 'red';
+  const plen = pts => pts.reduce((a, q, k) => a + (k ? Math.hypot(q[0] - pts[k - 1][0], q[1] - pts[k - 1][1]) : 0), 0);
+  const nearest = (list, q) => list.reduce((b, c) => (!b || Math.hypot(c.pos[0] - q[0], c.pos[1] - q[1]) < Math.hypot(b.pos[0] - q[0], b.pos[1] - q[1])) ? c : b, null);
+  const along = (pts, k) => {
+    const x = Math.min(Math.max(k, 0), 1) * (pts.length - 1), a = Math.floor(x), b = Math.min(a + 1, pts.length - 1), r = x - a;
+    return [pts[a][0] + (pts[b][0] - pts[a][0]) * r, pts[a][1] + (pts[b][1] - pts[a][1]) * r];
+  };
+
+  function buildPlan(items) {
+    const steps = items.map((it, i) => [it, i]).filter(([it]) => ['dribble', 'pass', 'run', 'shot'].includes(it.t));
+    const num = steps.filter(([it]) => it.n != null).sort((a, b) => a[0].n - b[0].n);
+    if (!num.length) return null;
+    const groups = [];
+    num.forEach(([it]) => {
+      if (groups.length && (it.t === 'run' || it.with)) groups[groups.length - 1].m.push(it);
+      else groups.push({ m: [it] });
+    });
+    steps.filter(([it]) => it.n == null).forEach(([it]) => {
+      (groups.find(g => g.m.some(x => x.n === it.at)) || groups[0]).m.push(it);
+    });
+    const pl = [], off = {};
+    items.forEach((it, i) => {
+      if (it.t !== 'p') return;
+      const s = sc(it.v), facing = it.u > .5 ? -1 : 1;
+      pl[i] = { it, i, base: P(it.u, it.v), pos: P(it.u, it.v), segs: [] };
+      off[i] = [7 * s * facing, -1];
+    });
+    const people = pl.filter(Boolean);
+    const balls = {}, holds = {};
+    people.forEach(p => { if (p.it.ball) { balls[p.i] = { base: [p.base[0] + off[p.i][0], p.base[1] + off[p.i][1]], segs: [{ t0: 0, type: 'hold', h: p.i }] }; holds[p.i] = p.i; } });
+    let t = 0;
+    groups.forEach(g => {
+      const start = {}; people.forEach(p => { start[p.i] = p.pos; });
+      const taken = new Set(); let dur = 0;
+      g.m.filter(it => it.t === 'dribble' || it.t === 'run').forEach(it => {
+        const pts = sample(it.pts);
+        const a = nearest(people.filter(p => !taken.has(p.i) && (it.d ? isDef(p.it) : isAtt(p.it))), pts[0]);
+        if (!a) return;
+        taken.add(a.i);
+        const d = Math.max(600, plen(pts) / SPD[it.t] * 1000);
+        a.segs.push({ t0: t, t1: t + d, pts, s: [a.pos[0] - pts[0][0], a.pos[1] - pts[0][1]] });
+        a.pos = pts[pts.length - 1];
+        dur = Math.max(dur, d);
+      });
+      g.m.filter(it => it.t === 'pass' || it.t === 'shot').forEach(it => {
+        const pts = sample(it.pts), end = pts[pts.length - 1];
+        const holder = nearest(people.filter(p => holds[p.i] != null).map(p => ({ i: p.i, pos: start[p.i] })), pts[0]);
+        if (!holder) return;
+        const bid = holds[holder.i], b = balls[bid];
+        const from = [start[holder.i][0] + off[holder.i][0], start[holder.i][1] + off[holder.i][1]];
+        let to = null;
+        if (it.t === 'pass') {
+          const c = nearest(people.filter(p => p.i !== holder.i && isAtt(p.it)), end);
+          if (c && Math.hypot(c.pos[0] - end[0], c.pos[1] - end[1]) < 45) to = c;
+        }
+        const d = Math.max(450, plen(pts) / SPD[it.t] * 1000);
+        const e1 = to ? [to.pos[0] + off[to.i][0] - end[0], to.pos[1] + off[to.i][1] - end[1]] : [0, 0];
+        b.segs.push({ t0: t, t1: t + d, type: 'fly', pts, s0: [from[0] - pts[0][0], from[1] - pts[0][1]], s1: e1 });
+        delete holds[holder.i];
+        if (to) { b.segs.push({ t0: t + d, type: 'hold', h: to.i }); holds[to.i] = bid; }
+        else b.segs.push({ t0: t + d, type: 'rest', pos: [end[0], end[1]] });
+        dur = Math.max(dur, d);
+      });
+      t += dur + 350;
+    });
+    return { pl, off, balls, total: t - 350, run: { T: 0, playing: false, speed: 1 } };
+  }
+
+  function playerAt(p, T) {
+    let s = null;
+    for (const q of p.segs) if (q.t0 <= T) s = q;
+    if (!s) return p.base;
+    const k = T >= s.t1 ? 1 : (T - s.t0) / (s.t1 - s.t0), q = along(s.pts, k);
+    return [q[0] + s.s[0] * (1 - k), q[1] + s.s[1] * (1 - k)];
+  }
+
+  function frame(svg, plan) {
+    const T = plan.run.T, q = (sel) => svg.querySelector(sel);
+    plan.pl.forEach(p => {
+      if (!p || !p.segs.length) return;
+      const a = playerAt(p, T), n = q(`[data-pid="${p.i}"]`);
+      if (n) n.setAttribute('transform', `translate(${f(a[0] - p.base[0])} ${f(a[1] - p.base[1])})`);
+    });
+    Object.keys(plan.balls).forEach(id => {
+      const b = plan.balls[id];
+      if (b.segs.length < 2) return;
+      let s = b.segs[0];
+      for (const x of b.segs) if (x.t0 <= T) s = x;
+      let pos;
+      if (s.type === 'hold') { const a = playerAt(plan.pl[s.h], T); pos = [a[0] + plan.off[s.h][0], a[1] + plan.off[s.h][1]]; }
+      else if (s.type === 'rest') pos = s.pos;
+      else {
+        const k = T >= s.t1 ? 1 : (T - s.t0) / (s.t1 - s.t0), a = along(s.pts, k);
+        pos = [a[0] + s.s0[0] + (s.s1[0] - s.s0[0]) * k, a[1] + s.s0[1] + (s.s1[1] - s.s0[1]) * k];
+      }
+      const n = q(`[data-bid="${id}"]`);
+      if (n) n.setAttribute('transform', `translate(${f(pos[0] - b.base[0])} ${f(pos[1] - b.base[1])})`);
+    });
+  }
+
+  function icons(svg, plan) {
+    const r = plan.run, done = r.T >= plan.total;
+    const set = (a, on) => { const n = svg.querySelector(`[data-ic="${a}"]`); if (n) n.setAttribute('display', on ? 'inline' : 'none'); };
+    set('play', !r.playing && !done); set('pause', r.playing); set('again', !r.playing && done);
+    const sp = svg.querySelector('[data-ic="speed"]'); if (sp) sp.textContent = r.speed === 1 ? '1×' : '½×';
+  }
+
+  function tick(svg, plan, now) {
+    const r = plan.run;
+    if (!r.playing) return;
+    if (!svg.isConnected) { r.playing = false; return; }
+    r.T = Math.min(plan.total, r.T + (now - r.last) * r.speed);
+    r.last = now;
+    frame(svg, plan);
+    if (r.T >= plan.total) { r.playing = false; icons(svg, plan); return; }
+    requestAnimationFrame(n => tick(svg, plan, n));
+  }
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest && e.target.closest('.pd-ctl [data-act]');
+    if (!b) return;
+    const svg = b.closest('svg'), plan = plans[svg.dataset.pd];
+    if (!plan) return;
+    const r = plan.run, act = b.dataset.act;
+    if (act === 'speed') r.speed = r.speed === 1 ? .5 : 1;
+    else if (act === 'reset') { r.playing = false; r.T = 0; frame(svg, plan); }
+    else if (r.playing) r.playing = false;
+    else {
+      if (r.T >= plan.total) { r.T = 0; frame(svg, plan); }
+      r.playing = true; r.last = performance.now();
+      requestAnimationFrame(n => tick(svg, plan, n));
+    }
+    icons(svg, plan);
+    e.stopPropagation();
+  }, true);
+
+  function controls(id) {
+    const btn = (x, act, inner) => `<g data-act="${act}" transform="translate(${x} 15)" style="cursor:pointer"><circle r="11" fill="#0b1f3a" opacity=".92"/><circle r="14" fill="#fff" opacity="0"/>${inner}</g>`;
+    return `<g class="pd-ctl" data-pd="${id}">` +
+      btn(304, 'play', `<path data-ic="play" d="M-3.4 -5.2 L5 0 L-3.4 5.2 Z" fill="#fff"/><g data-ic="pause" display="none" fill="#fff"><rect x="-4" y="-5" width="3" height="10"/><rect x="1" y="-5" width="3" height="10"/></g><g data-ic="again" display="none" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4.2 -1.4 A4.8 4.8 0 1 0 3.4 3.2"/><path d="M5 -5.4 L4.2 -1.4 L.4 -2.6" stroke-linejoin="round"/></g>`) +
+      btn(278, 'reset', `<g fill="#fff"><rect x="-4.6" y="-4.6" width="1.8" height="9.2"/><path d="M4.4 -4.6 L-2 0 L4.4 4.6 Z"/></g>`) +
+      btn(252, 'speed', `<text data-ic="speed" text-anchor="middle" y="3" font-size="8.5" font-weight="900" fill="#fff">1×</text>`) + '</g>';
+  }
+
   function render(diagram, opts = {}) {
     const id = ++uid;
     const items = diagram.items || [];
@@ -252,7 +406,9 @@
       else people.push([it, i]);
     });
     people.sort((a, b) => a[0].v - b[0].v);
-    let s = `<svg class="pitch-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(opts.label || 'Banetegning')}" font-family="Inter, Arial, sans-serif">`;
+    const plan = buildPlan(items);
+    if (plan) plans[id] = plan;
+    let s = `<svg class="pitch-svg"${plan ? ` data-pd="${id}"` : ''} viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(opts.label || 'Banetegning')}" font-family="Inter, Arial, sans-serif">`;
     s += pitch(id);
     flat.forEach(([it]) => { s += it.t === 'zone' ? zone(it) : it.t === 'line' ? hline(it) : path(it); });
     people.forEach(([it, i]) => {
@@ -267,6 +423,7 @@
     if (diagram.size) s += dims(diagram.size);
     over.forEach(([it]) => { const [x, y] = P(it.u, it.v); s += tag(x, y, it.text); });
     if (opts.step) s += `<g><circle cx="17" cy="17" r="11" fill="#0b1f3a"/><text x="17" y="21" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">${opts.step}</text></g>`;
+    if (plan) s += controls(id);
     return s + '</svg>';
   }
 

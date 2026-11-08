@@ -1,0 +1,2348 @@
+{
+  "version": "2026-11-08",
+  "team": "U11",
+  "session": 5,
+  "sessionTotal": 6,
+  "cardTitle": "U11 · TRÆNING 5 AF 6",
+  "focus": "Afleveringer og første berøring under pres",
+  "goals": [
+    "Træffe gode beslutninger i kampnære situationer: aflever, drible eller afslut – og vælg det, der giver overtal eller mål",
+    "Holde presset oppe og skifte hurtigt fra angreb til forsvar og tilbage igen, når bolden vindes eller tabt",
+    "Spille sammen under tidspres og rigtig modstand – med få berøringer, hovedet oppe og tydelig kommunikation"
+  ],
+  "coaches": [
+    {
+      "name": "Jacob",
+      "day": "Mandag",
+      "photo": null
+    },
+    {
+      "name": "Allan",
+      "day": "Mandag",
+      "photo": null
+    },
+    {
+      "name": "Mads",
+      "day": "Onsdag",
+      "photo": null
+    },
+    {
+      "name": "Lars",
+      "day": "Onsdag",
+      "photo": null
+    }
+  ],
+  "days": {
+    "man": {
+      "label": "Mandag",
+      "coaches": "Jacob & Allan",
+      "default": [
+        "A",
+        "B"
+      ]
+    },
+    "ons": {
+      "label": "Onsdag",
+      "coaches": "Mads & Lars",
+      "default": [
+        "C",
+        "D"
+      ]
+    }
+  },
+  "warmup": {
+    "name": "Opvarmning: kegletyven, kommandoer og firkanter med jæger",
+    "purpose": "Mange boldberøringer, hovedet oppe og hurtige valg fra første minut – og en vej ind til dagens kampnære spil med pres og omstilling. Alle er aktive hele tiden.",
+    "duration": "15 min.",
+    "pitch": "Ét stort felt på ca. 30 × 20 m til de to første dele, derefter 3 firkanter à 10 × 10 m",
+    "players": "15 spillere – alle med bold i de to første dele, derefter 3 firkanter med 5 i hver (4 på keglerne, 1 i midten)",
+    "gear": "Ca. 20 kegler (gul og orange), 15 bolde, 3 veste til jægerne",
+    "phases": [
+      {
+        "time": "0–4 min.",
+        "title": "Kegletyven",
+        "text": "Alle 15 har bold. De tre hold à fem har hver sit hjem midt i feltet, hvor fem gule kegler står i en lille række. På startsignalet dribler alle ud og stjæler en kegle fra et andet holds hjem og dribler den hjem til deres eget – én kegle ad gangen, altid med bolden ved foden, og de placerer den i deres egen række. Efter tre minutter tæller træneren, hvem der har flest kegler. Tegningen viser to spillere, der dribler mod hvert sit hjem.",
+        "focus": "Bolden tæt på foden og hovedet oppe – se, hvor der er plads, og undgå de andre.",
+        "diagram": {
+          "items": [
+            {
+              "t": "cone",
+              "u": 0.12,
+              "v": 0.16,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.88,
+              "v": 0.16,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.12,
+              "v": 0.9,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.88,
+              "v": 0.9,
+              "c": "orange"
+            },
+            {
+              "t": "cone",
+              "u": 0.14,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.17,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.23,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.26,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.44,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.47,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.5,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.53,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.56,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.74,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.77,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8300000000000001,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8600000000000001,
+              "v": 0.5,
+              "c": "yellow"
+            },
+            {
+              "t": "dribble",
+              "n": 1,
+              "pts": [
+                [
+                  0.3,
+                  0.78
+                ],
+                [
+                  0.34,
+                  0.66
+                ],
+                [
+                  0.24,
+                  0.56
+                ]
+              ]
+            },
+            {
+              "t": "dribble",
+              "n": 2,
+              "pts": [
+                [
+                  0.62,
+                  0.3
+                ],
+                [
+                  0.56,
+                  0.4
+                ],
+                [
+                  0.52,
+                  0.5
+                ]
+              ],
+              "with": true
+            },
+            {
+              "t": "p",
+              "u": 0.3,
+              "v": 0.8,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.62,
+              "v": 0.28,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.72,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.45,
+              "v": 0.8,
+              "team": "red",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.15,
+              "v": 0.3,
+              "team": "red",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.85,
+              "v": 0.34,
+              "team": "red",
+              "ball": true
+            },
+            {
+              "t": "tag",
+              "u": 0.5,
+              "v": 0.99,
+              "text": "KEGLETYVEN · 3 HOLD · ALLE MED BOLD"
+            }
+          ]
+        }
+      },
+      {
+        "time": "4–8 min.",
+        "title": "Dribleleg med kommandoer",
+        "text": "Alle 15 dribler frit med bold i feltet på ca. 20 × 20 m. Træneren råber kommandoer: 'Vend!' – skift retning med indersiden. 'Fart!' – spurt ind i åben plads. 'Stop!' – fod på bolden. 'Byt!' – aflever din bold til den nærmeste, og tag hans. Den sidste, der gør det rigtigt, laver fem hurtige tåberøringer. Tegningen viser tre spillere, der skifter retning på råbet 'Vend!'.",
+        "focus": "Kig op, før du skifter retning – og hold bolden tæt, når der er mange omkring dig.",
+        "diagram": {
+          "items": [
+            {
+              "t": "zone",
+              "u0": 0.1,
+              "v0": 0.16,
+              "u1": 0.9,
+              "v1": 0.9,
+              "c": "yellow",
+              "op": 0.16
+            },
+            {
+              "t": "cone",
+              "u": 0.1,
+              "v": 0.16,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.9,
+              "v": 0.16,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.9,
+              "v": 0.9,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.1,
+              "v": 0.9,
+              "c": "yellow"
+            },
+            {
+              "t": "dribble",
+              "n": 1,
+              "pts": [
+                [
+                  0.3,
+                  0.7
+                ],
+                [
+                  0.38,
+                  0.58
+                ],
+                [
+                  0.34,
+                  0.46
+                ]
+              ]
+            },
+            {
+              "t": "dribble",
+              "n": 2,
+              "pts": [
+                [
+                  0.7,
+                  0.72
+                ],
+                [
+                  0.76,
+                  0.6
+                ],
+                [
+                  0.8,
+                  0.5
+                ]
+              ],
+              "with": true
+            },
+            {
+              "t": "dribble",
+              "n": 3,
+              "pts": [
+                [
+                  0.5,
+                  0.8
+                ],
+                [
+                  0.5,
+                  0.66
+                ],
+                [
+                  0.56,
+                  0.56
+                ]
+              ],
+              "with": true
+            },
+            {
+              "t": "p",
+              "u": 0.3,
+              "v": 0.72,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.7,
+              "v": 0.74,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.5,
+              "v": 0.82,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.22,
+              "v": 0.42,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.62,
+              "v": 0.4,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "coach",
+              "u": 0.9,
+              "v": 0.95,
+              "say": "VEND!"
+            }
+          ]
+        }
+      },
+      {
+        "time": "8–12 min.",
+        "title": "Firkant: aflever og flyt dig",
+        "text": "Tre firkanter med fem i hver: fire spillere står ved hver sin kegle og én i midten, og bolden spilles rundt. Efter hver aflevering skal afgiveren løbe ind i midten og bytte plads med midterspilleren, der løber ud til afgiverens kegle. Bolden må kun have to berøringer. Tegningen viser første aflevering langs toppen, afgiveren, der løber ind mod midten, og næste aflevering ned langs siden.",
+        "focus": "Aflever hårdt og præcist, og flyt dig med det samme – bevægelse efter aflevering giver altid et valg.",
+        "diagram": {
+          "items": [
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "pass",
+              "n": 1,
+              "pts": [
+                [
+                  0.24,
+                  0.34
+                ],
+                [
+                  0.74,
+                  0.34
+                ]
+              ]
+            },
+            {
+              "t": "run",
+              "n": 2,
+              "pts": [
+                [
+                  0.2,
+                  0.34
+                ],
+                [
+                  0.2,
+                  0.6
+                ],
+                [
+                  0.34,
+                  0.6
+                ]
+              ],
+              "with": true
+            },
+            {
+              "t": "pass",
+              "n": 3,
+              "pts": [
+                [
+                  0.8,
+                  0.38
+                ],
+                [
+                  0.8,
+                  0.8
+                ]
+              ]
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.34,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.34,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.5,
+              "v": 0.58,
+              "team": "blue"
+            },
+            {
+              "t": "tag",
+              "u": 0.5,
+              "v": 0.99,
+              "text": "AFLEVER OG FLYT DIG · MIDTEN SPILLER MED"
+            }
+          ]
+        }
+      },
+      {
+        "time": "12–15 min.",
+        "title": "Firkant med jæger – frem mod dagens øvelser",
+        "text": "Samme tre firkanter, men den i midten er nu jæger og presser rigtigt. Rører jægeren bolden, bytter han med den, der afleverede. Tre afleveringer i træk, uden at jægeren rører bolden, giver firkanten et point. Taber en firkant bolden, har den kun tre sekunder til at vinde den tilbage – det samme gælder i dagens øvelser, hvor pres og hurtig omstilling er nøglen. Tegningen viser tre afleveringer rundt, mens jægeren løber efter bolden.",
+        "focus": "Aflever, før jægeren er på dig – og pres straks, hvis du mister bolden.",
+        "diagram": {
+          "items": [
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.3,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.8,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "cone",
+              "u": 0.2,
+              "v": 0.86,
+              "c": "yellow"
+            },
+            {
+              "t": "pass",
+              "n": 1,
+              "pts": [
+                [
+                  0.24,
+                  0.34
+                ],
+                [
+                  0.74,
+                  0.34
+                ]
+              ]
+            },
+            {
+              "t": "pass",
+              "n": 2,
+              "pts": [
+                [
+                  0.8,
+                  0.38
+                ],
+                [
+                  0.8,
+                  0.8
+                ]
+              ]
+            },
+            {
+              "t": "pass",
+              "n": 3,
+              "pts": [
+                [
+                  0.74,
+                  0.86
+                ],
+                [
+                  0.26,
+                  0.86
+                ]
+              ]
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.34,
+              "team": "blue",
+              "ball": true
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.34,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.8,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.2,
+              "v": 0.84,
+              "team": "blue"
+            },
+            {
+              "t": "p",
+              "u": 0.5,
+              "v": 0.58,
+              "team": "red"
+            },
+            {
+              "t": "run",
+              "d": true,
+              "at": 1,
+              "pts": [
+                [
+                  0.5,
+                  0.58
+                ],
+                [
+                  0.66,
+                  0.4
+                ]
+              ]
+            },
+            {
+              "t": "run",
+              "d": true,
+              "at": 2,
+              "pts": [
+                [
+                  0.66,
+                  0.4
+                ],
+                [
+                  0.74,
+                  0.7
+                ]
+              ]
+            },
+            {
+              "t": "run",
+              "d": true,
+              "at": 3,
+              "pts": [
+                [
+                  0.74,
+                  0.7
+                ],
+                [
+                  0.5,
+                  0.82
+                ]
+              ]
+            },
+            {
+              "t": "tag",
+              "u": 0.5,
+              "v": 0.99,
+              "text": "JÆGER I MIDTEN · 3 AFLEVERINGER I TRÆK = POINT"
+            }
+          ]
+        }
+      }
+    ],
+    "say": {
+      "lines": [
+        "\"Blå rejser keglerne, røde vælter dem – alle med bold. Hvem har flest stående efter tre minutter?\"",
+        "\"Fire på keglerne, én i midten. Aflever via midten, og kig op, før du modtager.\""
+      ],
+      "check": "\"Hvem i firkanten er fri lige nu – og hvordan kan du se det?\"",
+      "help": "Drible selv med i feltet og tæl højt ned. Gå rundt mellem firkanterne og ros dem, der kigger op, før de afleverer."
+    },
+    "flex": "Er I 12-14, så lav to firkanter à 6-7 (5-6 på keglerne og 1 i midten) eller tre firkanter à 4 og tag jægeren fra de andre. Er I 18, så brug tre firkanter à 6 med to i midten. Flyt ikke kegler midt i legen – luk en del af feltet i stedet.",
+    "unit": {
+      "ideal": 5,
+      "min": 4,
+      "word": "firkant",
+      "words": "firkanter",
+      "per": "4 på keglerne + 1 i midten",
+      "pitch": "10 × 10 m firkanter",
+      "dims": {
+        "w": "10 m",
+        "h": "10 m"
+      },
+      "rot": "midterspilleren skifter hvert minut"
+    }
+  },
+  "stations": {
+    "A": {
+      "name": "3 mod 3 med fire porte: Vælg den åbne port",
+      "purpose": "Træffe hurtige beslutninger i ligetal – hvilken port er åben, og skal jeg aflevere, drible eller skyde – og skifte straks fra angreb til forsvar, når bolden er vundet eller tabt.",
+      "pitch": "24 × 18 m bane med to porte (hver 3 m) i hver ende",
+      "players": "6 spillere (3 mod 3)",
+      "gear": "8 kegler til de fire porte, 4 kegler til banen, bolde, veste i to farver",
+      "setup": "Bane på 24 × 18 m. I hver ende står to porte med 3 m mellemrum. De blå angriber de to porte i toppen, de røde de to porte i bunden. Hold med bold starter i bunden af sin halvdel. Går bolden ud, starter et nyt angreb med ny bold. Efter hver runde bytter de røde og blå ende.",
+      "coaching": [
+        "Kig op, før du modtager – hvilken port er åben?",
+        "Spil mod den port, forsvaret har forladt – lokk dem til den ene side",
+        "Tabt bold: de nærmeste presser med det samme, de andre lukker porten",
+        "Tal højt: 'Mig!', 'Venstre!', 'Tid!'"
+      ],
+      "say": {
+        "lines": [
+          "\"Tre mod tre. I scorer i en af de to porte i toppen – bolden skal gennem porten på jorden.\"",
+          "\"Nu tæller det dobbelt, hvis I vinder bolden og scorer inden seks sekunder.\""
+        ],
+        "check": "\"Hvilken port var åben – og hvem så det først?\"",
+        "help": "Stil dig midt på langsiden og råb 'Seks!', når tiden løber, så begge hold hører det."
+      },
+      "flex": "En bane kører med 5, 6 eller 7. Med 5: 3 mod 2, og de to forsvarere skifter hver 2. minut. Med 7: tre mod tre og en joker, der altid spiller med dem, der har bolden. Med 10–12 børn laves to baner side om side.",
+      "unit": {
+        "ideal": 6,
+        "min": 5,
+        "per": "3 mod 3 med fire porte",
+        "pitch": "24 × 18 m med fire porte",
+        "dims": {
+          "w": "18 m",
+          "h": "24 m"
+        },
+        "rot": "efter hver runde bytter holdene ende, og vinderne bytter modstander"
+      },
+      "variants": {
+        "harder": "Gør banen 4 m kortere, og giv hver spiller kun to berøringer.",
+        "easier": "Gør banen 4 m længere, og lad angriberne starte hvert angreb med to frie afleveringer, før de røde må presse."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Vælg den åbne port",
+          "text": "Tre blå angriber to porte i toppen mod tre røde forsvarere. En scoring sker, når bolden passerer gennem en af portene på jorden. De røde presser rigtigt fra første berøring. Vinder de røde bolden, starter de et angreb mod de to porte i bunden. Tegningen viser et blåt angreb: aflevering, løb i ny plads og skud gennem den venstre port.",
+          "focus": "Se, hvilken port forsvaret har forladt – og skift spillet derhen.",
+          "rule": "Mål gennem en port: 1 point. Maks. tre berøringer pr. spiller.",
+          "diagram": {
+            "items": [
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.07,
+                "w": 0.16,
+                "c": "yellow"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.07,
+                "w": 0.16,
+                "c": "yellow"
+              },
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.88,
+                "w": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.88,
+                "w": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.3,
+                    0.76
+                  ],
+                  [
+                    0.7,
+                    0.64
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.3,
+                    0.74
+                  ],
+                  [
+                    0.26,
+                    0.5
+                  ],
+                  [
+                    0.28,
+                    0.44
+                  ]
+                ],
+                "with": true
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.7,
+                    0.62
+                  ],
+                  [
+                    0.28,
+                    0.44
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.28,
+                    0.4
+                  ],
+                  [
+                    0.3,
+                    0.09
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.78,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.7,
+                "v": 0.68,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.88,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.52,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.62,
+                "v": 0.48,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.36,
+                "team": "red"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.3,
+                    0.52
+                  ],
+                  [
+                    0.42,
+                    0.58
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.62,
+                    0.48
+                  ],
+                  [
+                    0.66,
+                    0.58
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.42,
+                    0.58
+                  ],
+                  [
+                    0.34,
+                    0.48
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.5,
+                    0.36
+                  ],
+                  [
+                    0.34,
+                    0.3
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "SCOR I EN AF DE TO PORTE · 3 MOD 3"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "Omstilling: seks sekunder",
+          "text": "Samme bane og samme spillere. Vinder et hold bolden, må det score straks i de to porte på den modsatte side, og scorer det inden seks sekunder efter erobringen, giver det 2 point. Det hold, der mistede bolden, skal presse straks. Tegningen viser et blåt angreb, hvor de røde presser: dribling, aflevering til makkeren, der løber ind på højre side, og skud gennem den højre port. Vinder de røde bolden, vender spillet.",
+          "focus": "Skift straks: den, der mister bolden, presser, og de andre lukker porten.",
+          "rule": "Scor inden 6 sek. efter erobring: 2 point. Ellers 1 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.07,
+                "w": 0.16,
+                "c": "yellow"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.07,
+                "w": 0.16,
+                "c": "yellow"
+              },
+              {
+                "t": "gate",
+                "u": 0.3,
+                "v": 0.88,
+                "w": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "gate",
+                "u": 0.7,
+                "v": 0.88,
+                "w": 0.16,
+                "c": "orange"
+              },
+              {
+                "t": "dribble",
+                "n": 1,
+                "pts": [
+                  [
+                    0.3,
+                    0.76
+                  ],
+                  [
+                    0.4,
+                    0.62
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.7,
+                    0.74
+                  ],
+                  [
+                    0.76,
+                    0.54
+                  ]
+                ],
+                "with": true
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.4,
+                    0.6
+                  ],
+                  [
+                    0.76,
+                    0.52
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.76,
+                    0.48
+                  ],
+                  [
+                    0.7,
+                    0.09
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.78,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.7,
+                "v": 0.76,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.88,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.38,
+                "v": 0.5,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.64,
+                "v": 0.42,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.28,
+                "team": "red"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.38,
+                    0.5
+                  ],
+                  [
+                    0.42,
+                    0.58
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.64,
+                    0.42
+                  ],
+                  [
+                    0.68,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.42,
+                    0.58
+                  ],
+                  [
+                    0.5,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.68,
+                    0.5
+                  ],
+                  [
+                    0.72,
+                    0.44
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "VINDER RØD BOLDEN: SCOR STRAKS I BUNDEN · 6 SEK. = 2 POINT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "B": {
+      "name": "2 mod 2 med målmand: Afslut under pres",
+      "purpose": "Vælge rigtigt i et lille spil med tidspres: aflever, drible eller skyd, mens to forsvarere presser rigtigt – og skifte hurtigt til forsvar, når bolden er tabt.",
+      "pitch": "18 × 20 m bane med mål og målmand i toppen og en kontraport (3 m) i bunden",
+      "players": "5 spillere (2 angribere, 2 forsvarere og målmand)",
+      "gear": "1 mål, 1 port (2 kegler), 4 kegler til banen, bolde, veste i to farver",
+      "setup": "Bane på 18 × 20 m med mål og målmand i toppen. To blå angribere starter med bolden i bunden mod to røde forsvarere. I anden fase står en kontraport midt på bagkanten, som de røde kan score i, hvis de vinder bolden. Går bolden ud, eller der er scoret, starter et nyt angreb. Efter tre angreb rykkes en rolle: angriber → forsvarer → målmand → angriber.",
+      "coaching": [
+        "Aflever og flyt dig straks – to mod to giver altid et vægspil",
+        "Skyd tidligt, når der er åbent – målmanden skal arbejde",
+        "Forsvarere: den nærmeste presser, den anden dækker",
+        "Bolden tabt: løb hjem eller pres med det samme"
+      ],
+      "say": {
+        "lines": [
+          "\"To mod to. I har ti sekunder fra første berøring til skud.\"",
+          "\"Nu står der en kontraport – vinder forsvaret bolden, skal de score i den.\""
+        ],
+        "check": "\"Hvornår skulle du have skudt – og hvornår skulle du have afleveret?\"",
+        "help": "Stil dig ved siden af banen og tæl sekunderne højt, så alle kan høre, hvornår tiden er gået."
+      },
+      "flex": "En bane kører med 4, 5 eller 6. Med 4: 2 mod 1 med målmand. Med 5: som tegnet. Med 6: tre angribere og to forsvarere. Med 10–12 børn laves to baner side om side – flyt aldrig målet.",
+      "unit": {
+        "ideal": 5,
+        "min": 4,
+        "per": "2 mod 2 + målmand",
+        "pitch": "18 × 20 m med mål og kontraport",
+        "dims": {
+          "w": "18 m",
+          "h": "20 m"
+        },
+        "rot": "efter tre angreb: angriber → forsvarer → målmand"
+      },
+      "variants": {
+        "harder": "Gør banen 4 m kortere, og giv angriberne kun otte sekunder.",
+        "easier": "Gør banen 4 m bredere, eller giv angriberne tolv sekunder."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Skyd inden ti sekunder",
+          "text": "To blå angribere starter med bolden i bunden mod to røde forsvarere og en målmand. De må aflevere, drible og løbe i ny plads, men skal skyde inden ti sekunder efter første berøring. Forsvarerne presser rigtigt fra start. Efter hvert angreb starter et nyt med ny bold. Tegningen viser vægspil: aflevering, løb i ny plads, aflevering tilbage og skud i mål.",
+          "focus": "Aflever og flyt dig med det samme – så får du bolden igen i en bedre plads.",
+          "rule": "Skud inden 10 sek.: mål tæller 1 point. Redning eller forbi: 0.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.34
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.04,
+                "team": "keeper"
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.35,
+                    0.78
+                  ],
+                  [
+                    0.68,
+                    0.7
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.35,
+                    0.76
+                  ],
+                  [
+                    0.3,
+                    0.5
+                  ],
+                  [
+                    0.3,
+                    0.42
+                  ]
+                ],
+                "with": true
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.68,
+                    0.68
+                  ],
+                  [
+                    0.3,
+                    0.42
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.3,
+                    0.38
+                  ],
+                  [
+                    0.42,
+                    0.08
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.35,
+                "v": 0.8,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.68,
+                "v": 0.72,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.42,
+                "v": 0.5,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.62,
+                "v": 0.46,
+                "team": "red"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.42,
+                    0.5
+                  ],
+                  [
+                    0.5,
+                    0.6
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.62,
+                    0.46
+                  ],
+                  [
+                    0.66,
+                    0.58
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.5,
+                    0.6
+                  ],
+                  [
+                    0.38,
+                    0.46
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.66,
+                    0.58
+                  ],
+                  [
+                    0.52,
+                    0.4
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "SKUD INDEN 10 SEKUNDER · 2 MOD 2"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "Kontra i bundporten",
+          "text": "Samme bane, men nu står en kontraport på 3 m i bunden. Vinder de røde bolden, må de score i porten med dribling eller aflevering gennem den og får 2 point. Blå mål tæller stadig 1 point. Tegningen viser et blåt angreb: dribling, aflevering til makkeren, der løber ind, og skud. De røde presser og vil score i bundporten, hvis de vinder bolden.",
+          "focus": "Pres, når du mister bolden – og hold nøje øje med, hvem der kan kontre.",
+          "rule": "Kontra gennem bundporten: 2 point. Mål: 1 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.34
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.04,
+                "team": "keeper"
+              },
+              {
+                "t": "gate",
+                "u": 0.5,
+                "v": 0.89,
+                "w": 0.26,
+                "c": "orange"
+              },
+              {
+                "t": "dribble",
+                "n": 1,
+                "pts": [
+                  [
+                    0.35,
+                    0.78
+                  ],
+                  [
+                    0.4,
+                    0.62
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.68,
+                    0.7
+                  ],
+                  [
+                    0.74,
+                    0.48
+                  ]
+                ],
+                "with": true
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.4,
+                    0.6
+                  ],
+                  [
+                    0.74,
+                    0.46
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.74,
+                    0.42
+                  ],
+                  [
+                    0.58,
+                    0.08
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.35,
+                "v": 0.8,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.68,
+                "v": 0.72,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.42,
+                "v": 0.5,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.62,
+                "v": 0.46,
+                "team": "red"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.42,
+                    0.5
+                  ],
+                  [
+                    0.44,
+                    0.6
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.62,
+                    0.46
+                  ],
+                  [
+                    0.66,
+                    0.56
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.66,
+                    0.56
+                  ],
+                  [
+                    0.72,
+                    0.46
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "VINDER RØD BOLDEN: SCOR I KONTRAPORTEN I BUNDEN"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "C": {
+      "name": "3 mod 3 med to mål: Pres og omstilling",
+      "purpose": "Spille kamp i ligetal og træffe hurtige valg under tidspres: pres straks, når bolden er tabt, og skift straks til angreb, når den er vundet.",
+      "pitch": "25 × 18 m bane med et lille mål i hver ende (ingen målmænd)",
+      "players": "6 spillere (3 mod 3)",
+      "gear": "2 små mål, 4 kegler til banen, bolde, veste i to farver",
+      "setup": "Bane på 25 × 18 m med et lille mål i hver ende. Tre blå mod tre røde, ingen målmænd. Blå scorer i målet i toppen, røde i målet i bunden. Holdet med bold starter ved midten af sin egen halvdel. Går bolden ud, spilles den ind med en aflevering fra stedet. Efter hver runde bytter holdene ende.",
+      "coaching": [
+        "Pres med det samme: den nærmeste går, de andre følger efter",
+        "Kig op, før du modtager – hvem er fri?",
+        "Erobring: spil frem straks, mens forsvaret er ude af position",
+        "Kommunikér: 'Mig!', 'Pres!', 'Hjem!'"
+      ],
+      "say": {
+        "lines": [
+          "\"Tre mod tre. Højst tre berøringer, så spillet går hurtigt.\"",
+          "\"Nu tæller det dobbelt, hvis I vinder bolden og scorer inden seks sekunder.\""
+        ],
+        "check": "\"Hvem pressede først – og hvad gjorde de andre?\"",
+        "help": "Stil dig midt på langsiden og tæl seks sekunder højt efter hver erobring."
+      },
+      "flex": "En bane kører med 5, 6 eller 7. Med 5: 3 mod 2, og de to forsvarere skifter hver 2. minut. Med 7: tre mod tre og en joker, der altid spiller med dem, der har bolden. Med 10–12 børn laves to baner side om side.",
+      "unit": {
+        "ideal": 6,
+        "min": 5,
+        "per": "3 mod 3 med to mål",
+        "pitch": "25 × 18 m med to mål",
+        "dims": {
+          "w": "18 m",
+          "h": "25 m"
+        },
+        "rot": "efter hver runde bytter holdene ende"
+      },
+      "variants": {
+        "harder": "Gør banen 4 m kortere, og giv hver spiller kun to berøringer.",
+        "easier": "Gør banen 4 m længere, og lad hvert angreb starte med en fri aflevering, før de røde må presse."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Højst tre berøringer",
+          "text": "Tre blå angriber målet i toppen mod tre røde forsvarere. Hver spiller må højst røre bolden tre gange i træk, så spillet går hurtigt. De røde presser rigtigt fra første berøring. Vinder de bolden, angriber de målet i bunden. Tegningen viser et blåt angreb: dribling, aflevering til den fri på højre side og skud i målet.",
+          "focus": "Hovedet oppe, før bolden kommer – og afgør hurtigt: skyd, drible eller aflever.",
+          "rule": "Højst 3 berøringer pr. spiller. Mål tæller 1 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.3,
+                "small": true
+              },
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0.97,
+                "w": 0.3,
+                "small": true
+              },
+              {
+                "t": "cone",
+                "u": 0.06,
+                "v": 0.12,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.94,
+                "v": 0.12,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.06,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.94,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "dribble",
+                "n": 1,
+                "pts": [
+                  [
+                    0.3,
+                    0.68
+                  ],
+                  [
+                    0.4,
+                    0.56
+                  ]
+                ]
+              },
+              {
+                "t": "pass",
+                "n": 2,
+                "pts": [
+                  [
+                    0.4,
+                    0.54
+                  ],
+                  [
+                    0.74,
+                    0.48
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 3,
+                "pts": [
+                  [
+                    0.74,
+                    0.44
+                  ],
+                  [
+                    0.54,
+                    0.06
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.7,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.52,
+                "v": 0.62,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.76,
+                "v": 0.5,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.34,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.3,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.2,
+                "v": 0.52,
+                "team": "red"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.2,
+                    0.52
+                  ],
+                  [
+                    0.32,
+                    0.58
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.5,
+                    0.3
+                  ],
+                  [
+                    0.46,
+                    0.42
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 2,
+                "pts": [
+                  [
+                    0.46,
+                    0.42
+                  ],
+                  [
+                    0.64,
+                    0.44
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 2,
+                "pts": [
+                  [
+                    0.3,
+                    0.34
+                  ],
+                  [
+                    0.42,
+                    0.24
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "MAKS. 3 BERØRINGER · 3 MOD 3 · TO MÅL"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "Pres og omstilling på seks sekunder",
+          "text": "Samme bane og regler, men nu giver erobring og mål inden seks sekunder 2 point. Det hold, der mister bolden, skal presse straks. Tegningen viser et blåt angreb: aflevering, løb ud i siden, aflevering til den fri og skud. De røde presser og vil slå til, så snart bolden tabes.",
+          "focus": "Pres straks, når bolden er tabt – og spil frem straks, når den er vundet.",
+          "rule": "Erobring og mål inden 6 sek.: 2 point. Ellers 1 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.3,
+                "small": true
+              },
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0.97,
+                "w": 0.3,
+                "small": true
+              },
+              {
+                "t": "cone",
+                "u": 0.06,
+                "v": 0.12,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.94,
+                "v": 0.12,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.06,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "cone",
+                "u": 0.94,
+                "v": 0.9,
+                "c": "orange"
+              },
+              {
+                "t": "pass",
+                "n": 1,
+                "pts": [
+                  [
+                    0.32,
+                    0.66
+                  ],
+                  [
+                    0.52,
+                    0.56
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.76,
+                    0.62
+                  ],
+                  [
+                    0.78,
+                    0.44
+                  ]
+                ],
+                "with": true
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.52,
+                    0.54
+                  ],
+                  [
+                    0.78,
+                    0.44
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.78,
+                    0.4
+                  ],
+                  [
+                    0.56,
+                    0.06
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.68,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.52,
+                "v": 0.58,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.76,
+                "v": 0.64,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.3,
+                "v": 0.34,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.28,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.68,
+                "v": 0.42,
+                "team": "red"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.3,
+                    0.34
+                  ],
+                  [
+                    0.38,
+                    0.48
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.68,
+                    0.42
+                  ],
+                  [
+                    0.7,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.5,
+                    0.28
+                  ],
+                  [
+                    0.62,
+                    0.34
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "PRES STRAKS · EROBRING + MÅL INDEN 6 SEK. = 2 POINT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "D": {
+      "name": "1 mod 1 bliver til 2 mod 2: Hjælp ind",
+      "purpose": "Vinde dueller og træffe hurtige valg: tag 1 mod 1 på, og vælg, når hjælpen kommer ind – aflever, drible eller skyd – og skift straks, når bolden er tabt.",
+      "pitch": "18 × 20 m bane med mål og målmand i toppen og en kontraport (3 m) i bunden",
+      "players": "5 spillere (2 angribere, 2 forsvarere og målmand)",
+      "gear": "1 mål, 1 port (2 kegler), 4 kegler til banen, bolde, veste i to farver",
+      "setup": "Bane på 18 × 20 m med mål og målmand i toppen. En blå angriber med bold starter i bunden mod en rød forsvarer midt i banen. Den anden blå og den anden røde venter ved hver sin side af banen. Råber træneren 'Hjælp!', løber begge ind på banen. Efter hvert angreb bytter rollerne: ny angriber, forsvarer og målmand. I anden fase står en kontraport i bunden.",
+      "coaching": [
+        "Tag den første duel på – brug fint og fart",
+        "Kig op: hvor kommer hjælpen fra?",
+        "Forsvarer: pres langsomt og luk vejen til mål",
+        "Bolden tabt: skift straks – pres eller løb hjem"
+      ],
+      "say": {
+        "lines": [
+          "\"Én mod én. Når jeg råber 'Hjælp!', kommer jeres makkere ind fra siden.\"",
+          "\"Nu står der en kontraport – vinder forsvaret bolden, skal de score i den.\""
+        ],
+        "check": "\"Hvornår kom hjælpen – og hvad valgte du?\"",
+        "help": "Stil dig ved siden af banen og råb 'Hjælp!', når den første duel har kørt i 4–5 sekunder."
+      },
+      "flex": "En bane kører med 4, 5 eller 6. Med 4: 1 mod 1 med målmand og en hjælper. Med 5: som tegnet. Med 6: to angribere starter mod én forsvarer. Med 10–12 børn laves to baner side om side – flyt aldrig målet.",
+      "unit": {
+        "ideal": 5,
+        "min": 4,
+        "per": "1 mod 1 → 2 mod 2 + målmand",
+        "pitch": "18 × 20 m med mål og kontraport",
+        "dims": {
+          "w": "18 m",
+          "h": "20 m"
+        },
+        "rot": "efter hvert angreb: angriber → forsvarer → målmand"
+      },
+      "variants": {
+        "harder": "Træneren råber 'Hjælp!' efter kun tre sekunder, og banen gøres 4 m kortere.",
+        "easier": "Giv angriberen seks sekunder på 1 mod 1 først, og gør banen 4 m bredere."
+      },
+      "frame": "2 min. forklaring · 2 × 8 min. spil · 2 min. kåring",
+      "phases": [
+        {
+          "time": "2–10 min.",
+          "title": "Én mod én, så kommer hjælpen",
+          "text": "En blå angriber med bold starter mod en rød forsvarer og en målmand. Efter fire til fem sekunder råber træneren 'Hjælp!', og den anden blå og den anden røde løber ind fra hver sin side, så det bliver to mod to. Forsvarerne presser rigtigt hele vejen. Tegningen viser dribling, hjælp ind fra siden, aflevering og skud i mål.",
+          "focus": "Tag duellen på – og se, hvor hjælpen kommer fra, før du vælger.",
+          "rule": "Mål tæller 1 point. Mål efter aflevering fra hjælperen tæller 2 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.34
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.04,
+                "team": "keeper"
+              },
+              {
+                "t": "dribble",
+                "n": 1,
+                "pts": [
+                  [
+                    0.5,
+                    0.8
+                  ],
+                  [
+                    0.46,
+                    0.62
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.14,
+                    0.72
+                  ],
+                  [
+                    0.28,
+                    0.52
+                  ],
+                  [
+                    0.3,
+                    0.44
+                  ]
+                ],
+                "with": true
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.44,
+                    0.6
+                  ],
+                  [
+                    0.3,
+                    0.44
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.3,
+                    0.4
+                  ],
+                  [
+                    0.44,
+                    0.08
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.82,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.12,
+                "v": 0.74,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.5,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.88,
+                "v": 0.64,
+                "team": "red"
+              },
+              {
+                "t": "coach",
+                "u": 0.9,
+                "v": 0.93,
+                "say": "HJÆLP!"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.5,
+                    0.5
+                  ],
+                  [
+                    0.48,
+                    0.58
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 2,
+                "pts": [
+                  [
+                    0.88,
+                    0.64
+                  ],
+                  [
+                    0.68,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.48,
+                    0.58
+                  ],
+                  [
+                    0.36,
+                    0.48
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.68,
+                    0.5
+                  ],
+                  [
+                    0.5,
+                    0.38
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "1 MOD 1 · PÅ 'HJÆLP!' KOMMER NR. 2 IND FRA SIDEN"
+              }
+            ]
+          }
+        },
+        {
+          "time": "10–18 min.",
+          "title": "Kontra i bundporten",
+          "text": "Samme bane og samme forløb, men nu står en kontraport på 3 m i bunden. Vinder de røde bolden, må de score i porten og får 2 point. Tegningen viser dribling, hjælp fra siden til venstre, aflevering og skud. De røde presser og vil kontre i bundporten, hvis de vinder bolden.",
+          "focus": "Tab ikke bolden i midten – og pres straks, hvis du mister den.",
+          "rule": "Kontra gennem bundporten: 2 point. Mål: 1 point.",
+          "diagram": {
+            "items": [
+              {
+                "t": "goal",
+                "u": 0.5,
+                "v": 0,
+                "w": 0.34
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.04,
+                "team": "keeper"
+              },
+              {
+                "t": "gate",
+                "u": 0.5,
+                "v": 0.89,
+                "w": 0.26,
+                "c": "orange"
+              },
+              {
+                "t": "dribble",
+                "n": 1,
+                "pts": [
+                  [
+                    0.5,
+                    0.8
+                  ],
+                  [
+                    0.4,
+                    0.62
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "n": 2,
+                "pts": [
+                  [
+                    0.14,
+                    0.72
+                  ],
+                  [
+                    0.2,
+                    0.5
+                  ]
+                ],
+                "with": true
+              },
+              {
+                "t": "pass",
+                "n": 3,
+                "pts": [
+                  [
+                    0.4,
+                    0.6
+                  ],
+                  [
+                    0.2,
+                    0.48
+                  ]
+                ]
+              },
+              {
+                "t": "shot",
+                "n": 4,
+                "pts": [
+                  [
+                    0.2,
+                    0.44
+                  ],
+                  [
+                    0.4,
+                    0.08
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "u": 0.5,
+                "v": 0.82,
+                "team": "blue",
+                "ball": true
+              },
+              {
+                "t": "p",
+                "u": 0.12,
+                "v": 0.74,
+                "team": "blue"
+              },
+              {
+                "t": "p",
+                "u": 0.48,
+                "v": 0.52,
+                "team": "red"
+              },
+              {
+                "t": "p",
+                "u": 0.88,
+                "v": 0.64,
+                "team": "red"
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 1,
+                "pts": [
+                  [
+                    0.48,
+                    0.52
+                  ],
+                  [
+                    0.44,
+                    0.6
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 2,
+                "pts": [
+                  [
+                    0.88,
+                    0.64
+                  ],
+                  [
+                    0.72,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "t": "run",
+                "d": true,
+                "at": 3,
+                "pts": [
+                  [
+                    0.44,
+                    0.6
+                  ],
+                  [
+                    0.34,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "t": "tag",
+                "u": 0.5,
+                "v": 0.99,
+                "text": "VINDER RØD BOLDEN: SCOR I KONTRAPORTEN I BUNDEN"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
